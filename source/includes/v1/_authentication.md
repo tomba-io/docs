@@ -1,40 +1,13 @@
 
-# Authentication
+## Authentication
 
-> To authorize, use this code:
+Authentication is made with a `key` and `secret` you will have to add to every call you make to our API.
+This parameter is always required.
+We'll return an error if the key is either missing or invalid.
 
-```ruby
-require 'kittn'
+Your API `key` and `secret` is what identifies your account, so make sure to keep it secret! You can at anytime generate or delete API `keys` on your [dashboard](#dashboard).
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+| Api      | Authorization | Location |
+| -------- | ------------- | -------- |
+| `key`    | `X-Tomba-Key` | `header` |
+| `secret` | `secret`      | `query`  |
