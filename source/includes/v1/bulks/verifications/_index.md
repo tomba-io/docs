@@ -100,7 +100,6 @@ Returns a Bulk email verifier.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

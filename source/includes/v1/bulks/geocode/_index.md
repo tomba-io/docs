@@ -78,7 +78,6 @@ Returns a Bulk IP.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

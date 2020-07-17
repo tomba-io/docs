@@ -13,7 +13,6 @@ curl --request GET \
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -121,7 +120,6 @@ curl --request GET \
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -222,7 +220,6 @@ curl --request POST \
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -319,7 +316,6 @@ curl --request PUT \
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -411,7 +407,6 @@ curl --request DELETE \
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

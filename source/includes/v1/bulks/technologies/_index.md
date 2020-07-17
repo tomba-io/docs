@@ -100,7 +100,6 @@ Returns a Bulk technologies.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

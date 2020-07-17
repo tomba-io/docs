@@ -10,7 +10,6 @@ Returns a list of keys.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -99,7 +98,6 @@ Returns a key.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -186,7 +184,6 @@ import 'package:tomaba/tomaba.dart';
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -273,7 +270,6 @@ import 'package:tomaba/tomaba.dart';
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
@@ -360,7 +356,6 @@ import 'package:tomaba/tomaba.dart';
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

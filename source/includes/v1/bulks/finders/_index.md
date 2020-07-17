@@ -78,7 +78,6 @@ Returns a Bulk Email.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```

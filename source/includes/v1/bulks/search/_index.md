@@ -100,7 +100,6 @@ Returns a Bulk domain.
 
 ```php
 <?php
-
 use tomaba\Tomba;
 
 ```
