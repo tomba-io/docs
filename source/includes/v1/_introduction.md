@@ -1,7 +1,26 @@
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+The Tomba API is exposed via [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) web services and makes use of the standard [JSON](https://en.wikipedia.org/wiki/JSON) encoding.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+This documentation will show you how to query.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Three main calls are available:
+
+- The [Domain Search](#aa) returns all the email addresses found using one given domain name, with sources.
+- The [Email Finder](#aa) guesses the most likely email of a person using his/her first name, last name and a domain name.
+- The [Email Verifier](#aa) checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.
+- The [Technologies Finder](#aa)
+- The [IP address](#aa)
+- The [Bulk Domain Search](#aa) Find emails from a list of companies or domains
+- The [Bulk Email Finder](#aa) Find emails from a list of name and companies or domains
+- The [Bulk Email Verifier](#aa) Verify a list of professional emails at once
+- The [Bulk Technologies Finder](#aa) Find domains tools
+- The [Bulk IP address](#aa) Find IP address details
+
+> API endpoint
+
+```bash
+https://api.tomba.io/v1/
+```
+
+> API endpoint
