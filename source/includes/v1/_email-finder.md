@@ -1,10 +1,13 @@
 # Email Finder
 
-asdasda
-asdasdasdasdas adsdfgsdf adsad
+This API endpoint generates or retrieves the most likely email address from a domain name, a first name and a last name.
 
 ```shell
-
+curl --request GET \
+  --url 'http://api.hunting.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin&secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940' \
+  --header 'content-type: application/json' \
+  --header 'user-agent: tomba api' \
+  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
 ```
 
 ```php
@@ -73,9 +76,15 @@ import 'package:tomaba/tomaba.dart';
 
 ## HTTP Request
 
-`GET /email-finder/:email?secret={YOUR_SECRET}`
+`GET /email-finder/:domain?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter  | Default  | Description                                                                |
+| ---------- | -------- | -------------------------------------------------------------------------- |
+| domain     | Required | The domain name of the company, used for emails. For example, "asana.com". |
+| first_name | Required | The person's first name. It doesn't need to be in lowercase..              |
+| last_name  | Required | The person's last name. It doesn't need to be in lowercase..               |
 
 ## Response  Objects details
 
@@ -83,6 +92,50 @@ import 'package:tomaba/tomaba.dart';
 
 ```json
 {
-  "1": 1
+  "data": {
+    "email": [
+      {
+        "email": "googxle@asana.com",
+        "type": "1",
+        "website_url": "asana.com",
+        "first_name": "Moskoz",
+        "last_name": "Dustin",
+        "country": "tr",
+        "score": 72,
+        "accept_all": false,
+        "position": "CEO",
+        "department": "ascsd",
+        "twitter": "moskov",
+        "linkedin_url": "dmoskov",
+        "phone_number": "5646456",
+        "company": "Asana",
+        "latitude": "0",
+        "longitude": "0",
+        "last_updated": "2020-08-19 13:58:19",
+        "full_name": "Moskoz Dustin"
+      }
+    ],
+    "sources": false
+  }
 }
 ```
+
+| Attribute      | Type   | Description                                                |
+| -------------- | ------ | ---------------------------------------------------------- |
+| `email`        | string |
+| `type`         | string | Get the count of only personal or generic email addresses. |
+| `website_url`  | string |
+| `first_name`   | string |
+| `last_name`    | string |
+| `full_name`    | string |
+| `country`      | string |
+| `accept_all`   | bool   |
+| `position`     | string |
+| `department`   | string |
+| `twitter`      | string |
+| `linkedin_url` | string |
+| `phone_number` | string |
+| `company`      | string |
+| `latitude`     | string |
+| `longitude`    | string |
+| `last_updated` | string |
