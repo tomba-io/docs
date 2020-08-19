@@ -47,6 +47,7 @@ includes:
   - v1/usage
   - v1/logs
   - v1/logo
+  - v1/autocomplete
   - v1/cli
   
 
