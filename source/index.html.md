@@ -34,16 +34,21 @@ includes:
   - v1/domain-search
   - v1/email-finder
   - v1/email-verifier
-  - v1/geocode
+  - v1/social
   - v1/technologies
+  - v1/geocode
   - v1/bulks/search/index
   - v1/bulks/finders/index
   - v1/bulks/verifications/index
-  - v1/bulks/geocode/index
+  - v1/bulks/social/index
   - v1/bulks/technologies/index
+  - v1/bulks/geocode/index
   - v1/leads/index
   - v1/leads_lists/index
+  - v1/companies/index
+  - v1/companies_lists/index
   - v1/keys/index
+  - v1/risk
   - v1/usage
   - v1/logs
   - v1/logo
