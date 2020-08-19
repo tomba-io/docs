@@ -45,6 +45,7 @@ includes:
   - v1/leads_lists/index
   - v1/keys/index
   - v1/usage
+  - v1/logs
   - v1/logo
   - v1/cli
   
