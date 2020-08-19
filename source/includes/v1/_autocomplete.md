@@ -11,14 +11,13 @@ curl --request GET \
 
 ### HTTP Request
 
-`GET /domains-suggestion?query=:name`
+`GET /domains-suggestion?query=:query`
 
 ### The parameters are defined as follows
 
 | Parameter | Default  | Description                     |
 | --------- | -------- | ------------------------------- |
 | query     | Required | name of the company or website. |
-
 
 ### Response Objects details
 
