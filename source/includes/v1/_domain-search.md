@@ -77,15 +77,15 @@ import 'package:tomaba/tomaba.dart';
 
 ### The parameters are defined as follows
 
-| Parameter  | Default  | Description                                                                             |
-| ---------- | -------- | --------------------------------------------------------------------------------------- |
-| domain     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
-| secret     | Required | Your secret key                                                                         |
-| page       | optional | Specifies the number of email addresses to skip. The default is 0.                      |
-| limit      | optional | Specifies the max number of email addresses to return. The default is 10.               |
-| department | optional | Get only email addresses for people working in the selected department(s).              |
-| seniority  | optional | Get only email addresses for people with the selected seniority level. The possible val |
-| type       | optional | Get only `personal` or `generic` email addresses.                                       |
+| Parameter    | Default  | Description                                                                             |
+| ------------ | -------- | --------------------------------------------------------------------------------------- |
+| `domain`     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
+| `secret`     | Required | Your secret key                                                                         |
+| `page`       | optional | Specifies the number of email addresses to skip. The default is 0.                      |
+| `limit`      | optional | Specifies the max number of email addresses to return. The default is 10.               |
+| `department` | optional | Get only email addresses for people working in the selected department(s).              |
+| `seniority`  | optional | Get only email addresses for people with the selected seniority level. The possible val |
+| `type`       | optional | Get only `personal` or `generic` email addresses.                                       |
 
 ## Response  Objects details
 
