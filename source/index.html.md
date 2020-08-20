@@ -49,11 +49,13 @@ includes:
   - v1/companies_lists/index
   - v1/keys/index
   - v1/risk
+  - v1/reveal
   - v1/usage
   - v1/logs
   - v1/logo
   - v1/autocomplete
   - v1/cli
+  - v1/app
   
 
 search: false
