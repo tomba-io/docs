@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Tomba REST API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
