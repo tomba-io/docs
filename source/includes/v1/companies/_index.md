@@ -1,6 +1,6 @@
-# Companys
+# Companies
 
-## List all your companys
+## List all your Companies
 
 ## Get a company
 
