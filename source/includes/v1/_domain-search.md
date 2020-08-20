@@ -4,7 +4,11 @@ One key feature of Tobma is to search all the email addresses corresponding to o
 You give one domain name and it returns all the email addresses using this domain name found on the internet.
 
 ```shell
-
+curl --request GET \
+  --url 'http://api.hunting.io/v1/domain-search/rbr3.com?format=json&page=&limit=&department=&seniority=&type=&secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940' \
+  --header 'content-type: application/json' \
+  --header 'user-agent: tomba api' \
+  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
 ```
 
 ```php
@@ -185,22 +189,21 @@ import 'package:tomaba/tomaba.dart';
 }
 ```
 
-| Attribute                                    | Type   | Description |
-| -------------------------------------------- | ------ | ----------- |
-| `organization`                               | array  |
-| `organization` > `location.country`          | string |
-| `organization` > `social_links.twitter_url`  | string |
-| `organization` > `social_links.facebook_url` | string |
-| `organization` > `social_links.linkedin_url` | string |
-| `organization` > `disposable`                | bool   |
-| `organization` > `webmail`                   | bool   |
-| `organization` > `organization_id`           | string |
-| `organization` > `website_url`               | string |
-| `organization` > `state`                     | string |
-| `organization` > `ip_address`                | string |
-| `organization` > `accept_all`                | bool   |
-| `organization` > `industries`                | string |
-| `organization` > `last_updated`              | date   |
-| `organization` > `organization`              | string |
-| `emails`                                     | array  |
-| `geolocation`                                | array  |
+| Attribute                                    | Type   | Description                           |
+| -------------------------------------------- | ------ | ------------------------------------- |
+| `organization` > `location.country`          | string | The country of company                |
+| `organization` > `social_links.twitter_url`  | string | The Twitter screen name               |
+| `organization` > `social_links.facebook_url` | string | The Facebook screen name              |
+| `organization` > `social_links.linkedin_url` | string | The Linkedin screen name              |
+| `organization` > `disposable`                | bool   | is disposable email service           |
+| `organization` > `webmail`                   | bool   | is webmail email                      |
+| `organization` > `organization_id`           | hash   | Internal ID                           |
+| `organization` > `website_url`               | string | The Domain of company’s website       |
+| `organization` > `state`                     | string | The company state                     |
+| `organization` > `ip_address`                | string | The IP of company                     |
+| `organization` > `accept_all`                | bool   | The SMTP checks                       |
+| `organization` > `industries`                | string | The company industries info           |
+| `organization` > `last_updated`              | date   | The time at which we update this data |
+| `organization` > `organization`              | string | The Name of company                   |
+| `emails`                                     | array  | The list of Emails                    |
+| `geolocation`                                | array  | The company geolocation info          |
