@@ -38,20 +38,22 @@ body {
   /* Never autoresize text */
 }
 
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
 
 #toc>ul>li>a>span {
   float: right;
-  background-color: #2484FF;
+  background-color: #0e0b2a;
   border-radius: 40px;
   width: 20px;
 }
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
+  border-left: 5px solid #0e0b2a;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -699,3 +701,10 @@ body {
   padding-left: $nav-padding + $nav-padding + $nav-padding + $nav-indent;
   font-size: 12px;
 }
+
+@import 'toc';
+@import 'warning';
+@import 'label';
+@import 'endpoint';
+@import 'content';
+@import 'lang-selector';
