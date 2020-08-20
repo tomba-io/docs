@@ -117,25 +117,24 @@ import 'package:tomaba/tomaba.dart';
 }
 ```
 
-| Attribute                       | Type   | Description |
-| ------------------------------- | ------ | ----------- |
-| `ip`                            | string |
-| `location` > `asn`              | int    |
-| `location` > `country`          | string |
-| `location` > `stateprov`        | string |
-| `location` > `city`             | string |
-| `location` > `latitude`         | string |
-| `location` > `longitude`        | string |
-| `location` > `name`             | string |
-| `location` > `continent_name`   | string |
-| `location` > `top_level_domain` | string |
-| `location` > `alpha3_code`      | string |
-| `location` > `timezones`        | string |
-| `location` > `currencies`       | string |
-| `location` > `currencies_name`  | string |
-| `location` > `type`             | string |
-| `connection` > `country`        | string |
-| `connection` > `organization`   | string |
-| `connection` > `asn`            | int    |
-| `connection` > `website`        | string |
-| `connection` > `comany_type`    | string |
+| Attribute                      | Type   | Description                                               |
+| ------------------------------ | ------ | --------------------------------------------------------- |
+| `ip`                           | string | The requested IP address                                  |
+| `location` > `asn`             | int    | The AS number                                             |
+| `location` > `country`         | string | The ISO 3166-1 alpha-2 country code                       |
+| `location` > `stateprov`       | string | The State or province name                                |
+| `location` > `city`            | string | The City name                                             |
+| `location` > `latitude`        | string | The Decimal latitude                                      |
+| `location` > `longitude`       | string | The Decimal longitude                                     |
+| `location` > `name`            | string | The Country name                                          |
+| `location` > `continent_name`  | string | The 2-letter continent code                               |
+| `location` > `alpha3_code`     | string | The ISO 3166-1 alpha-3 country code                       |
+| `location` > `timezones`       | string | The UTC                                                   |
+| `location` > `currencies`      | string | The code of the given currency.                           |
+| `location` > `currencies_name` | string | The name of the given currency.                           |
+| `location` > `type`            | string | IP address type `ipv4` or `ipv6`                          |
+| `connection` > `country`       | string | The ISO 3166-1 alpha-2 country code                       |
+| `connection` > `organization`  | string | The name of the organization associated with the `asn`    |
+| `connection` > `asn`           | int    | The AS number                                             |
+| `connection` > `website`       | string | The Website of Organization                               |
+| `connection` > `comany_type`   | string | The Organization type ,`business`,`hosting`,`isp`,`other` |

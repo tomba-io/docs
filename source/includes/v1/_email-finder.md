@@ -120,22 +120,22 @@ import 'package:tomaba/tomaba.dart';
 }
 ```
 
-| Attribute      | Type   | Description                                                |
-| -------------- | ------ | ---------------------------------------------------------- |
-| `email`        | string |
-| `type`         | string | Get the count of only personal or generic email addresses. |
-| `website_url`  | string |
-| `first_name`   | string |
-| `last_name`    | string |
-| `full_name`    | string |
-| `country`      | string |
-| `accept_all`   | bool   |
-| `position`     | string |
-| `department`   | string |
-| `twitter`      | string |
-| `linkedin_url` | string |
-| `phone_number` | string |
-| `company`      | string |
-| `latitude`     | string |
-| `longitude`    | string |
-| `last_updated` | string |
+| Attribute      | Type   | Description                                                                                                                |
+| -------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `email`        | string | The email address                                                                                                          |
+| `type`         | string | Get the count of only personal or generic email addresses.                                                                 |
+| `website_url`  | string | Company domain                                                                                                             |
+| `first_name`   | string | First name of person (if found)                                                                                            |
+| `last_name`    | string | Last name of person (if found)                                                                                             |
+| `full_name`    | string | Full formatted name of person. Sometimes this will be present even if the `last_name` or `first_name` aren’t available     |
+| `country`      | string | Two letter country code based on location                                                                                  |
+| `accept_all`   | bool   | is `true` if the SMTP server accepts all the email addresses. It means you can have have `false` positives on SMTP checks. |
+| `position`     | string | The job title of person (if found)                                                                                         |
+| `department`   | string | The person  working in the selected department(s).                                                                         |
+| `twitter`      | string | Twitter handle for the person (if found).                                                                                  |
+| `linkedin_url` | string | LinkedIn URL for the person (if found).                                                                                    |
+| `phone_number` | string | The phone number of person (if found)                                                                                      |
+| `company`      | string | The company of person (if found)                                                                                           |
+| `latitude`     | string | latitude based on location                                                                                                 |
+| `longitude`    | string | longitude based on location                                                                                                |
+| `last_updated` | string | The time at which we update this data                                                                                      |

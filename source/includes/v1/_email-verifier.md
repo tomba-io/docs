@@ -138,19 +138,19 @@ import 'package:tomaba/tomaba.dart';
 }
 ```
 
-| Attribute     | Type   | Description |
-| ------------- | ------ | ----------- |
-| `email_id`    | hash   |
-| `email`       | string |
-| `first_name`  | string |
-| `last_name`   | string |
-| `country`     | string |
-| `mx_records`  | bool   |
-| `smtp_server` | bool   |
-| `smtp_check`  | bool   |
-| `accept_all`  | bool   |
-| `block`       | bool   |
-| `score`       | int    |
-| `regex`       | bool   |
-| `full_name`   | string |
-| `source`      | array  |
+| Attribute     | Type   | Description                                                                                                                |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `email_id`    | hash   | Internal ID                                                                                                                |
+| `email`       | string | The email address to look up.                                                                                              |
+| `first_name`  | string | First name of person (if found)                                                                                            |
+| `last_name`   | string | Last name of person (if found)                                                                                             |
+| `country`     | string | Two letter country code based on location                                                                                  |
+| `mx_records`  | bool   | is `true` if we find MX records exist on the domain of the given email address.                                            |
+| `smtp_server` | bool   | is `true` if we connect to the SMTP server successfully.                                                                   |
+| `smtp_check`  | bool   | is `true` if the email address doesn't bounce.                                                                             |
+| `accept_all`  | bool   | is `true` if the SMTP server accepts all the email addresses. It means you can have have `false` positives on SMTP checks. |
+| `block`       | bool   | is `true` if the SMTP server prevented us to perform the SMTP check.                                                       |
+| `score`       | int    | The deliverability score we give to the email address.                                                                     |
+| `regex`       | bool   | The email address passes our regular expression.                                                                           |
+| `full_name`   | string | The person's full name.                                                                                                    |
+| `source`      | array  | The given email address somewhere on the web                                                                               |
