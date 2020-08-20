@@ -38,6 +38,10 @@ Returns a Bulk domain.
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
+
 ### Response Objects details
 
 > Full Response
@@ -60,27 +64,14 @@ Returns a Bulk domain.
 
 ### The parameters are defined as follows
 
-### Response Objects details
-
-> Full Response
-
-```json
-{
-  "1": 1
-}
-```
-
-## Update a bulk domain
-
-```shell
-
-```
-
-### HTTP Request
-
-`PUT /bulk-searches/:id?secret={YOUR_SECRET}`
-
-### The parameters are defined as follows
+| Parameter       | Default  | Description                               |
+| --------------- | -------- | ----------------------------------------- |
+| `name`          | Required | The bulk name .                           |
+| `list`          | Required | The domains names .                       |
+| `maximum_email` | Required | Maximum email addresses per domain .      |
+| `email_type`    | Required | The Email addresses type .                |
+| `department`    | Required | The Department type .                     |
+| `sources`       | Required | The Include the sources in the result   . |
 
 ### Response Objects details
 
@@ -91,6 +82,7 @@ Returns a Bulk domain.
   "1": 1
 }
 ```
+
 
 ## Delete a bulk domain
 
@@ -167,6 +159,10 @@ import 'package:tomaba/tomaba.dart';
 `DELETE /bulk-searches/:id?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
 
 ### Response Objects details
 

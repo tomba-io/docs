@@ -38,6 +38,10 @@ Returns a bulk Social URL.
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
+
 ### Response Objects details
 
 > Full Response
@@ -60,27 +64,10 @@ Returns a bulk Social URL.
 
 ### The parameters are defined as follows
 
-### Response Objects details
-
-> Full Response
-
-```json
-{
-  "1": 1
-}
-```
-
-## Update a bulk Social URL
-
-```shell
-
-```
-
-### HTTP Request
-
-`PUT /bulk-social/:id?secret={YOUR_SECRET}`
-
-### The parameters are defined as follows
+| Parameter | Default  | Description           |
+| --------- | -------- | --------------------- |
+| `name`    | Required | The bulk name .       |
+| `list`    | Required | The Social URL list . |
 
 ### Response Objects details
 
@@ -167,6 +154,10 @@ import 'package:tomaba/tomaba.dart';
 `DELETE /bulk-social/:id?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
 
 ### Response Objects details
 

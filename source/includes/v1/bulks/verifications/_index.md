@@ -38,6 +38,10 @@ Returns a Bulk email verifier.
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
+
 ### Response Objects details
 
 > Full Response
@@ -60,27 +64,11 @@ Returns a Bulk email verifier.
 
 ### The parameters are defined as follows
 
-### Response Objects details
+| Parameter | Default  | Description      |
+| --------- | -------- | ---------------- |
+| `name`    | Required | The bulk name .  |
+| `list`    | Required | The email list . |
 
-> Full Response
-
-```json
-{
-  "1": 1
-}
-```
-
-## Update a bulk email verifier
-
-```shell
-
-```
-
-### HTTP Request
-
-`PUT /bulk-verifications/:id?secret={YOUR_SECRET}`
-
-### The parameters are defined as follows
 
 ### Response Objects details
 
@@ -167,6 +155,10 @@ import 'package:tomaba/tomaba.dart';
 `DELETE /bulk-verifications/:id?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
 
 ### Response Objects details
 

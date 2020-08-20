@@ -38,6 +38,10 @@ Returns a Bulk Email.
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
+
 ### Response Objects details
 
 > Full Response
@@ -59,6 +63,12 @@ Returns a Bulk Email.
 `POST /bulk-finders/:id?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter | Default  | Description                                      |
+| --------- | -------- | ------------------------------------------------ |
+| `name`    | Required | The bulk name .                                  |
+| `list`    | Required | The list : first name and last name and domain . |
+| `sources` | Required | The Include the sources in the result   .        |
 
 ### Response Objects details
 
@@ -145,6 +155,10 @@ import 'package:tomaba/tomaba.dart';
 `DELETE /bulk-finders/:id?secret={YOUR_SECRET}`
 
 ### The parameters are defined as follows
+
+| Parameter | Default  | Description  |
+| --------- | -------- | ------------ |
+| id        | Required | The bulk ID. |
 
 ### Response Objects details
 
