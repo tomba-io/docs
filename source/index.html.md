@@ -53,6 +53,8 @@ includes:
   - v1/usage
   - v1/logs
   - v1/logo
+  - v1/email-count
+  - v1/domain-status
   - v1/autocomplete
   - v1/cli
   - v1/app
