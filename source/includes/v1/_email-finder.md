@@ -83,6 +83,7 @@ import 'package:tomaba/tomaba.dart';
 | Parameter  | Default  | Description                                                                |
 | ---------- | -------- | -------------------------------------------------------------------------- |
 | domain     | Required | The domain name of the company, used for emails. For example, "asana.com". |
+| full_name  | Required | The person's full name                                                     |
 | first_name | Required | The person's first name. It doesn't need to be in lowercase..              |
 | last_name  | Required | The person's last name. It doesn't need to be in lowercase..               |
 
