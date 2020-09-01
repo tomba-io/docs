@@ -46,14 +46,14 @@ body {
 
 #toc>ul>li>a>span {
   float: right;
-  background-color: #0e0b2a;
+  background-color: #001529;
   border-radius: 40px;
   width: 20px;
 }
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-  border-left: 5px solid #0e0b2a;
+  border-left: 5px solid #001529;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -62,7 +62,7 @@ body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
+  background-color: #001529;
   font-size: 13px;
   font-weight: bold;
 
@@ -161,7 +161,7 @@ body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
-    background-color: $nav-active-bg;
+    background-color: #1890ff;
     color: $nav-active-text;
   }
 
@@ -189,7 +189,7 @@ body {
 
     li,
     a {
-      color: $nav-text;
+      color: $nav-active-text;
       text-decoration: none;
     }
 
@@ -213,7 +213,7 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  color: $nav-text;
+  color: #ffffff;
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
