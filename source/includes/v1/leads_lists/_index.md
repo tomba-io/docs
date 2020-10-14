@@ -8,7 +8,7 @@ Returns a list of leads lists.
 curl --request GET \
   --url 'http://api.hunting.io/v1/leads_lists/?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 ```
 
 ```php
@@ -94,7 +94,7 @@ curl --request GET \
   --url 'http://api.hunting.io/v1/leads_lists/1?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6' \
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
 ```
 
 ```php
@@ -170,7 +170,7 @@ curl --request POST \
   --url 'http://api.hunting.io/v1/leads_lists/?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6' \
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
   --data '{
   "name": "Mario Monahan"
   }'
@@ -245,7 +245,7 @@ curl --request PUT \
   --url 'http://api.hunting.io/v1/leads_lists/17?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6' \
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
   --data '{
   "name": "update listsssssssssss"
   }'
@@ -318,7 +318,7 @@ curl --request DELETE \
   --url 'http://api.hunting.io/v1/leads_lists/5?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6' \
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
 ```
 
 ```php

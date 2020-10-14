@@ -9,7 +9,7 @@ curl --request POST \
   --url 'http://api.hunting.io/v1/risk?secret=df3908be-eb1e-4289-b842-8eff404318dc' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6' \
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
   --data '{
     "email" : "EMAIL",
     "ip" : "IP address",

@@ -9,7 +9,7 @@ curl --request GET \
   --url http://api.hunting.io/v1/keys \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 
 ```
 
@@ -105,7 +105,7 @@ curl --request GET \
   --url 'http://api.hunting.io/v1/keys/241' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 
 ```
 
@@ -194,7 +194,7 @@ import 'package:tomba/tomba.dart';
 curl --request POST \
   --url 'http://api.hunting.io/v1/keys?secret=df3908be-eb1e-4289-b842-8eff404318dc' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 
 ```
 
@@ -270,7 +270,7 @@ curl --request PUT \
   --url 'http://api.hunting.io/v1/keys/2' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 
 ```
 
@@ -350,7 +350,7 @@ curl --request DELETE \
   --url 'http://api.hunting.io/v1/keys/259' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 ```
 
 ```php

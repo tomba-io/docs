@@ -9,7 +9,7 @@ curl --request GET \
   --url 'http://api.hunting.io/v1/companies_list/?format=json&direction=&sortby=' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 ```
 
 ### HTTP Request
@@ -60,7 +60,7 @@ curl --request GET \
   --url 'http://api.hunting.io/v1/companies_list/8?format=json&page=&limit=&sortby=' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: be548b797bfcc3950be4ec9bdba18c91db203ef6'
+  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
 ```
 
 ### HTTP Request
