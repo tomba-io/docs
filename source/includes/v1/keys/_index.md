@@ -2,7 +2,11 @@
 
 ## List all your keys
 
-Returns a list of keys.
+Returns a list of your keys.
+
+<aside class="notice">
+The Free plane can create only one key.
+</aside>
 
 ```shell
 curl --request GET \
@@ -26,7 +30,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -39,13 +42,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -62,12 +62,12 @@ import 'package:tomba/tomba.dart';
 
 ### Response Objects details
 
-| Attribute                | Type   | Description                      |
-| ------------------------ | ------ | -------------------------------- |
-| `keys` ->`id`            | string | the key ID                       |
-| `keys` ->`key`           | string | your hash key                    |
-| `keys` ->`ip_addresses`  | string | IP address                       |
-| `keys` ->`creation_date` | string | the date of creation of this key |
+| Attribute                | Type   | Description                           |
+| ------------------------ | ------ | ------------------------------------- |
+| `keys` ->`id`            | string | the key ID                            |
+| `keys` ->`key`           | string | your hash key always start with `ta_` |
+| `keys` ->`ip_addresses`  | string | IP address                            |
+| `keys` ->`creation_date` | string | the date of creation of this key      |
 
 > Full Response
 
@@ -76,16 +76,22 @@ import 'package:tomba/tomba.dart';
   "data": {
     "keys": [
       {
-        "id": "241",
-        "key": "bsad548b797bfcc395xxxxxxxxx",
-        "ip_addresses": "127.0.0.1",
-        "creation_date": "2020-08-17 17:58:56"
+        "id": 373,
+        "key": "ta_6529b65481a353523c7c435ed62af1421c002",
+        "ip_addresses": "1.0.0.0",
+        "creation_date": "2020-10-05 15:34:00"
       },
       {
-        "id": "245",
-        "key": "be548b797bfcc395xxxxxxxxx",
-        "ip_addresses": "127.0.0.1",
-        "creation_date": "2020-08-17 17:59:54"
+        "id": 372,
+        "key": "ta_722ec46dc745c2224fb3bd6edbd44e7800542",
+        "ip_addresses": "1.0.0.0",
+        "creation_date": "2020-10-05 15:33:58"
+      },
+      {
+        "id": 371,
+        "key": "ta_5d02d28bbc5955aa5dbc8b01185278bd63b65",
+        "ip_addresses": "1.0.0.0",
+        "creation_date": "2020-10-05 15:33:56"
       },
       ...
       ...
@@ -122,7 +128,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -135,13 +140,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -179,8 +181,8 @@ import 'package:tomba/tomba.dart';
     "keys": [
       {
         "id": 241,
-        "key": "xxxxxxxxxxxxxxxxx",
-        "ip_addresses": "127.0.0.1",
+        "key": "ta_xxxxxxxxxxxxxxxxx",
+        "ip_addresses": "1.0.0.1",
         "creation_date": "2020-08-17 17:58:56"
       }
     ]
@@ -211,7 +213,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -224,13 +225,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -257,8 +255,8 @@ import 'package:tomba/tomba.dart';
 ```json
 {
   "data": {
-    "id": 259,
-    "key": "522f5429e6ccedfbe08xxxxxxxxxxxxxxx"
+    "id": 399,
+    "key": "ta_5fac2f2628532a6500833dc539971197ec583c59"
   }
 }
 ```
@@ -287,7 +285,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -300,13 +297,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -329,10 +323,10 @@ import 'package:tomba/tomba.dart';
 
 ### Response Objects details
 
-| Attribute | Type   | Description |
-| --------- | ------ | ----------- |
-| `status`  | bool   |             |
-| `message` | string |             |
+| Attribute | Type   |
+| --------- | ------ |
+| `status`  | bool   |
+| `message` | string |
 
 > Full Response
 
@@ -366,7 +360,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -379,13 +372,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -408,10 +398,10 @@ import 'package:tomba/tomba.dart';
 
 ### Response Objects details
 
-| Attribute | Type   | Description |
-| --------- | ------ | ----------- |
-| `status`  | bool   |             |
-| `message` | string |             |
+| Attribute | Type   |
+| --------- | ------ |
+| `status`  | bool   |
+| `message` | string |
 
 > Full Response
 
