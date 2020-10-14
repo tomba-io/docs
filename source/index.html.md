@@ -3,17 +3,12 @@ title: Tomba REST API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
-  - php: PHP
   - python: Python
   - javascript: Node.js
   - ruby: Ruby
   - java: JAVA
-  - lua: Lua
-  - d: dlang
+  - php: PHP
   - r: Rlang
-  - elixir: elixir
-  - swift: Swift
-  - go: Go
   - dart: Dart
   - powershell: CLI
 

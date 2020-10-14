@@ -13,61 +13,40 @@ curl --request GET \
 
 ```php
 <?php
-use tomaba\Tomba;
+use tomba\Tomba;
 
 ```
 
 ```python
-import tomaba
+import tomba
 
 ```
 
 ```javascript
-const Tomba = require("tomaba");
+const Tomba = require("tomba");
 
 ```
 
 ```ruby
-require 'tomaba'
+require 'tomba'
 
 ```
 
 ```java
-import io.tomaba.api.Tomba;
+import io.tomba.api.Tomba;
 
 ```
 
-```lua
-local tomaba = require('tomaba')
-
-```
-
-```d
-import tomaba;
-
-```
 
 ```r
-require(tomaba)
+require(tomba)
 
 ```
 
-```elixir
 
-```
-
-```swift
-import tomaba
-
-```
-
-```go
-import ( "github.com/tomaba-io/go/tomaba" )
-
-```
 
 ```dart
-import 'package:tomaba/tomaba.dart';
+import 'package:tomba/tomba.dart';
 
 ```
 
@@ -120,61 +99,40 @@ curl --request GET \
 
 ```php
 <?php
-use tomaba\Tomba;
+use tomba\Tomba;
 
 ```
 
 ```python
-import tomaba
+import tomba
 
 ```
 
 ```javascript
-const Tomba = require("tomaba");
+const Tomba = require("tomba");
 
 ```
 
 ```ruby
-require 'tomaba'
+require 'tomba'
 
 ```
 
 ```java
-import io.tomaba.api.Tomba;
+import io.tomba.api.Tomba;
 
 ```
 
-```lua
-local tomaba = require('tomaba')
-
-```
-
-```d
-import tomaba;
-
-```
 
 ```r
-require(tomaba)
+require(tomba)
 
 ```
 
-```elixir
 
-```
-
-```swift
-import tomaba
-
-```
-
-```go
-import ( "github.com/tomaba-io/go/tomaba" )
-
-```
 
 ```dart
-import 'package:tomaba/tomaba.dart';
+import 'package:tomba/tomba.dart';
 
 ```
 
@@ -220,61 +178,40 @@ curl --request POST \
 
 ```php
 <?php
-use tomaba\Tomba;
+use tomba\Tomba;
 
 ```
 
 ```python
-import tomaba
+import tomba
 
 ```
 
 ```javascript
-const Tomba = require("tomaba");
+const Tomba = require("tomba");
 
 ```
 
 ```ruby
-require 'tomaba'
+require 'tomba'
 
 ```
 
 ```java
-import io.tomaba.api.Tomba;
+import io.tomba.api.Tomba;
 
 ```
 
-```lua
-local tomaba = require('tomaba')
-
-```
-
-```d
-import tomaba;
-
-```
 
 ```r
-require(tomaba)
+require(tomba)
 
 ```
 
-```elixir
 
-```
-
-```swift
-import tomaba
-
-```
-
-```go
-import ( "github.com/tomaba-io/go/tomaba" )
-
-```
 
 ```dart
-import 'package:tomaba/tomaba.dart';
+import 'package:tomba/tomba.dart';
 
 ```
 
@@ -316,61 +253,40 @@ curl --request PUT \
 
 ```php
 <?php
-use tomaba\Tomba;
+use tomba\Tomba;
 
 ```
 
 ```python
-import tomaba
+import tomba
 
 ```
 
 ```javascript
-const Tomba = require("tomaba");
+const Tomba = require("tomba");
 
 ```
 
 ```ruby
-require 'tomaba'
+require 'tomba'
 
 ```
 
 ```java
-import io.tomaba.api.Tomba;
+import io.tomba.api.Tomba;
 
 ```
 
-```lua
-local tomaba = require('tomaba')
-
-```
-
-```d
-import tomaba;
-
-```
 
 ```r
-require(tomaba)
+require(tomba)
 
 ```
 
-```elixir
 
-```
-
-```swift
-import tomaba
-
-```
-
-```go
-import ( "github.com/tomaba-io/go/tomaba" )
-
-```
 
 ```dart
-import 'package:tomaba/tomaba.dart';
+import 'package:tomba/tomba.dart';
 
 ```
 
@@ -407,61 +323,40 @@ curl --request DELETE \
 
 ```php
 <?php
-use tomaba\Tomba;
+use tomba\Tomba;
 
 ```
 
 ```python
-import tomaba
+import tomba
 
 ```
 
 ```javascript
-const Tomba = require("tomaba");
+const Tomba = require("tomba");
 
 ```
 
 ```ruby
-require 'tomaba'
+require 'tomba'
 
 ```
 
 ```java
-import io.tomaba.api.Tomba;
+import io.tomba.api.Tomba;
 
 ```
 
-```lua
-local tomaba = require('tomaba')
-
-```
-
-```d
-import tomaba;
-
-```
 
 ```r
-require(tomaba)
+require(tomba)
 
 ```
 
-```elixir
 
-```
-
-```swift
-import tomaba
-
-```
-
-```go
-import ( "github.com/tomaba-io/go/tomaba" )
-
-```
 
 ```dart
-import 'package:tomaba/tomaba.dart';
+import 'package:tomba/tomba.dart';
 
 ```
 
