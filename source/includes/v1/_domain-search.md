@@ -5,7 +5,7 @@ You give one domain name and it returns all the email addresses using this domai
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/domain-search/rbr3.com?format=json&page=&limit=&department=&seniority=&type=&secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940' \
+  --url 'http://api.hunting.io/v1/domain-search/rbr3.com?format=json&page=&limit=&department=&seniority=&type=' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
   --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
@@ -54,14 +54,13 @@ import 'package:tomba/tomba.dart';
 
 ## HTTP Request
 
-`GET /domain-search/:domain?secret={YOUR_SECRET}`
+`GET /domain-search/:domain`
 
 ### The parameters are defined as follows
 
 | Parameter    | Default  | Description                                                                             |
 | ------------ | -------- | --------------------------------------------------------------------------------------- |
 | `domain`     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
-| `secret`     | Required | Your secret key                                                                         |
 | `page`       | optional | Specifies the number of email addresses to skip. The default is 0.                      |
 | `limit`      | optional | Specifies the max number of email addresses to return. The default is 10.               |
 | `department` | optional | Get only email addresses for people working in the selected department(s).              |

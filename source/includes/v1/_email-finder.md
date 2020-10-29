@@ -4,7 +4,7 @@ This API endpoint generates or retrieves the most likely email address from a do
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin&secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940' \
+  --url 'http://api.hunting.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin' \
   --header 'content-type: application/json' \
   --header 'user-agent: tomba api' \
   --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
@@ -36,13 +36,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -55,7 +52,7 @@ import 'package:tomba/tomba.dart';
 
 ## HTTP Request
 
-`GET /email-finder/:domain?secret={YOUR_SECRET}`
+`GET /email-finder/:domain`
 
 ### The parameters are defined as follows
 
