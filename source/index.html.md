@@ -29,10 +29,10 @@ includes:
   - v1/domain-search
   - v1/email-finder
   - v1/email-verifier
-  - v1/social
   - v1/geocode
-  - v1/leads/index
-  - v1/leads_lists/index
+  - v1/prospects/leads/index
+  - v1/prospects/leads/attributes/index
+  - v1/prospects/leads_lists/index
   - v1/keys/index
   - v1/usage
   - v1/logs
@@ -40,7 +40,7 @@ includes:
   - v1/domain-status
   - v1/autocomplete
   - v1/cli
-  - v1/app
+ # - v1/app
   
 
 search: false
