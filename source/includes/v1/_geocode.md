@@ -36,13 +36,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
