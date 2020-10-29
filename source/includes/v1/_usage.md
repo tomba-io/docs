@@ -36,13 +36,10 @@ import io.tomba.api.Tomba;
 
 ```
 
-
 ```r
 require(tomba)
 
 ```
-
-
 
 ```dart
 import 'package:tomba/tomba.dart';
@@ -61,36 +58,36 @@ import 'package:tomba/tomba.dart';
 
 | Attribute                | Type   | Description |
 | ------------------------ | ------ | ----------- |
-| `data` ->`usage`         | string |             |
-| `data` ->`created_at`    | string |             |
-| `data` ->`domain`        | string |             |
-| `data` ->`finder`        | string |             |
-| `data` ->`verifier`      | string |             |
-| `data` ->`technologies`  | string |             |
-| `data` ->`ip`            | string |             |
-| `data` ->`risk`          | string |             |
-| `data` ->`website`       | string |             |
-| `data` ->`bulk`          | string |             |
-| `data` ->`extension`     | string |             |
-| `data` ->`api`           | string |             |
-| `data` ->`mobile`        | string |             |
-| `data` ->`desktop`       | string |             |
-| `data` ->`sheets`        | string |             |
-| `total` ->`usage`        | string |             |
-| `total` ->`created_at`   | string |             |
-| `total` ->`domain`       | string |             |
-| `total` ->`finder`       | string |             |
-| `total` ->`verifier`     | string |             |
-| `total` ->`technologies` | string |             |
-| `total` ->`ip`           | string |             |
-| `total` ->`risk`         | string |             |
-| `total` ->`website`      | string |             |
-| `total` ->`bulk`         | string |             |
-| `total` ->`extension`    | string |             |
-| `total` ->`api`          | string |             |
-| `total` ->`mobile`       | string |             |
-| `total` ->`desktop`      | string |             |
-| `total` ->`sheets`       | string |             |
+| `data` ->`usage`         | int |             |
+| `data` ->`created_at`    | int |             |
+| `data` ->`domain`        | int |             |
+| `data` ->`finder`        | int |             |
+| `data` ->`verifier`      | int |             |
+| `data` ->`technologies`  | int |             |
+| `data` ->`ip`            | int |             |
+| `data` ->`risk`          | int |             |
+| `data` ->`website`       | int |             |
+| `data` ->`bulk`          | int |             |
+| `data` ->`extension`     | int |             |
+| `data` ->`api`           | int |             |
+| `data` ->`mobile`        | int |             |
+| `data` ->`desktop`       | int |             |
+| `data` ->`sheets`        | int |             |
+| `total` ->`usage`        | int |             |
+| `total` ->`created_at`   | int |             |
+| `total` ->`domain`       | int |             |
+| `total` ->`finder`       | int |             |
+| `total` ->`verifier`     | int |             |
+| `total` ->`technologies` | int |             |
+| `total` ->`ip`           | int |             |
+| `total` ->`risk`         | int |             |
+| `total` ->`website`      | int |             |
+| `total` ->`bulk`         | int |             |
+| `total` ->`extension`    | int |             |
+| `total` ->`api`          | int |             |
+| `total` ->`mobile`       | int |             |
+| `total` ->`desktop`      | int |             |
+| `total` ->`sheets`       | int |             |
 
 > Full Response
 
