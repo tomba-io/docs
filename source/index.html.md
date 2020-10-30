@@ -13,8 +13,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - powershell: CLI
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://app.tomba.io/auth/register'>Sign Up for a Developer Key</a>
 
 includes:
   - v1/introduction
