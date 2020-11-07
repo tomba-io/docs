@@ -280,7 +280,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-b20b8c56.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-336c2f86.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-4ba26dea.css" rel="stylesheet" media="print" />
       <script src="javascripts/all_nosearch-ea811c3e.js"></script>
 
@@ -297,7 +297,10 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <div class="toc-logo">
+        <img src="images/logo-a532e775.png" class="logo" alt="" />
+        <span class="logo-text">Tomba API v1</span>
+      </div>
         <div class="lang-selector">
               <a href="#" data-language-name="shell">cURL</a>
               <a href="#" data-language-name="python">Python</a>
@@ -321,12 +324,6 @@
                   </li>
                   <li>
                     <a href="#introduction-rate-limits" class="toc-h2 toc-link" data-title="Rate Limits">Rate Limits</a>
-                  </li>
-                  <li>
-                    <a href="#introduction-filtering-responses" class="toc-h2 toc-link" data-title="Filtering Responses">Filtering Responses</a>
-                  </li>
-                  <li>
-                    <a href="#introduction-versioning" class="toc-h2 toc-link" data-title="Versioning">Versioning</a>
                   </li>
                   <li>
                     <a href="#introduction-https-ssl" class="toc-h2 toc-link" data-title="HTTPS / SSL">HTTPS / SSL</a>
@@ -548,16 +545,10 @@
 <p>Three main calls are available:</p>
 
 <ul>
-<li>The <a href="#aa">Domain Search</a> returns all the email addresses found using one given domain name, with sources.</li>
-<li>The <a href="#aa">Email Finder</a> guesses the most likely email of a person using his/her first name, last name and a domain name.</li>
-<li>The <a href="#aa">Email Verifier</a> checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.</li>
-<li>The <a href="#aa">Technologies Finder</a></li>
-<li>The <a href="#aa">IP address</a></li>
-<li>The <a href="#aa">Bulk Domain Search</a> Find emails from a list of companies or domains</li>
-<li>The <a href="#aa">Bulk Email Finder</a> Find emails from a list of name and companies or domains</li>
-<li>The <a href="#aa">Bulk Email Verifier</a> Verify a list of professional emails at once</li>
-<li>The <a href="#aa">Bulk Technologies Finder</a> Find domains tools</li>
-<li>The <a href="#aa">Bulk IP address</a> Find IP address details</li>
+<li>The <a href="#domain-search">Domain Search</a> returns all the email addresses found using one given domain name, with sources.</li>
+<li>The <a href="#email-finder">Email Finder</a> guesses the most likely email of a person using his/her first name, last name and a domain name.</li>
+<li>The <a href="#email-verifier">Email Verifier</a> checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.</li>
+<li>The <a href="#ip-address">IP address</a> checks IP address details</li>
 </ul>
 
 <blockquote>
@@ -573,7 +564,7 @@
 This parameter is always required.
 We&#39;ll return an error if the key is either missing or invalid.</p>
 
-<p>Your API <code>key</code> and <code>secret</code> is what identifies your account, so make sure to keep it secret! You can at anytime generate or delete API <code>keys</code> on your <a href="#dashboard">dashboard</a>.</p>
+<p>Your API <code>key</code> and <code>secret</code> is what identifies your account, so make sure to keep it secret! You can at anytime generate or delete API <a href="https://app.tomba.io/api">keys</a> and rest secret on <a href="https://app.tomba.io/accounts/edit">Secret Key</a>.</p>
 
 <table><thead>
 <tr>
@@ -594,11 +585,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 </tr>
 </tbody></table>
 <h2 id='introduction-errors'>Errors</h2>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Tmba API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -651,9 +638,15 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h2 id='introduction-rate-limits'>Rate Limits</h2><h2 id='introduction-filtering-responses'>Filtering Responses</h2><h2 id='introduction-versioning'>Versioning</h2><h2 id='introduction-https-ssl'>HTTPS / SSL</h2>
+<h2 id='introduction-rate-limits'>Rate Limits</h2>
+<p>If you exceed that limit we&#39;ll return a 429 HTTP status code to you.</p>
+
+<p>Paid plans come with higher monthly limits</p>
+<h2 id='introduction-https-ssl'>HTTPS / SSL</h2>
 <p>Our API is available over a secure HTTPS connection for all users, even on the free plan. Simply add <code>https://</code> to the request URLs to make the requests secure.</p>
-<h2 id='introduction-data'>Data</h2><h2 id='introduction-libraries'>Libraries</h2><h3 id='introduction-libraries-language-libraries'>Language Libraries</h3>
+<h2 id='introduction-data'>Data</h2>
+<p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyse millions of websites to index the most up to date business data.</p>
+<h2 id='introduction-libraries'>Libraries</h2><h3 id='introduction-libraries-language-libraries'>Language Libraries</h3>
 <p>Official libraries for common programming languages, like PHP, Python etc.</p>
 
 <table><thead>
