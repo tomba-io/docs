@@ -64,7 +64,10 @@ under the License.
       </span>
     </a>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
+      <div class="toc-logo">
+        <%= image_tag "logo.png", class: 'logo' %>
+        <span class="logo-text">Tomba API v1</span>
+      </div>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
