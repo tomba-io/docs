@@ -20,8 +20,6 @@ includes:
   - v1/authentication
   - v1/errors
   - v1/rate-limiting
-  - v1/filtering
-  - v1/versioning
   - v1/https
   - v1/data
   - v1/libraries
