@@ -6,16 +6,10 @@ This documentation will show you how to query.
 
 Three main calls are available:
 
-- The [Domain Search](#aa) returns all the email addresses found using one given domain name, with sources.
-- The [Email Finder](#aa) guesses the most likely email of a person using his/her first name, last name and a domain name.
-- The [Email Verifier](#aa) checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.
-- The [Technologies Finder](#aa)
-- The [IP address](#aa)
-- The [Bulk Domain Search](#aa) Find emails from a list of companies or domains
-- The [Bulk Email Finder](#aa) Find emails from a list of name and companies or domains
-- The [Bulk Email Verifier](#aa) Verify a list of professional emails at once
-- The [Bulk Technologies Finder](#aa) Find domains tools
-- The [Bulk IP address](#aa) Find IP address details
+- The [Domain Search](#domain-search) returns all the email addresses found using one given domain name, with sources.
+- The [Email Finder](#email-finder) guesses the most likely email of a person using his/her first name, last name and a domain name.
+- The [Email Verifier](#email-verifier) checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.
+- The [IP address](#ip-address) checks IP address details
 
 > API endpoint
 
