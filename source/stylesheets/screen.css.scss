@@ -76,11 +76,31 @@ body {
     }
   }
 
+  .toc-logo {
+    display: flex;
+    flex-shrink: 0;
+    min-height: 3.25rem;
+    padding: .5rem .75rem;
+    position: relative;
+  }
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
-    margin-bottom: $logo-margin;
+    max-width: 25%;
+    margin-bottom: 8px;
+  }
+  .logo-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5px;
+    align-items: center;
+    font-weight: 600;
+    line-height: 3rem;
+    text-decoration: none;
+    font-size: 1.125rem;
+    border-bottom: none;
+    padding-left: 14px;
+    color: #fff;
   }
 
   &>.search {
