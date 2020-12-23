@@ -6,8 +6,7 @@ Returns a your monthly requests
 curl --request GET \
   --url http://api.hunting.io/v1/usage \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php

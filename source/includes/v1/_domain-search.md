@@ -5,10 +5,9 @@ You give one domain name and it returns all the email addresses using this domai
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/domain-search/rbr3.com?format=json&page=&limit=&department=&seniority=&type=' \
+  --url 'http://api.hunting.io/v1/domain-search/rbr3.com' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php
@@ -41,7 +40,6 @@ import io.tomba.api.Tomba;
 require(tomba)
 
 ```
-
 
 ```dart
 import 'package:tomba/tomba.dart';

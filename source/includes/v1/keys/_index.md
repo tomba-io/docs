@@ -12,8 +12,7 @@ The Free plane can create only one key.
 curl --request GET \
   --url http://api.hunting.io/v1/keys \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
 ```
 
@@ -83,7 +82,7 @@ import 'package:tomba/tomba.dart';
       },
       {
         "id": 372,
-        "key": "ta_722ec46dc745c2224fb3bd6edbd44e7800542",
+        "key": "ta_722xxxxxxxxxxxxx",
         "ip_addresses": "1.0.0.0",
         "creation_date": "2020-10-05 15:33:58"
       },
@@ -110,8 +109,7 @@ Returns a key.
 curl --request GET \
   --url 'http://api.hunting.io/v1/keys/241' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
 ```
 
@@ -195,8 +193,7 @@ import 'package:tomba/tomba.dart';
 ```shell
 curl --request POST \
   --url 'http://api.hunting.io/v1/keys?secret=df3908be-eb1e-4289-b842-8eff404318dc' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
 ```
 
@@ -267,8 +264,7 @@ import 'package:tomba/tomba.dart';
 curl --request PUT \
   --url 'http://api.hunting.io/v1/keys/2' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
 ```
 
@@ -343,8 +339,7 @@ import 'package:tomba/tomba.dart';
 curl --request DELETE \
   --url 'http://api.hunting.io/v1/keys/259' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php

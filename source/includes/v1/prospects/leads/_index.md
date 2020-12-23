@@ -6,10 +6,9 @@ Returns a list of leads.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1//leads/?page=1&limit=40&sortby=&direction=&format=' \
+  --url 'http://api.hunting.io/v1/leads/?page=1&limit=40&sortby=&direction=&format=' \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: tomba api' \
-  --header 'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -107,10 +106,9 @@ Returns a lead.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1//leads/2?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
+  --url 'http://api.hunting.io/v1/leads/2?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: tomba api' \
-  --header 'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -199,10 +197,9 @@ import 'package:tomba/tomba.dart';
 
 ```shell
 curl --request POST \
-  --url 'http://api.hunting.io/v1//leads?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
+  --url 'http://api.hunting.io/v1/leads?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&format=json' \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: tomba api' \
-  --header 'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
   --data '{
 	"list_id": 22,
 	"email": "Grover12@hotmail.com",
