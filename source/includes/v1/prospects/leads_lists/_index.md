@@ -8,7 +8,7 @@ Returns a list of leads lists.
 curl --request GET \
   --url 'http://api.hunting.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php
@@ -24,7 +24,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -55,30 +54,62 @@ import 'package:tomba/tomba.dart';
 
 `GET /leads_lists`
 
-### The parameters are defined as follows
-
 ### Response Objects details
+
+| Attribute                    | Type   | Description                                                    |
+| ---------------------------- | ------ | -------------------------------------------------------------- |
+| `list_leads` -> `id`         | int    | List ID                                                        |
+| `list_leads` -> `name`       | string | Name of the List                                               |
+| `list_leads` -> `favorite`   | bool   | is the List favorite `true` or `false`                         |
+| `list_leads` -> `type`       | string | The type is `campaigns` by default ,Soon we will add more Type |
+| `list_leads` -> `size`       | int    | Total lead on this list                                        |
+| `list_leads` -> `created_at` | string | The date of creation                                           |
+| `list_leads` -> `updated_at` | string | the date when the `list` was updated                           |
 
 > Full Response
 
 ```json
 {
-  "data": [
-    {
-      "list_id": 1,
-      "name": "Lazaro Reichert",
-      "created_at": "2020-06-02 19:16:20",
-      "updated_at": "0000-00-00 00:00:00"
-    },
-    {
-      "list_id": 8,
-      "name": "Filomena Murazik",
-      "created_at": "2020-06-02 19:16:20",
-      "updated_at": "0000-00-00 00:00:00"
-    },
-    ...
-    ...
-  ]
+  "data": {
+    "list_leads": [
+      {
+        "id": 2,
+        "name": "html",
+        "favorite": false,
+        "type": "campaigns",
+        "size": 105,
+        "created_at": "2020-12-13T07:59:36+01:00",
+        "updated_at": "2020-12-13T07:59:36+01:00"
+      },
+      {
+        "id": 3,
+        "name": "tgevrt",
+        "favorite": false,
+        "type": "campaigns",
+        "size": 34,
+        "created_at": "2020-12-13T08:01:45+01:00",
+        "updated_at": "2020-12-13T08:01:45+01:00"
+      },
+      {
+        "id": 436,
+        "name": "ce",
+        "favorite": false,
+        "type": "campaigns",
+        "size": 4,
+        "created_at": "2020-12-14T10:36:56+01:00",
+        "updated_at": "2020-12-14T10:36:56+01:00"
+      },
+      {
+        "id": 462,
+        "name": "we",
+        "favorite": false,
+        "type": "campaigns",
+        "size": 0,
+        "created_at": "2020-12-14T10:29:17+01:00",
+        "updated_at": "2020-12-14T10:29:17+01:00"
+      }
+    ]
+  }
 }
 ```
 
@@ -90,8 +121,7 @@ Returns a leads list.
 curl --request GET \
   --url 'http://api.hunting.io/v1/leads_lists/1' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -107,7 +137,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -140,7 +169,21 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description    |
+| --------- | -------- | -------------- |
+| `id`      | Required | attribute ID . |
+
 ### Response Objects details
+
+| Attribute                    | Type   | Description                                                    |
+| ---------------------------- | ------ | -------------------------------------------------------------- |
+| `list_leads` -> `id`         | int    | List ID                                                        |
+| `list_leads` -> `name`       | string | Name of the List                                               |
+| `list_leads` -> `favorite`   | bool   | is the List favorite `true` or `false`                         |
+| `list_leads` -> `type`       | string | The type is `campaigns` by default ,Soon we will add more Type |
+| `list_leads` -> `size`       | int    | Total lead on this list                                        |
+| `list_leads` -> `created_at` | string | The date of creation                                           |
+| `list_leads` -> `updated_at` | string | the date when the `list` was updated                           |
 
 > Full Response
 
@@ -148,10 +191,13 @@ import 'package:tomba/tomba.dart';
 {
   "data": [
     {
-      "list_id": 1,
-      "name": "Lazaro Reichert",
-      "created_at": "2020-06-02 19:16:20",
-      "updated_at": "0000-00-00 00:00:00"
+      "id": 1,
+      "name": "html",
+      "favorite": false,
+      "type": "campaigns",
+      "size": 109,
+      "created_at": "2020-12-13T07:59:36+01:00",
+      "updated_at": "2020-12-21T12:46:35+01:00"
     }
   ]
 }
@@ -159,12 +205,13 @@ import 'package:tomba/tomba.dart';
 
 ## Create a leads list
 
+Create a new leads list with the `name` request parameter. If the list name already exists, fails with `422` status code.
+
 ```shell
 curl --request POST \
   --url 'http://api.hunting.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
   --data '{
   "name": "Mario Monahan"
   }'
@@ -183,7 +230,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -216,7 +262,16 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
+| Parameter | Default | Description      |
+| --------- | ------- | ---------------- |
+| `name`    | string  | Name of the list |
+
 ### Response Objects details
+
+| Attribute           | Type   | Description |
+| ------------------- | ------ | ----------- |
+| `data` -> `list_id` | int    | List ID     |
+| `data` -> `list_id` | string | list name   |
 
 > Full Response
 
@@ -231,12 +286,13 @@ import 'package:tomba/tomba.dart';
 
 ## Update a leads list
 
+Update the fields of a list using `id`.
+
 ```shell
 curl --request PUT \
   --url 'http://api.hunting.io/v1/leads_lists/17' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
   --data '{
   "name": "update listsssssssssss"
   }'
@@ -255,7 +311,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -288,7 +343,17 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description           |
+| --------- | -------- | --------------------- |
+| `id`      | Required | list ID .             |
+| `name`    | string   | new name for the list |
+
 ### Response Objects details
+
+| Attribute | Type   | Description       |
+| --------- | ------ | ----------------- |
+| `status`  | bool   | `true` if updated |
+| `message` | string | note message      |
 
 > Full Response
 
@@ -301,12 +366,13 @@ import 'package:tomba/tomba.dart';
 
 ## Delete a leads list
 
+Delete a specific list by passing `id`.
+
 ```shell
 curl --request DELETE \
   --url 'http://api.hunting.io/v1/leads_lists/5' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542' \
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -322,7 +388,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -355,7 +420,16 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
+| Parameter | Default  | Description                                      |
+| --------- | -------- | ------------------------------------------------ |
+| `id`      | Required | list ID .                                   |
+
 ### Response Objects details
+
+| Attribute | Type   | Description       |
+| --------- | ------ | ----------------- |
+| `status`  | bool   | `true` if deleted |
+| `message` | string | note message      |
 
 > Full Response
 
