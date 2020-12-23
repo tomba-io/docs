@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Tomba REST API Documentation</title>
 
-    <link rel="icon" href="images/favicon-a532e775.png" />
+    <link rel="icon" href="images/favicon-ccaaaf03.ico" />
     <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -489,7 +489,7 @@
                     <a href="#email-count-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#email-count-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#email-count-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -548,7 +548,15 @@
 <li>The <a href="#domain-search">Domain Search</a> returns all the email addresses found using one given domain name, with sources.</li>
 <li>The <a href="#email-finder">Email Finder</a> guesses the most likely email of a person using his/her first name, last name and a domain name.</li>
 <li>The <a href="#email-verifier">Email Verifier</a> checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.</li>
-<li>The <a href="#ip-address">IP address</a> checks IP address details</li>
+<li>The <a href="#ip-address">IP address</a> checks IP address details.</li>
+<li>The <a href="#leads">Leads.</a> .</li>
+<li>The <a href="#leads-lists">Leads Lists.</a></li>
+<li>The <a href="#leads-attributes">Lead Attributes.</a></li>
+<li>The <a href="#usage">Usage.</a></li>
+<li>The Account <a href="#logs">Logs.</a></li>
+<li>The <a href="#keys">Keys.</a></li>
+<li>The <a href="#email-count">Email Count.</a></li>
+<li>The <a href="#autocomplete">Domain autocomplete.</a></li>
 </ul>
 
 <blockquote>
@@ -585,7 +593,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 </tr>
 </tbody></table>
 <h2 id='introduction-errors'>Errors</h2>
-<p>The Tmba API uses the following error codes:</p>
+<p>Tomba API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -661,72 +669,6 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td>Javascript</td>
 <td>In progress</td>
 <td><a href="https://github.com/tomba-io/node">tomba-io/node</a></td>
-<td><a href="https://www.npmjs.com/package/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>Java</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/java">tomba-io/java</a></td>
-<td><a href="https://search.maven.org/search?q=a:tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>Python</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/python">tomba-io/python</a></td>
-<td><a href="https://pypi.org/project/tomba-io/">tomba-io</a></td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/php">tomba-io/php</a></td>
-<td><a href="https://packagist.org/packages/tomba-io/tomba-io">tomba-io/tomba-io</a></td>
-</tr>
-<tr>
-<td>Ruby</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/ruby">tomba-io/ruby</a></td>
-<td><a href="https://rubygems.org/gems/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>Perl</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/perl">tomba-io/perl</a></td>
-<td><a href="https://metacpan.org/release/tomba-io/IO-tomba-io-1.0">IO-tomba-io</a></td>
-</tr>
-<tr>
-<td>D</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/dlang">tomba-io/dlag</a></td>
-<td><a href="https://code.dlang.org/packages/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>Lua</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/lua">tomba-io/lua</a></td>
-<td><a href="https://luarocks.org/modules/benemohamed/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>elixir</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/elixir">tomba-io/elixir</a></td>
-<td><a href="https://hex.pm/packages/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>Dart</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/dart">tomba-io/dart</a></td>
-<td><a href="https://pub.dev/packages/tomba-io">tomba-io</a></td>
-</tr>
-<tr>
-<td>R</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/rlang">tomba-io/rlang</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Swift</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/swift">tomba-io/swift</a></td>
 <td></td>
 </tr>
 <tr>
@@ -736,33 +678,51 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td></td>
 </tr>
 <tr>
-<td>C#</td>
+<td>Java</td>
 <td>In progress</td>
+<td><a href="https://github.com/tomba-io/java">tomba-io/java</a></td>
 <td></td>
+</tr>
+<tr>
+<td>Python</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/python">tomba-io/python</a></td>
+<td></td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/php">tomba-io/php</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/ruby">tomba-io/ruby</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Perl</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/perl">tomba-io/perl</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Dart</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/dart">tomba-io/dart</a></td>
 <td></td>
 </tr>
 <tr>
 <td>Rust</td>
 <td>In progress</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Haskell</td>
-<td>In progress</td>
-<td></td>
+<td><a href="https://github.com/tomba-io/rlang">tomba-io/rlang</a></td>
 <td></td>
 </tr>
 <tr>
-<td>Erlang</td>
+<td>R</td>
 <td>In progress</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>C</td>
-<td>In progress</td>
-<td></td>
+<td><a href="https://github.com/tomba-io/rlang">tomba-io/rlang</a></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -771,57 +731,6 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 
 <p>In the framework libraries we can assume more about the developer&#39;s use case, and we probably have access to more information, such as a HTTP request object. We can therefore implement additional functionality that
 doesn&#39;t make sense in the core language library. This includes bot filtering (not sending requests to our API if the user agent belongs to a &quot;bot&quot;).</p>
-
-<p>The framework libraries should make it <em>as simple as possible</em> to use our API. For example, ideally only a few lines of code would be required to get tomba-io data for everyone accessing your Ruby site.</p>
-
-<table><thead>
-<tr>
-<th>Framework</th>
-<th>Status</th>
-<th>Link</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>CodeIgniter (PHP)</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/codeigniter-tomba-io">tomba-io/codeigniter-tomba-io</a></td>
-</tr>
-<tr>
-<td>cakephp (PHP)</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/cakephp-tomba-io">tomba-io/cakephp-tomba-io</a></td>
-</tr>
-<tr>
-<td>Meteor (NodeJS - Javascript)</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/meteor">tomba-io/meteor</a></td>
-</tr>
-<tr>
-<td>Express  (NodeJS - Javascript)</td>
-<td>In progress</td>
-<td></td>
-</tr>
-<tr>
-<td>Spring  (Java)</td>
-<td>In progress</td>
-<td></td>
-</tr>
-<tr>
-<td>Laravel (PHP)</td>
-<td>In progress</td>
-<td></td>
-</tr>
-<tr>
-<td>Django (Python)</td>
-<td>In progress</td>
-<td></td>
-</tr>
-<tr>
-<td>Rails (Ruby)</td>
-<td>In progress</td>
-<td></td>
-</tr>
-</tbody></table>
 <h3 id='introduction-libraries-third-party-libraries'>Third party libraries</h3>
 <p>There are a large number of unofficial tomba-io libraries written by third parties. While these aren&#39;t maintained by us and haven&#39;t been tested by us these libraries can be a great way to get started quickly with tomba-io if you&#39;re using a language or framework that we don&#39;t have an official library for. Search GitHub for <a href="https://github.com/search?q=tomba-io">tomba-io</a> libraries.</p>
 
@@ -830,10 +739,9 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <p>One key feature of Tobma is to search all the email addresses corresponding to one website.
 You give one domain name and it returns all the email addresses using this domain name found on the internet.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domain-search/rbr3.com?format=json&amp;page=&amp;limit=&amp;department=&amp;seniority=&amp;type='</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domain-search/rbr3.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1080,8 +988,7 @@ You give one domain name and it returns all the email addresses using this domai
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/email-finder/asana.com?first_name=Moskoz&amp;last_name=Dustin'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1265,8 +1172,7 @@ You give one domain name and it returns all the email addresses using this domai
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/email-verifier/ziad@test.io'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1428,8 +1334,7 @@ You give one domain name and it returns all the email addresses using this domai
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> http://api.hunting.io/v1/ip/2.2.2.2 <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1599,10 +1504,9 @@ You give one domain name and it returns all the email addresses using this domai
 <h1 id='leads'>Leads</h1><h2 id='leads-list-all-your-leads'>List all your leads</h2>
 <p>Returns a list of leads.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/?page=1&amp;limit=40&amp;sortby=&amp;direction=&amp;format='</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/?page=1&amp;limit=40&amp;sortby=&amp;direction=&amp;format='</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'User-Agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1664,10 +1568,9 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='leads-get-a-lead'>Get a lead</h2>
 <p>Returns a lead.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/2?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/2?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'User-Agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1718,10 +1621,9 @@ You give one domain name and it returns all the email addresses using this domai
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='leads-create-a-lead'>Create a lead</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'User-Agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
     "list_id": 22,
     "email": "Grover12@hotmail.com",
@@ -1818,14 +1720,16 @@ You give one domain name and it returns all the email addresses using this domai
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='lead-attributes'>Lead Attributes</h1><h2 id='lead-attributes-list-all-your-lead-attributes'>List all your lead attributes</h2>
 <p>Returns a list of Lead Attributes.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> http://api.hunting.io/v1/leads/attributes <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1838,20 +1742,144 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h3 id='lead-attributes-list-all-your-lead-attributes-http-request'>HTTP Request</h3>
 <p><code>GET /leads/attributes/</code></p>
 <h3 id='lead-attributes-list-all-your-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='lead-attributes-list-all-your-lead-attributes-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>attributes</code> -&gt; <code>id</code></td>
+<td>int</td>
+<td>attribute ID</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>name</code></td>
+<td>string</td>
+<td>Name of the custom attribute</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>identifier</code></td>
+<td>string</td>
+<td>identifier of attribute read only It can&#39;t be edited</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>type</code></td>
+<td>string</td>
+<td>type attributes <code>string</code>, <code>date</code>, <code>number</code> only.</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>date_created</code></td>
+<td>string</td>
+<td>The date of creation</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>date_modified</code></td>
+<td>string</td>
+<td>the date when the <code>attr</code> was updated</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALLO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allo"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T08:18:37+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T08:47:22+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD ASD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd_asd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T08:16:22+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T08:16:22+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AS ASD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as-asd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T08:15:47+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T08:15:47+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:35:41+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:35:55+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"swe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"swe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:35:15+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:35:15+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:34:24+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:34:24+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:03:17+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:33:18+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatesdsad"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatesdsad"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:02:55+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12T09:20:19+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssssss"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssssss"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T05:37:53+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-09T03:33:31+01:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='lead-attributes-get-a-attributes'>Get a attributes</h2>
 <p>Returns a Lead Attributes.</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes/38?format=json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1863,19 +1891,89 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='lead-attributes-get-a-attributes-http-request'>HTTP Request</h3>
 <p><code>GET /leads/attributes/:id</code></p>
-<h3 id='lead-attributes-get-a-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='lead-attributes-get-a-attributes-response-objects-details'>Response Objects details</h3>
+<h3 id='lead-attributes-get-a-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>attribute ID .</td>
+</tr>
+</tbody></table>
+<h3 id='lead-attributes-get-a-attributes-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>attributes</code> -&gt; <code>id</code></td>
+<td>int</td>
+<td>attribute ID</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>name</code></td>
+<td>string</td>
+<td>Name of the custom attribute</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>identifier</code></td>
+<td>string</td>
+<td>identifier of attribute read only It can&#39;t be edited</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>type</code></td>
+<td>string</td>
+<td>type attributes <code>string</code>, <code>date</code>, <code>number</code> only.</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>date_created</code></td>
+<td>string</td>
+<td>The date of creation</td>
+</tr>
+<tr>
+<td><code>attributes</code> -&gt; <code>date_modified</code></td>
+<td>string</td>
+<td>the date when the <code>attr</code> was updated</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre></div><h2 id='lead-attributes-create-a-lead-attributes'>Create a Lead Attributes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salary"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T05:37:53+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T05:37:53+01:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='lead-attributes-create-a-lead-attributes'>Create a Lead Attributes</h2>
+<p>Create a new Attributes with the <code>name</code> and <code>type</code> request parameter. If the Attributes name already exists, fails with <code>422</code> status code.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes?format=json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name": "Millie","type": "date"}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1887,19 +1985,61 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='lead-attributes-create-a-lead-attributes-http-request'>HTTP Request</h3>
 <p><code>POST /leads/attributes</code></p>
-<h3 id='lead-attributes-create-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='lead-attributes-create-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<h3 id='lead-attributes-create-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Name of the custom attribute</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>type attributes <code>string</code>, <code>date</code>, <code>number</code> only.</td>
+</tr>
+</tbody></table>
+<h3 id='lead-attributes-create-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>data</code> -&gt; <code>id</code></td>
+<td>int</td>
+<td>attribute ID</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre></div><h2 id='lead-attributes-update-a-lead-attributes'>Update a Lead Attributes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='lead-attributes-update-a-lead-attributes'>Update a Lead Attributes</h2>
+<p>Update the fields of a Attributes using <code>id</code>.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/attributes/41?format=json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name": "total ","type": "string"}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1911,19 +2051,69 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='lead-attributes-update-a-lead-attributes-http-request'>HTTP Request</h3>
 <p><code>PUT /leads/attributes/:id</code></p>
-<h3 id='lead-attributes-update-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='lead-attributes-update-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<h3 id='lead-attributes-update-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>attribute ID .</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Name of the custom attribute</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>type attributes <code>string</code>, <code>date</code>, <code>number</code> only.</td>
+</tr>
+</tbody></table>
+<h3 id='lead-attributes-update-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>status</code></td>
+<td>bool</td>
+<td><code>true</code> if updated</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>note message</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre></div><h2 id='lead-attributes-delete-a-lead-attributes'>Delete a Lead Attributes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The leads lists info has been updated successfully."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='lead-attributes-delete-a-lead-attributes'>Delete a Lead Attributes</h2>
+<p>Delete a specific Attributes by passing <code>id</code>.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/attributes?format=json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1935,24 +2125,59 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='lead-attributes-delete-a-lead-attributes-http-request'>HTTP Request</h3>
 <p><code>DELETE /leads/attributes/:id</code></p>
-<h3 id='lead-attributes-delete-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='lead-attributes-delete-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<h3 id='lead-attributes-delete-a-lead-attributes-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>attribute ID .</td>
+</tr>
+</tbody></table>
+<h3 id='lead-attributes-delete-a-lead-attributes-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>status</code></td>
+<td>bool</td>
+<td><code>true</code> if deleted</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>note message</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The attributes has been delete successfully."</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='leads-lists'>Leads Lists</h1><h2 id='leads-lists-list-all-your-leads-lists'>List all your leads lists</h2>
 <p>Returns a list of leads lists.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads_lists/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1964,42 +2189,108 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='leads-lists-list-all-your-leads-lists-http-request'>HTTP Request</h3>
 <p><code>GET /leads_lists</code></p>
-<h3 id='leads-lists-list-all-your-leads-lists-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='leads-lists-list-all-your-leads-lists-response-objects-details'>Response Objects details</h3>
+<h3 id='leads-lists-list-all-your-leads-lists-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list_leads</code> -&gt; <code>id</code></td>
+<td>int</td>
+<td>List ID</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>name</code></td>
+<td>string</td>
+<td>Name of the List</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>favorite</code></td>
+<td>bool</td>
+<td>is the List favorite <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>type</code></td>
+<td>string</td>
+<td>The type is <code>campaigns</code> by default ,Soon we will add more Type</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>size</code></td>
+<td>int</td>
+<td>Total lead on this list</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>created_at</code></td>
+<td>string</td>
+<td>The date of creation</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>updated_at</code></td>
+<td>string</td>
+<td>the date when the <code>list</code> was updated</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lazaro Reichert"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-02 19:16:20"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000-00-00 00:00:00"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Filomena Murazik"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-02 19:16:20"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000-00-00 00:00:00"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"list_leads"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T07:59:36+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T07:59:36+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tgevrt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T08:01:45+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T08:01:45+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">436</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14T10:36:56+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14T10:36:56+01:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">462</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"we"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14T10:29:17+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-14T10:29:17+01:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='leads-lists-get-a-leads-list'>Get a leads list</h2>
 <p>Returns a leads list.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads_lists/1'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -2011,25 +2302,87 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='leads-lists-get-a-leads-list-http-request'>HTTP Request</h3>
 <p><code>GET /leads_lists/:id</code></p>
-<h3 id='leads-lists-get-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='leads-lists-get-a-leads-list-response-objects-details'>Response Objects details</h3>
+<h3 id='leads-lists-get-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>attribute ID .</td>
+</tr>
+</tbody></table>
+<h3 id='leads-lists-get-a-leads-list-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list_leads</code> -&gt; <code>id</code></td>
+<td>int</td>
+<td>List ID</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>name</code></td>
+<td>string</td>
+<td>Name of the List</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>favorite</code></td>
+<td>bool</td>
+<td>is the List favorite <code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>type</code></td>
+<td>string</td>
+<td>The type is <code>campaigns</code> by default ,Soon we will add more Type</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>size</code></td>
+<td>int</td>
+<td>Total lead on this list</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>created_at</code></td>
+<td>string</td>
+<td>The date of creation</td>
+</tr>
+<tr>
+<td><code>list_leads</code> -&gt; <code>updated_at</code></td>
+<td>string</td>
+<td>the date when the <code>list</code> was updated</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lazaro Reichert"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-02 19:16:20"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000-00-00 00:00:00"</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"campaigns"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">109</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T07:59:36+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21T12:46:35+01:00"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='leads-lists-create-a-leads-list'>Create a leads list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
+</span></code></pre></div><h2 id='leads-lists-create-a-leads-list'>Create a leads list</h2>
+<p>Create a new leads list with the <code>name</code> request parameter. If the list name already exists, fails with <code>422</code> status code.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads_lists/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
   "name": "Mario Monahan"
   }'</span>
@@ -2039,7 +2392,6 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -2051,7 +2403,40 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='leads-lists-create-a-leads-list-http-request'>HTTP Request</h3>
 <p><code>POST /leads_lists</code></p>
-<h3 id='leads-lists-create-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='leads-lists-create-a-leads-list-response-objects-details'>Response Objects details</h3>
+<h3 id='leads-lists-create-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Name of the list</td>
+</tr>
+</tbody></table>
+<h3 id='leads-lists-create-a-leads-list-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>data</code> -&gt; <code>list_id</code></td>
+<td>int</td>
+<td>List ID</td>
+</tr>
+<tr>
+<td><code>data</code> -&gt; <code>list_id</code></td>
+<td>string</td>
+<td>list name</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -2061,11 +2446,12 @@ You give one domain name and it returns all the email addresses using this domai
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nya Dicki"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='leads-lists-update-a-leads-list'>Update a leads list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
+</span></code></pre></div><h2 id='leads-lists-update-a-leads-list'>Update a leads list</h2>
+<p>Update the fields of a list using <code>id</code>.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads_lists/17'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
   "name": "update listsssssssssss"
   }'</span>
@@ -2075,7 +2461,6 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -2087,7 +2472,45 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='leads-lists-update-a-leads-list-http-request'>HTTP Request</h3>
 <p><code>PUT /leads_lists/:id</code></p>
-<h3 id='leads-lists-update-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='leads-lists-update-a-leads-list-response-objects-details'>Response Objects details</h3>
+<h3 id='leads-lists-update-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>list ID .</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>new name for the list</td>
+</tr>
+</tbody></table>
+<h3 id='leads-lists-update-a-leads-list-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>status</code></td>
+<td>bool</td>
+<td><code>true</code> if updated</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>note message</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -2095,18 +2518,18 @@ You give one domain name and it returns all the email addresses using this domai
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The leads list info has been updated successfully."</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='leads-lists-delete-a-leads-list'>Delete a leads list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
+</span></code></pre></div><h2 id='leads-lists-delete-a-leads-list'>Delete a leads list</h2>
+<p>Delete a specific list by passing <code>id</code>.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads_lists/5'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -2118,7 +2541,40 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='leads-lists-delete-a-leads-list-http-request'>HTTP Request</h3>
 <p><code>DELETE /leads_lists/:id</code></p>
-<h3 id='leads-lists-delete-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3><h3 id='leads-lists-delete-a-leads-list-response-objects-details'>Response Objects details</h3>
+<h3 id='leads-lists-delete-a-leads-list-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>Required</td>
+<td>list ID .</td>
+</tr>
+</tbody></table>
+<h3 id='leads-lists-delete-a-leads-list-response-objects-details'>Response Objects details</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>status</code></td>
+<td>bool</td>
+<td><code>true</code> if deleted</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>note message</td>
+</tr>
+</tbody></table>
+
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -2135,8 +2591,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> http://api.hunting.io/v1/keys <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2199,7 +2654,7 @@ The Free plane can create only one key.
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">372</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_722ec46dc745c2224fb3bd6edbd44e7800542"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_722xxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05 15:33:58"</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -2221,8 +2676,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys/241'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2302,8 +2756,7 @@ The Free plane can create only one key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='keys-create-a-key'>Create a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys?secret=df3908be-eb1e-4289-b842-8eff404318dc'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2354,8 +2807,7 @@ The Free plane can create only one key.
 </span></code></pre></div><h2 id='keys-rest-a-key'>Rest a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys/2'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2415,8 +2867,7 @@ The Free plane can create only one key.
 </span></code></pre></div><h2 id='keys-delete-a-key'>Delete a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys/259'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2477,8 +2928,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> http://api.hunting.io/v1/usage <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2723,8 +3173,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> http://api.hunting.io/v1/logs <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2775,6 +3224,11 @@ The Free plane can create only one key.
 <td>string</td>
 <td>The date of creation</td>
 </tr>
+<tr>
+<td><code>data</code> -&gt; <code>country</code></td>
+<td>string</td>
+<td>The ISO 3166-1 alpha-2 country code</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -2791,7 +3245,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1809</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Search"</span><span class="p">,</span><span class="w">
@@ -2802,7 +3257,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1799</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Finder"</span><span class="p">,</span><span class="w">
@@ -2813,7 +3269,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1724</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Finder"</span><span class="p">,</span><span class="w">
@@ -2824,7 +3281,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1723</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Verification"</span><span class="p">,</span><span class="w">
@@ -2835,7 +3293,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1633</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geolocation API"</span><span class="p">,</span><span class="w">
@@ -2846,7 +3305,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomba api"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email Verification"</span><span class="p">,</span><span class="w">
@@ -2857,7 +3317,8 @@ The Free plane can create only one key.
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">767</span><span class="p">,</span><span class="w">
       </span><span class="nl">"user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla</span><span class="se">\/</span><span class="s2">5.0 (X11; Linux x86_64) AppleWebKit</span><span class="se">\/</span><span class="s2">537.36 (KHTML, like Gecko) Chrome</span><span class="se">\/</span><span class="s2">85.0.4183.121 Safari</span><span class="se">\/</span><span class="s2">537.36"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="w">
+      </span><span class="nl">"http_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
     </span><span class="err">...</span><span class="w">
@@ -2872,8 +3333,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/email-count?domain=rbr3.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'</span>
+  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><h2 id='email-count-http-request'>HTTP Request</h2>
 <p><code>GET /email-count/?domain=:domain</code></p>
 <h3 id='email-count-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
@@ -2890,38 +3350,7 @@ The Free plane can create only one key.
 <td>Domain name from which you want to find the email addresses. For example, &quot;stripe.com&quot;.</td>
 </tr>
 </tbody></table>
-<h2 id='email-count-response-objects-details'>Response  Objects details</h2>
-<blockquote>
-<p>Full Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"personal_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"generic_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"design"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"engineering"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hr"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"it"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"operations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"management"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"legal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"support"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"communication"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"junior"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"senior"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+<h2 id='email-count-response-objects-details'>Response Objects details</h2>
 <table><thead>
 <tr>
 <th>Attribute</th>
@@ -2945,88 +3374,51 @@ The Free plane can create only one key.
 <td>Total <code>generic</code> email</td>
 </tr>
 <tr>
-<td><code>department</code> &gt; <code>design</code></td>
+<td><code>department</code> &gt; <code>_key_name_</code></td>
 <td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>engineering</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>finance</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>hr</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>it</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>marketing</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>operations</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>management</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>executive</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>sales</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>legal</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>support</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>department</code> &gt; <code>communication</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>seniority</code> &gt; <code>junior</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>seniority</code> &gt; <code>senior</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>seniority</code> &gt; <code>executive</code></td>
-<td>int</td>
-<td></td>
+<td>Total <code>_key_name_</code> email</td>
 </tr>
 </tbody></table>
-<h1 id='domain-status'>Domain status</h1>
-<p>Returns domain status for webmail and disposable.</p>
+
+<blockquote>
+<p>Full Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8513</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"personal_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">8313</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generic_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"engineering"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"finance"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"it"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"operations"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"management"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"legal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"support"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"communication"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"software"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"warehouse"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"diversity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"administrative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"facilities"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accounting"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"junior"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"senior"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='domain-status'>Domain status</h1>
+<p>Returns domain status if is webmail or disposable.</p>
 
 <p>It&#39;s free and doesn&#39;t require authentication.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
