@@ -6,8 +6,7 @@ Returns total email addresses we have for one domain.
 curl --request GET \
   --url 'http://api.hunting.io/v1/email-count?domain=rbr3.com' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ## HTTP Request
@@ -20,59 +19,50 @@ curl --request GET \
 | --------- | -------- | --------------------------------------------------------------------------------------- |
 | `domain`  | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
 
+## Response Objects details
 
-## Response  Objects details
-
+| Attribute                   | Type | Description              |
+| --------------------------- | ---- | ------------------------ |
+| `total`                     | int  | Total email              |
+| `personal_emails`           | int  | Total `personal` email   |
+| `generic_emails`            | int  | Total `generic` email    |
+| `department` > `_key_name_` | int  | Total `_key_name_` email |
 > Full Response
 
 ```json
 {
   "data": {
-    "total": 5,
-    "personal_emails": 1,
-    "generic_emails": 4,
+    "total": 8513,
+    "personal_emails": 8313,
+    "generic_emails": 200,
     "department": {
-      "design": 0,
-      "engineering": 0,
-      "finance": 0,
-      "hr": 0,
+      "engineering": 52,
+      "finance": 44,
+      "hr": 10,
       "it": 2,
-      "marketing": 0,
-      "operations": 0,
+      "marketing": 58,
+      "operations": 40,
       "management": 0,
       "executive": 0,
       "sales": 0,
       "legal": 0,
       "support": 0,
-      "communication": 0
+      "communication": 0,
+      "software": 0,
+      "security": 0,
+      "pr": 0,
+      "warehouse": 0,
+      "diversity": 0,
+      "administrative": 0,
+      "facilities": 0,
+      "accounting": 0
     },
     "seniority": {
-      "junior": 1,
-      "senior": 2,
-      "executive": 1
+      "junior": 152,
+      "senior": 88,
+      "executive": 0
     }
   }
 }
 ```
 
-| Attribute                      | Type | Description            |
-| ------------------------------ | ---- | ---------------------- |
-| `total`                        | int  | Total email            |
-| `personal_emails`              | int  | Total `personal` email |
-| `generic_emails`               | int  | Total `generic` email  |
-| `department` > `design`        | int  |                        |
-| `department` > `engineering`   | int  |                        |
-| `department` > `finance`       | int  |                        |
-| `department` > `hr`            | int  |                        |
-| `department` > `it`            | int  |                        |
-| `department` > `marketing`     | int  |                        |
-| `department` > `operations`    | int  |                        |
-| `department` > `management`    | int  |                        |
-| `department` > `executive`     | int  |                        |
-| `department` > `sales`         | int  |                        |
-| `department` > `legal`         | int  |                        |
-| `department` > `support`       | int  |                        |
-| `department` > `communication` | int  |                        |
-| `seniority` > `junior`         | int  |                        |
-| `seniority` > `senior`         | int  |                        |
-| `seniority` > `executive`      | int  |                        |
