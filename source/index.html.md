@@ -28,7 +28,7 @@ includes:
   - v1/email-verifier
   - v1/geocode
   - v1/prospects/leads/index
-  - v1/prospects/leads/attributes/index
+  - v1/prospects/attributes/index
   - v1/prospects/leads_lists/index
   - v1/keys/index
   - v1/usage
