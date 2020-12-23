@@ -6,8 +6,7 @@ Returns a your last 1,000 requests you made during the last 3 months.
 curl --request GET \
   --url http://api.hunting.io/v1/logs \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php
@@ -62,6 +61,7 @@ import 'package:tomba/tomba.dart';
 | `data` -> `cost`       | bool   | The cost `false` Free `true` 1 request     |
 | `data` -> `ip_address` | string | The IP address associated with the Request |
 | `data` -> `created_at` | string | The date of creation                       |
+| `data` -> `country`    | string | The ISO 3166-1 alpha-2 country code        |
 
 > Full Response
 
@@ -77,7 +77,8 @@ import 'package:tomba/tomba.dart';
       "id": 1809,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+      "country" : "TN"
     },
     {
       "type": "Social Search",
@@ -88,7 +89,8 @@ import 'package:tomba/tomba.dart';
       "id": 1799,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+      "country" : "TN"
     },
     {
       "type": "Email Finder",
@@ -99,7 +101,8 @@ import 'package:tomba/tomba.dart';
       "id": 1724,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+      "country" : "TN"
     },
     {
       "type": "Email Finder",
@@ -110,7 +113,8 @@ import 'package:tomba/tomba.dart';
       "id": 1723,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+      "country" : "TN"
     },
     {
       "type": "Email Verification",
@@ -121,7 +125,8 @@ import 'package:tomba/tomba.dart';
       "id": 1633,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+       "country" : "TN"
     },
     {
       "type": "Geolocation API",
@@ -132,7 +137,8 @@ import 'package:tomba/tomba.dart';
       "id": 1290,
       "user_agent": "tomba api",
       "source": "API",
-      "http_method": "GET"
+      "http_method": "GET",
+       "country" : "TN"
     },
     {
       "type": "Email Verification",
@@ -143,7 +149,8 @@ import 'package:tomba/tomba.dart';
       "id": 767,
       "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/85.0.4183.121 Safari\/537.36",
       "source": "Website",
-      "http_method": "GET"
+      "http_method": "GET",
+       "country" : "TN"
     },
     ...
     ...
