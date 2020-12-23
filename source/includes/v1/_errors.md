@@ -1,6 +1,6 @@
 ## Errors
 
-The Tmba API uses the following error codes:
+Tomba API uses the following error codes:
 
 | Error Code | Meaning                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------- |

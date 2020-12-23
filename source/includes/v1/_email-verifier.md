@@ -12,8 +12,7 @@ The request will run for 20 seconds. If it was not able to provide a response in
 curl --request GET \
   --url 'http://api.hunting.io/v1/email-verifier/ziad@test.io' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api' \
-  --header 'x-tannin-key: ta_722ec46dc745c2224fb3bd6edbd44e7800542'
+  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
 
 ```php

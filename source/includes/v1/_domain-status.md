@@ -1,6 +1,6 @@
 # Domain status
 
-Returns domain status for webmail and disposable.
+Returns domain status if is webmail or disposable.
 
 It's free and doesn't require authentication.
 
@@ -20,7 +20,6 @@ curl --request GET \
 | Parameter | Default  | Description                                                                             |
 | --------- | -------- | --------------------------------------------------------------------------------------- |
 | `domain`  | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
-
 
 ## Response  Objects details
 
