@@ -302,10 +302,10 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
-| Parameter | Default | Description                                      |
-| --------- | ------- | ------------------------------------------------ |
-| `name`    | string  | Name of the custom attribute                     |
-| `type`    | string  | type attributes `string`, `date`, `number` only. |
+| Parameter | Default  | Description                                      |
+| --------- | -------- | ------------------------------------------------ |
+| `name`    | Required | Name of the custom attribute                     |
+| `type`    | Required | type attributes `string`, `date`, `number` only. |
 
 ### Response Objects details
 
@@ -383,8 +383,8 @@ import 'package:tomba/tomba.dart';
 | Parameter | Default  | Description                                      |
 | --------- | -------- | ------------------------------------------------ |
 | `id`      | Required | attribute ID .                                   |
-| `name`    | string   | Name of the custom attribute                     |
-| `type`    | string   | type attributes `string`, `date`, `number` only. |
+| `name`    | Required | Name of the custom attribute                     |
+| `type`    | Required | type attributes `string`, `date`, `number` only. |
 
 ### Response Objects details
 
@@ -458,9 +458,9 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
-| Parameter | Default  | Description                                      |
-| --------- | -------- | ------------------------------------------------ |
-| `id`      | Required | attribute ID .                                   |
+| Parameter | Default  | Description    |
+| --------- | -------- | -------------- |
+| `id`      | Required | attribute ID . |
 
 ### Response Objects details
 

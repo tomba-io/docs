@@ -264,14 +264,14 @@ import 'package:tomba/tomba.dart';
 
 | Parameter | Default | Description      |
 | --------- | ------- | ---------------- |
-| `name`    | string  | Name of the list |
+| `name`    | Required  | Name of the list |
 
 ### Response Objects details
 
 | Attribute           | Type   | Description |
 | ------------------- | ------ | ----------- |
 | `data` -> `list_id` | int    | List ID     |
-| `data` -> `list_id` | string | list name   |
+| `data` -> `name` | string | list name   |
 
 > Full Response
 
@@ -346,7 +346,7 @@ import 'package:tomba/tomba.dart';
 | Parameter | Default  | Description           |
 | --------- | -------- | --------------------- |
 | `id`      | Required | list ID .             |
-| `name`    | string   | new name for the list |
+| `name`    | Required | new name for the list |
 
 ### Response Objects details
 
@@ -420,9 +420,9 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
-| Parameter | Default  | Description                                      |
-| --------- | -------- | ------------------------------------------------ |
-| `id`      | Required | list ID .                                   |
+| Parameter | Default  | Description |
+| --------- | -------- | ----------- |
+| `id`      | Required | list ID .   |
 
 ### Response Objects details
 

@@ -59,7 +59,7 @@ import 'package:tomba/tomba.dart';
 | Parameter    | Default  | Description                                                                             |
 | ------------ | -------- | --------------------------------------------------------------------------------------- |
 | `domain`     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
-| `page`       | optional | Specifies the number of email addresses to skip. The default is 0.                      |
+| `page`       | optional | Specifies the number of email addresses to skip. The default is 1.                      |
 | `limit`      | optional | Specifies the max number of email addresses to return. The default is 10.               |
 | `department` | optional | Get only email addresses for people working in the selected department(s).              |
 | `seniority`  | optional | Get only email addresses for people with the selected seniority level. The possible val |

@@ -2,7 +2,7 @@
 
 This API endpoint allows you to verify the deliverability of an email address.
 
-Hunter focuses on B2B. Therefore, webmails are not verified. We'll run every check but won't reach the remote SMTP server.
+Tomba focuses on B2B. Therefore, webmails are not verified. We'll run every check but won't reach the remote SMTP server.
 
 This endpoint is rate-limited by domain name. You can check up to 200 email addresses for a domain name every 24 hours. You can check the number of requests remaining using the X-RateLimit-Remaining header.
 
