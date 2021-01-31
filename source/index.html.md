@@ -19,14 +19,14 @@ includes:
   - v1/introduction
   - v1/authentication
   - v1/errors
-  - v1/rate-limiting
+  - v1/rate-limiting 
   - v1/https
   - v1/data
   - v1/libraries
+  - v1/account
   - v1/domain-search
   - v1/email-finder
   - v1/email-verifier
-  - v1/geocode
   - v1/prospects/leads/index
   - v1/prospects/attributes/index
   - v1/prospects/leads_lists/index
@@ -36,9 +36,8 @@ includes:
   - v1/email-count
   - v1/domain-status
   - v1/autocomplete
-  - v1/cli
- # - v1/app
-  
+  # - v1/cli
+  # - v1/app
 
 search: false
 
