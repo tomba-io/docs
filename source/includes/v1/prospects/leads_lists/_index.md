@@ -262,16 +262,16 @@ import 'package:tomba/tomba.dart';
 
 ### The parameters are defined as follows
 
-| Parameter | Default | Description      |
-| --------- | ------- | ---------------- |
-| `name`    | Required  | Name of the list |
+| Parameter | Default  | Description      |
+| --------- | -------- | ---------------- |
+| `name`    | Required | Name of the list |
 
 ### Response Objects details
 
 | Attribute           | Type   | Description |
 | ------------------- | ------ | ----------- |
 | `data` -> `list_id` | int    | List ID     |
-| `data` -> `name` | string | list name   |
+| `data` -> `name`    | string | list name   |
 
 > Full Response
 

@@ -8,7 +8,6 @@ It's free and doesn't require authentication.
 curl --request GET \
   --url 'http://api.hunting.io/v1/domain-status?domain=gmail.com' \
   --header 'content-type: application/json' \
-  --header 'user-agent: tomba api'
 ```
 
 ## HTTP Request

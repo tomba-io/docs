@@ -4,7 +4,7 @@ Returns total email addresses we have for one domain.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/email-count?domain=rbr3.com' \
+  --url 'http://api.hunting.io/v1/email-count?domain=google.com' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
@@ -32,34 +32,26 @@ curl --request GET \
 ```json
 {
   "data": {
-    "total": 8513,
-    "personal_emails": 8313,
-    "generic_emails": 200,
+    "total": 336,
+    "personal_emails": 334,
+    "generic_emails": 2,
     "department": {
-      "engineering": 52,
-      "finance": 44,
-      "hr": 10,
-      "it": 2,
-      "marketing": 58,
-      "operations": 40,
+      "design": 0,
+      "engineering": 0,
+      "finance": 1,
+      "hr": 0,
+      "it": 0,
+      "marketing": 2,
+      "operations": 0,
       "management": 0,
-      "executive": 0,
-      "sales": 0,
+      "sales": 2,
       "legal": 0,
       "support": 0,
-      "communication": 0,
-      "software": 0,
-      "security": 0,
-      "pr": 0,
-      "warehouse": 0,
-      "diversity": 0,
-      "administrative": 0,
-      "facilities": 0,
-      "accounting": 0
+      "communication": 0
     },
     "seniority": {
-      "junior": 152,
-      "senior": 88,
+      "junior": 0,
+      "senior": 8,
       "executive": 0
     }
   }

@@ -55,77 +55,49 @@ import 'package:tomba/tomba.dart';
 
 ### Response Objects details
 
-| Attribute                | Type   | Description |
-| ------------------------ | ------ | ----------- |
-| `data` ->`usage`         | int |             |
-| `data` ->`created_at`    | int |             |
-| `data` ->`domain`        | int |             |
-| `data` ->`finder`        | int |             |
-| `data` ->`verifier`      | int |             |
-| `data` ->`technologies`  | int |             |
-| `data` ->`ip`            | int |             |
-| `data` ->`risk`          | int |             |
-| `data` ->`website`       | int |             |
-| `data` ->`bulk`          | int |             |
-| `data` ->`extension`     | int |             |
-| `data` ->`api`           | int |             |
-| `data` ->`mobile`        | int |             |
-| `data` ->`desktop`       | int |             |
-| `data` ->`sheets`        | int |             |
-| `total` ->`usage`        | int |             |
-| `total` ->`created_at`   | int |             |
-| `total` ->`domain`       | int |             |
-| `total` ->`finder`       | int |             |
-| `total` ->`verifier`     | int |             |
-| `total` ->`technologies` | int |             |
-| `total` ->`ip`           | int |             |
-| `total` ->`risk`         | int |             |
-| `total` ->`website`      | int |             |
-| `total` ->`bulk`         | int |             |
-| `total` ->`extension`    | int |             |
-| `total` ->`api`          | int |             |
-| `total` ->`mobile`       | int |             |
-| `total` ->`desktop`      | int |             |
-| `total` ->`sheets`       | int |             |
+| Attribute             | Type | Description             |
+| --------------------- | ---- | ----------------------- |
+| `data` ->`usage`      | int  | total usage on date     |
+| `data` ->`created_at` | int  | usage date              |
+| `data` ->`name`       | int  | total usage on the name |
+
 
 > Full Response
 
 ```json
 {
   "data": [
-    {
-      "usage": 155,
-      "created_at": "2020-08-01",
+       {
+      "usage": 2,
+      "created_at": "2021-01-17",
       "domain": 0,
-      "finder": 3,
-      "verifier": 9,
+      "finder": 0,
+      "verifier": 2,
       "technologies": 0,
       "ip": 0,
-      "risk": 0,
-      "website": 1,
+      "website": 0,
       "bulk": 0,
       "extension": 0,
       "api": 0,
       "mobile": 0,
       "desktop": 0,
-      "sheets": 12
+      "sheets": 0
     },
     {
-      "usage": 300,
-      "created_at": "2020-08-02",
+      "usage": 0,
+      "created_at": "2021-01-19",
       "domain": 0,
-      "finder": 3,
-      "verifier": 9,
+      "finder": 0,
+      "verifier": 0,
       "technologies": 0,
       "ip": 0,
-      "risk": 0,
-      "website": 1,
+      "website": 0,
       "bulk": 0,
       "extension": 0,
       "api": 0,
       "mobile": 0,
       "desktop": 0,
-      "sheets": 12
+      "sheets": 0
     },
    ...
    ...
@@ -133,20 +105,19 @@ import 'package:tomba/tomba.dart';
    ...
   ],
   "total": {
-    "usage": 6673,
-    "domain": 80,
-    "finder": 45,
-    "verifier": 121,
-    "technologies": 360,
-    "ip": 360,
-    "risk": 168,
-    "website": 108,
+    "usage": 227,
+    "domain": 0,
+    "finder": 158,
+    "verifier": 35,
+    "socail": 0,
+    "technologies": 0,
+    "website": 0,
     "bulk": 0,
     "extension": 0,
     "api": 0,
     "mobile": 0,
     "desktop": 0,
-    "sheets": 96
+    "sheets": 0
   }
 }
 ```

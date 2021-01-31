@@ -22,7 +22,6 @@ import tomba
 
 ```javascript
 const Tomba = require("tomba");
-
 ```
 
 ```ruby
@@ -62,7 +61,7 @@ import 'package:tomba/tomba.dart';
 | first_name | Required | The person's first name. It doesn't need to be in lowercase..              |
 | last_name  | Required | The person's last name. It doesn't need to be in lowercase..               |
 
-## Response  Objects details
+## Response Objects details
 
 > Full Response
 
@@ -107,7 +106,7 @@ import 'package:tomba/tomba.dart';
 | `country`      | string | Two letter country code based on location                                                                                  |
 | `accept_all`   | bool   | is `true` if the SMTP server accepts all the email addresses. It means you can have have `false` positives on SMTP checks. |
 | `position`     | string | The job title of person (if found)                                                                                         |
-| `department`   | string | The person  working in the selected department(s).                                                                         |
+| `department`   | string | The person working in the selected department(s).                                                                          |
 | `twitter`      | string | Twitter handle for the person (if found).                                                                                  |
 | `linkedin_url` | string | LinkedIn URL for the person (if found).                                                                                    |
 | `phone_number` | string | The phone number of person (if found)                                                                                      |
