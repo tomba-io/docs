@@ -337,13 +337,24 @@
               </ul>
           </li>
           <li>
+            <a href="#account-information" class="toc-h1 toc-link" data-title="Account Information">Account Information</a>
+              <ul class="toc-list-h3">
+                  <li>
+                    <a href="#account-information-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#account-information-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#domain-search" class="toc-h1 toc-link" data-title="Domain Search">Domain Search</a>
               <ul class="toc-list-h3">
                   <li>
                     <a href="#domain-search-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#domain-search-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#domain-search-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -354,7 +365,7 @@
                     <a href="#email-finder-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#email-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#email-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -366,17 +377,6 @@
                   </li>
                   <li>
                     <a href="#email-verifier-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#ip-address" class="toc-h1 toc-link" data-title="IP address">IP address</a>
-              <ul class="toc-list-h3">
-                  <li>
-                    <a href="#ip-address-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#ip-address-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
                   </li>
               </ul>
           </li>
@@ -518,17 +518,6 @@
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#cli-command-line-interface" class="toc-h1 toc-link" data-title="CLI (Command Line Interface)">CLI (Command Line Interface)</a>
-              <ul class="toc-list-h3">
-                  <li>
-                    <a href="#cli-command-line-interface-installation" class="toc-h2 toc-link" data-title="Installation">Installation</a>
-                  </li>
-                  <li>
-                    <a href="#cli-command-line-interface-command-list" class="toc-h2 toc-link" data-title="Command list">Command list</a>
-                  </li>
-              </ul>
-          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://app.tomba.io/auth/register'>Sign Up for a Developer Key</a></li>
@@ -545,10 +534,10 @@
 <p>Three main calls are available:</p>
 
 <ul>
+<li>The <a href="#account-information">Account information</a></li>
 <li>The <a href="#domain-search">Domain Search</a> returns all the email addresses found using one given domain name, with sources.</li>
 <li>The <a href="#email-finder">Email Finder</a> guesses the most likely email of a person using his/her first name, last name and a domain name.</li>
 <li>The <a href="#email-verifier">Email Verifier</a> checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.</li>
-<li>The <a href="#ip-address">IP address</a> checks IP address details.</li>
 <li>The <a href="#leads">Leads.</a> .</li>
 <li>The <a href="#leads-lists">Leads Lists.</a></li>
 <li>The <a href="#leads-attributes">Lead Attributes.</a></li>
@@ -654,6 +643,10 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <p>Our API is available over a secure HTTPS connection for all users, even on the free plan. Simply add <code>https://</code> to the request URLs to make the requests secure.</p>
 <h2 id='introduction-data'>Data</h2>
 <p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyse millions of websites to index the most up to date business data.</p>
+<h3 id='introduction-data-data-at-scale'>Data at scale</h3>
+<p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 100millions domains, all bought together into a standardised global schema.</p>
+<h3 id='introduction-data-direct-from-source'>Direct from source</h3>
+<p>We only collect data from the official source itself, we do not use third party data providers to access this data, and we provide direct line of sight to the original source.</p>
 <h2 id='introduction-libraries'>Libraries</h2><h3 id='introduction-libraries-language-libraries'>Language Libraries</h3>
 <p>Official libraries for common programming languages, like PHP, Python etc.</p>
 
@@ -735,13 +728,13 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <p>There are a large number of unofficial tomba-io libraries written by third parties. While these aren&#39;t maintained by us and haven&#39;t been tested by us these libraries can be a great way to get started quickly with tomba-io if you&#39;re using a language or framework that we don&#39;t have an official library for. Search GitHub for <a href="https://github.com/search?q=tomba-io">tomba-io</a> libraries.</p>
 
 <p>If you’ve written a tomba-io library and would like to add it to this page, send an email to info@tomba.io.</p>
-<h1 id='domain-search'>Domain Search</h1>
-<p>One key feature of Tobma is to search all the email addresses corresponding to one website.
-You give one domain name and it returns all the email addresses using this domain name found on the internet.</p>
+<h1 id='account-information'>Account Information</h1>
+<p>Returns information about the current account.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domain-search/rbr3.com'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/account'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>  
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -749,6 +742,129 @@ You give one domain name and it returns all the email addresses using this domai
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
+</span></code></pre></div><h2 id='account-information-http-request'>HTTP Request</h2>
+<p><code>GET /account</code></p>
+<h3 id='account-information-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>key</code></td>
+<td>Required</td>
+<td>Your API <code>key</code></td>
+</tr>
+<tr>
+<td><code>secret</code></td>
+<td>Required</td>
+<td>Your API <code>secret</code></td>
+</tr>
+</tbody></table>
+<h2 id='account-information-response-objects-details'>Response  Objects details</h2>
+<blockquote>
+<p>Full Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"secret_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ts_xxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@tomba.io"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+xxxxxxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.gravatar.com</span><span class="se">\/</span><span class="s2">avatar</span><span class="se">\/</span><span class="s2">xxxxxxxxx?s=128&amp;d=https:</span><span class="se">\/\/</span><span class="s2">ui-avatars.com</span><span class="se">\/</span><span class="s2">api</span><span class="se">\/</span><span class="s2">M+B</span><span class="se">\/</span><span class="s2">128</span><span class="se">\/</span><span class="s2">001529</span><span class="se">\/</span><span class="s2">fff?ssl=1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx</span><span class="se">\/</span><span class="s2">xx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-18T15:52:10+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-22T15:52:10+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expired"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-24T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pricing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Growth"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pricing_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_searches"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_verifications"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_phones"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_list"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_attr"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_keys"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_teams"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available_email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 21:23:00.997965"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx</span><span class="se">\/</span><span class="s2">xxxx"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">1349</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"teams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OWNER"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"workspace"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"verifications"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='domain-search'>Domain Search</h1>
+<p>Search emails are based on the website
+You give one domain name and it returns all the email addresses found on the internet.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domain-search/google.com'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -799,7 +915,7 @@ You give one domain name and it returns all the email addresses using this domai
 <td>Get only <code>personal</code> or <code>generic</code> email addresses.</td>
 </tr>
 </tbody></table>
-<h2 id='domain-search-response-objects-details'>Response  Objects details</h2>
+<h2 id='domain-search-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -808,90 +924,141 @@ You give one domain name and it returns all the email addresses using this domai
     </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"social_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"twitter_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">twitter.com</span><span class="se">\/</span><span class="s2">rbr3pa"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.facebook.com</span><span class="se">\/</span><span class="s2">rbr3pa</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">company</span><span class="se">\/</span><span class="s2">rebein-bangerter-rebein-pa"</span><span class="w">
+          </span><span class="nl">"twitter_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"organization_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62a2a9a62fa275a0c392b11dfcfbe98a6ed291c3"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rbr3.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kansas"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ip_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"employee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-30T16:25:48+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"revenue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"industries"</span><span class="p">:</span><span class="w"> </span><span class="s2">"law practice"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"technologies_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-28 13:40:13"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rebein Brothers Law Firm"</span><span class="w">
+        </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"goocgle@rbr3.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rbr3.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskovitz"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dustin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dz"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmoskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0666666"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asana"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-10 15:12:58"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="w">
+        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"executive"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:41:00+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">betterthanstockcars.com</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-10 03:23:53"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:41:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"betterthanstockcars.com"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">departamentuldecontabilitate.ro</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-08 18:52:14"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:46:50"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"departamentuldecontabilitate.ro"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">departamentuldecontabilitate.ro</span><span class="se">\/</span><span class="s2">servicii</span><span class="se">\/</span><span class="s2">analiza-financiara</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-08 18:52:14"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:46:50"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"departamentuldecontabilitate.ro"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asx@rbr3.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rbr3.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskovitzs"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dustinx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ma"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdasd"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmoskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7687456"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asana"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-10 15:13:07"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:45:18+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">community.apache.org</span><span class="se">\/</span><span class="s2">gsoc-admin-tasks.html"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-04 23:36:07"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:45:18"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community.apache.org"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"asn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AS13335"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"stateprov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queensland"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Brisbane"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-27.4748"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"153.017"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continent_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oceania"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"top_level_domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">".au"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"alpha3_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"timezones"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC+05:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currencies_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australian dollar"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"  NOC"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloudflare.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"comany_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:45:18+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">community.apache.org</span><span class="se">\/</span><span class="s2">gsoc-admin-tasks.html"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-04 23:36:07"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:45:18"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community.apache.org"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="err">...</span><span class="w">
     </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -933,11 +1100,6 @@ You give one domain name and it returns all the email addresses using this domai
 <td>is webmail email</td>
 </tr>
 <tr>
-<td><code>organization</code> &gt; <code>organization_id</code></td>
-<td>hash</td>
-<td>Internal ID</td>
-</tr>
-<tr>
 <td><code>organization</code> &gt; <code>website_url</code></td>
 <td>string</td>
 <td>The Domain of company’s website</td>
@@ -946,11 +1108,6 @@ You give one domain name and it returns all the email addresses using this domai
 <td><code>organization</code> &gt; <code>state</code></td>
 <td>string</td>
 <td>The company state</td>
-</tr>
-<tr>
-<td><code>organization</code> &gt; <code>ip_address</code></td>
-<td>string</td>
-<td>The IP of company</td>
 </tr>
 <tr>
 <td><code>organization</code> &gt; <code>accept_all</code></td>
@@ -973,14 +1130,14 @@ You give one domain name and it returns all the email addresses using this domai
 <td>The Name of company</td>
 </tr>
 <tr>
+<td><code>organization</code> &gt; <code>pattern</code></td>
+<td>string</td>
+<td>The Name of company</td>
+</tr>
+<tr>
 <td><code>emails</code></td>
 <td>array</td>
 <td>The list of Emails</td>
-</tr>
-<tr>
-<td><code>geolocation</code></td>
-<td>array</td>
-<td>The company geolocation info</td>
 </tr>
 </tbody></table>
 <h1 id='email-finder'>Email Finder</h1>
@@ -995,7 +1152,6 @@ You give one domain name and it returns all the email addresses using this domai
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
@@ -1036,7 +1192,7 @@ You give one domain name and it returns all the email addresses using this domai
 <td>The person&#39;s last name. It doesn&#39;t need to be in lowercase..</td>
 </tr>
 </tbody></table>
-<h2 id='email-finder-response-objects-details'>Response  Objects details</h2>
+<h2 id='email-finder-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -1123,7 +1279,7 @@ You give one domain name and it returns all the email addresses using this domai
 <tr>
 <td><code>department</code></td>
 <td>string</td>
-<td>The person  working in the selected department(s).</td>
+<td>The person working in the selected department(s).</td>
 </tr>
 <tr>
 <td><code>twitter</code></td>
@@ -1329,184 +1485,12 @@ You give one domain name and it returns all the email addresses using this domai
 <td>The given email address somewhere on the web</td>
 </tr>
 </tbody></table>
-<h1 id='ip-address'>IP address</h1>
-<p>Returns a IP address information</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> http://api.hunting.io/v1/ip/2.2.2.2 <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
-</span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
-</span></code></pre></div><h2 id='ip-address-http-request'>HTTP Request</h2>
-<p><code>GET /ip/:ip</code></p>
-<h3 id='ip-address-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>ip</code></td>
-<td>optional</td>
-<td>if you pass a single IPv4 or IPv6 IP address, else you will lookup your IP address information .</td>
-</tr>
-</tbody></table>
-<h2 id='ip-address-response-objects-details'>Response  Objects details</h2>
-<blockquote>
-<p>Full Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.2.2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"asn"</span><span class="p">:</span><span class="w"> </span><span class="mi">3215</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"stateprov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Île-de-France"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aubervilliers"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48.9123"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.38405"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"continent_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"top_level_domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">".fr"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"alpha3_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"timezones"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC−10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currencies_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Euro"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IPV4"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FR"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange S.A."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"asn"</span><span class="p">:</span><span class="w"> </span><span class="mi">3215</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orange.fr"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"comany_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isp"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>ip</code></td>
-<td>string</td>
-<td>The requested IP address</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>asn</code></td>
-<td>int</td>
-<td>The AS number</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>country</code></td>
-<td>string</td>
-<td>The ISO 3166-1 alpha-2 country code</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>stateprov</code></td>
-<td>string</td>
-<td>The State or province name</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>city</code></td>
-<td>string</td>
-<td>The City name</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>latitude</code></td>
-<td>string</td>
-<td>The Decimal latitude</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>longitude</code></td>
-<td>string</td>
-<td>The Decimal longitude</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>name</code></td>
-<td>string</td>
-<td>The Country name</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>continent_name</code></td>
-<td>string</td>
-<td>The 2-letter continent code</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>alpha3_code</code></td>
-<td>string</td>
-<td>The ISO 3166-1 alpha-3 country code</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>timezones</code></td>
-<td>string</td>
-<td>The UTC</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>currencies</code></td>
-<td>string</td>
-<td>The code of the given currency.</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>currencies_name</code></td>
-<td>string</td>
-<td>The name of the given currency.</td>
-</tr>
-<tr>
-<td><code>location</code> &gt; <code>type</code></td>
-<td>string</td>
-<td>IP address type <code>ipv4</code> or <code>ipv6</code></td>
-</tr>
-<tr>
-<td><code>connection</code> &gt; <code>country</code></td>
-<td>string</td>
-<td>The ISO 3166-1 alpha-2 country code</td>
-</tr>
-<tr>
-<td><code>connection</code> &gt; <code>organization</code></td>
-<td>string</td>
-<td>The name of the organization associated with the <code>asn</code></td>
-</tr>
-<tr>
-<td><code>connection</code> &gt; <code>asn</code></td>
-<td>int</td>
-<td>The AS number</td>
-</tr>
-<tr>
-<td><code>connection</code> &gt; <code>website</code></td>
-<td>string</td>
-<td>The Website of Organization</td>
-</tr>
-<tr>
-<td><code>connection</code> &gt; <code>comany_type</code></td>
-<td>string</td>
-<td>The Organization type ,<code>business</code>,<code>hosting</code>,<code>isp</code>,<code>other</code></td>
-</tr>
-</tbody></table>
 <h1 id='leads'>Leads</h1><h2 id='leads-list-all-your-leads'>List all your leads</h2>
 <p>Returns a list of leads.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/?page=1&amp;limit=5&amp;direction='</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1568,7 +1552,7 @@ You give one domain name and it returns all the email addresses using this domai
 </thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>bool</td>
+<td>int</td>
 <td>Lead ID</td>
 </tr>
 <tr>
@@ -1632,14 +1616,14 @@ You give one domain name and it returns all the email addresses using this domai
 <td>The lead synchronization status default is <code>null</code> or one of the following values: <code>success</code>, <code>pending</code>, <code>error</code>.</td>
 </tr>
 <tr>
-<td><code>leads_list</code> -&gt; <code>leads_list</code></td>
-<td>int</td>
-<td>List ID</td>
+<td><code>sync</code></td>
+<td>object</td>
+<td>sync CRM integrations status</td>
 </tr>
 <tr>
-<td><code>leads_list</code> -&gt; <code>name</code></td>
-<td>string</td>
-<td>List name</td>
+<td><code>leads_list</code></td>
+<td>object</td>
+<td>List info</td>
 </tr>
 <tr>
 <td><code>attributes</code></td>
@@ -1655,145 +1639,79 @@ You give one domain name and it returns all the email addresses using this domai
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"leads"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">279</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mohamed@mohamed.fr"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx@google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"head partners business solutions russia ukraine cis"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">xxx"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"domain"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16T14:54:29+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-19T19:07:38+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"sync_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">436466</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tests"</span><span class="w">
+        </span><span class="nl">"sync"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"sync_airtable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_hubspot"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_mailchimp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_pipedrive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"xxx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T22:07:07+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T22:07:07+01:00"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">278</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mohamed@xasdasd.io"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohamed"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mohamed"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://google.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx@google.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new business sales manager indonesia market"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">xxx"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asana"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finder"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T07:59:36+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21T12:46:35+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"sync_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w">
+        </span><span class="nl">"sync"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"sync_airtable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_hubspot"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_mailchimp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sync_pipedrive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"wee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mo"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"updatesdsad"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mo"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"as_asd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"swe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"xxx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"ssssss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-26"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"allo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allo"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"asd_asd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T22:07:07+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T22:07:07+01:00"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">277</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ziad@ziad.fr"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verify"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13T07:59:36+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21T12:46:35+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sync_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"allo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allo"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">276</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ass@sadasd.fr"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browser"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16T14:54:29+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-19T19:07:38+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">436466</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tests"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">275</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd@sad.fr"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browser"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16T14:54:29+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-19T19:07:38+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"leads_list"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"list_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">436466</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tests"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+     </span><span class="err">...</span><span class="w">
+     </span><span class="err">...</span><span class="w">
+     </span><span class="err">...</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">148</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
       </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+      </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='leads-get-a-lead'>Get a lead</h2>
 <p>Returns a lead.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/2?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/2'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
@@ -1837,7 +1755,7 @@ You give one domain name and it returns all the email addresses using this domai
 </thead><tbody>
 <tr>
 <td><code>id</code></td>
-<td>bool</td>
+<td>int</td>
 <td>Lead ID</td>
 </tr>
 <tr>
@@ -1901,14 +1819,14 @@ You give one domain name and it returns all the email addresses using this domai
 <td>The lead synchronization status default is <code>null</code> or one of the following values: <code>success</code>, <code>pending</code>, <code>error</code>.</td>
 </tr>
 <tr>
-<td><code>leads_list</code> -&gt; <code>leads_list</code></td>
-<td>int</td>
-<td>List ID</td>
+<td><code>sync</code></td>
+<td>object</td>
+<td>sync CRM integrations status</td>
 </tr>
 <tr>
-<td><code>leads_list</code> -&gt; <code>name</code></td>
-<td>string</td>
-<td>List name</td>
+<td><code>leads_list</code></td>
+<td>object</td>
+<td>List info</td>
 </tr>
 <tr>
 <td><code>attributes</code></td>
@@ -1950,7 +1868,7 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='leads-create-a-lead'>Create a lead</h2>
 <p>Create a new lead . If the email already exists, fails with <code>422</code> status code.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
@@ -2000,7 +1918,7 @@ You give one domain name and it returns all the email addresses using this domai
 </tr>
 <tr>
 <td><code>list</code></td>
-<td>Required</td>
+<td>optional</td>
 <td>List ID</td>
 </tr>
 <tr>
@@ -2050,7 +1968,7 @@ You give one domain name and it returns all the email addresses using this domai
 </tr>
 <tr>
 <td><code>attributes</code></td>
-<td>object</td>
+<td>optional</td>
 <td>attributes value</td>
 </tr>
 </tbody></table>
@@ -2080,10 +1998,9 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='leads-update-a-lead'>Update a lead</h2>
 <p>Update the fields of a lead using <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/278?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/278?format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'User-Agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
     "email": "mohamed@xasdasd.io",
     "first_name": "Mohamed",
@@ -2189,7 +2106,7 @@ You give one domain name and it returns all the email addresses using this domai
 </tr>
 <tr>
 <td><code>attributes</code></td>
-<td>object</td>
+<td>optional</td>
 <td>attributes value</td>
 </tr>
 </tbody></table>
@@ -2223,10 +2140,9 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='leads-delete-a-lead'>Delete a lead</h2>
 <p>Delete a specific lead by passing <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/275?secret=c18ae4c7-2d78-4c06-9a32-a94bc27bc940&amp;format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/275'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'User-Agent: tomba api'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2440,7 +2356,7 @@ You give one domain name and it returns all the email addresses using this domai
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes/38?format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2533,7 +2449,7 @@ You give one domain name and it returns all the email addresses using this domai
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes?format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"name": "Millie","type": "date"}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2597,9 +2513,9 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='lead-attributes-update-a-lead-attributes'>Update a Lead Attributes</h2>
 <p>Update the fields of a Attributes using <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/attributes/41?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes/41?format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"name": "total ","type": "string"}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -2672,9 +2588,9 @@ You give one domain name and it returns all the email addresses using this domai
 </span></code></pre></div><h2 id='lead-attributes-delete-a-lead-attributes'>Delete a Lead Attributes</h2>
 <p>Delete a specific Attributes by passing <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1//leads/attributes?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/leads/attributes?format=json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_256390b87e59e33eed1353724a2c65214f266'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -3214,22 +3130,10 @@ The Free plane can create only one key.
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">373</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_6529b65481a353523c7c435ed62af1421c002"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05 15:34:00"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">372</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_722xxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05 15:33:58"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">371</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_5d02d28bbc5955aa5dbc8b01185278bd63b65"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05 15:33:56"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-13T01:00:41+01:00"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="err">...</span><span class="w">
       </span><span class="err">...</span><span class="w">
@@ -3316,13 +3220,13 @@ The Free plane can create only one key.
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w">
         </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_xxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ip_addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-08-17 17:58:56"</span><span class="w">
+        </span><span class="nl">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-13T00:45:05+01:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='keys-create-a-key'>Create a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys?secret=df3908be-eb1e-4289-b842-8eff404318dc'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/keys'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
@@ -3368,7 +3272,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">399</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_5fac2f2628532a6500833dc539971197ec583c59"</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_xxxxxx"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='keys-rest-a-key'>Rest a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
@@ -3525,152 +3429,17 @@ The Free plane can create only one key.
 <tr>
 <td><code>data</code> -&gt;<code>usage</code></td>
 <td>int</td>
-<td></td>
+<td>total usage on date</td>
 </tr>
 <tr>
 <td><code>data</code> -&gt;<code>created_at</code></td>
 <td>int</td>
-<td></td>
+<td>usage date</td>
 </tr>
 <tr>
-<td><code>data</code> -&gt;<code>domain</code></td>
+<td><code>data</code> -&gt;<code>name</code></td>
 <td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>finder</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>verifier</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>technologies</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>ip</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>risk</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>website</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>bulk</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>extension</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>api</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>mobile</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>desktop</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>data</code> -&gt;<code>sheets</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>usage</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>created_at</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>domain</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>finder</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>verifier</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>technologies</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>ip</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>risk</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>website</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>bulk</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>extension</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>api</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>mobile</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>desktop</code></td>
-<td>int</td>
-<td></td>
-</tr>
-<tr>
-<td><code>total</code> -&gt;<code>sheets</code></td>
-<td>int</td>
-<td></td>
+<td>total usage on the name</td>
 </tr>
 </tbody></table>
 
@@ -3679,39 +3448,37 @@ The Free plane can create only one key.
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-08-01"</span><span class="p">,</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-17"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nl">"technologies"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"bulk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"api"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-08-02"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-19"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"technologies"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"bulk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"api"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
    </span><span class="err">...</span><span class="w">
    </span><span class="err">...</span><span class="w">
@@ -3719,20 +3486,19 @@ The Free plane can create only one key.
    </span><span class="err">...</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">6673</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"technologies"</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="mi">227</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"socail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"technologies"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"bulk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"api"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"desktop"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+    </span><span class="nl">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='logs'>Logs</h1>
@@ -3898,7 +3664,7 @@ The Free plane can create only one key.
 </span></code></pre></div><h1 id='email-count'>Email Count</h1>
 <p>Returns total email addresses we have for one domain.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/email-count?domain=rbr3.com'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/email-count?domain=google.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
 </code></pre></div><h2 id='email-count-http-request'>HTTP Request</h2>
@@ -3952,34 +3718,26 @@ The Free plane can create only one key.
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">8513</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"personal_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">8313</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"generic_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"personal_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">334</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"generic_emails"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"engineering"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finance"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hr"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"it"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"operations"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"design"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"engineering"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"finance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hr"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"it"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"operations"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"management"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sales"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
       </span><span class="nl">"legal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"support"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"communication"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"software"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"warehouse"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"diversity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"administrative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"facilities"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"accounting"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="nl">"communication"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"junior"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"senior"</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"junior"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"senior"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
       </span><span class="nl">"executive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -3991,7 +3749,6 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domain-status?domain=gmail.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span>
 </code></pre></div><h2 id='domain-status-http-request'>HTTP Request</h2>
 <p><code>GET /email-count/?domain=:domain</code></p>
 <h3 id='domain-status-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
@@ -4039,9 +3796,8 @@ The Free plane can create only one key.
 <h1 id='autocomplete'>Autocomplete</h1>
 <p>Company Autocomplete is an API that lets you auto-complete company names and retreive logo and domain information.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domains-suggestion?query=rb'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'user-agent: tomba api'</span>
+  <span class="nt">--url</span> <span class="s1">'http://api.hunting.io/v1/domains-suggestion?query=googl'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 </code></pre></div><h3 id='autocomplete-response-objects-details-http-request'>HTTP Request</h3>
 <p><code>GET /domains-suggestion?query=:query</code></p>
 <h3 id='autocomplete-response-objects-details-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
@@ -4094,99 +3850,42 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rbr3.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rebein Brothers Law Firm"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">logo.tomba.com</span><span class="se">\/</span><span class="s2">rbr3.com"</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=google.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"txt.voice.google.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Txt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=txt.voice.google.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googlegroups.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Googlegroups"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=googlegroups.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ooglesngoogles.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ooglesngoogles"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=ooglesngoogles.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googlemail.con"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Googlemail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=googlemail.con"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="err">...</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rb"</span><span class="w">
+    </span><span class="nl">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googl"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='cli-command-line-interface'>CLI (Command Line Interface)</h1><h2 id='cli-command-line-interface-installation'>Installation</h2><h2 id='cli-command-line-interface-command-list'>Command list</h2>
-<table><thead>
-<tr>
-<th>shortopts</th>
-<th>longopts</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>-h</code></td>
-<td><code>--help</code></td>
-<td>This help text</td>
-</tr>
-<tr>
-<td><code>-m</code></td>
-<td><code>--domain</code></td>
-<td>Get Domain Search details</td>
-</tr>
-<tr>
-<td><code>-f</code></td>
-<td><code>--finder</code></td>
-<td>Get Email Finder details</td>
-</tr>
-<tr>
-<td><code>-v</code></td>
-<td><code>--verifier</code></td>
-<td>Get Email Verifier details</td>
-</tr>
-<tr>
-<td><code>-i</code></td>
-<td><code>--ip</code></td>
-<td>Get IP address details</td>
-</tr>
-<tr>
-<td><code>-t</code></td>
-<td><code>--tech</code></td>
-<td>Get web Technologies details</td>
-</tr>
-<tr>
-<td><code>-c</code></td>
-<td><code>--create</code></td>
-<td>Create a <code>key</code> , <code>leads</code>, <code>leads list</code>, <code>bulk *</code></td>
-</tr>
-<tr>
-<td><code>-g</code></td>
-<td><code>--get</code></td>
-<td>Get a <code>key</code> , <code>leads</code>, <code>leads list</code>, <code>bulk *</code></td>
-</tr>
-<tr>
-<td><code>-u</code></td>
-<td><code>--update</code></td>
-<td>Update a <code>key</code> , <code>leads</code>, <code>leads list</code>, <code>bulk *</code></td>
-</tr>
-<tr>
-<td><code>-d</code></td>
-<td><code>--delete</code></td>
-<td>Delete a <code>key</code> , <code>leads</code>, <code>leads list</code>, <code>bulk *</code></td>
-</tr>
-<tr>
-<td><code>-k</code></td>
-<td><code>--config</code></td>
-<td>add your <code>key</code> and <code>secret</code></td>
-</tr>
-<tr>
-<td><code>-r</code></td>
-<td><code>--usage</code></td>
-<td>get Usage details</td>
-</tr>
-<tr>
-<td><code>-o</code></td>
-<td><code>--output</code></td>
-<td>save to a given file</td>
-</tr>
-</tbody></table>
-
+</span></code></pre></div>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
