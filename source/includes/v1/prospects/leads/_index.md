@@ -92,19 +92,21 @@ import 'package:tomba/tomba.dart';
   "data": {
     "leads": [
       {
-        "id": 6,
-        "email": "xx@google.com",
-        "first_name": "xx",
-        "last_name": "xx",
+        "id": 84,
+        "user_id": 1,
+        "email": "xxx@mozilla.com",
+        "first_name": "ed",
+        "last_name": "lim",
         "country": "US",
-        "website_url": null,
-        "position": "head partners business solutions russia ukraine cis",
+        "website_url": "mozilla.com",
+        "position": "senior system administrator",
         "twitter": null,
-        "linkedin": "http:\/\/www.linkedin.com\/in\/xxx",
+        "linkedin": "https:\/\/www.linkedin.com\/in\/edwardlim",
         "phone_number": null,
-        "company": null,
-        "notes": null,
-        "lead_source": null,
+        "company": "Mozilla Toronto",
+        "notes": "Notes",
+        "score": 95,
+        "lead_source": "domain",
         "sync_status": null,
         "sync": {
           "sync_airtable": null,
@@ -113,27 +115,29 @@ import 'package:tomba/tomba.dart';
           "sync_pipedrive": null
         },
         "leads_list": {
-          "list_id": null,
-          "name": null
+          "list_id": 10,
+          "name": "test2"
         },
         "attributes": [],
-        "created_at": "2021-01-31T22:07:07+01:00",
-        "updated_at": "2021-01-31T22:07:07+01:00"
+        "created_at": "2021-02-02T23:04:43+01:00",
+        "updated_at": "2021-02-09T23:57:41+01:00"
       },
       {
-        "id": 5,
-        "email": "xx@google.com",
-        "first_name": "xx",
-        "last_name": "xx",
-        "country": "SG",
-        "website_url": null,
-        "position": "new business sales manager indonesia market",
+        "id": 83,
+        "user_id": 1,
+        "email": "xxxx@mozilla.com",
+        "first_name": "nick",
+        "last_name": "nguyen",
+        "country": "US",
+        "website_url": "mozilla.com",
+        "position": "vp firefox product",
         "twitter": null,
-        "linkedin": "http:\/\/www.linkedin.com\/in\/xxx",
+        "linkedin": "https:\/\/www.linkedin.com\/in\/osunick",
         "phone_number": null,
-        "company": null,
+        "company": "Mozilla Toronto",
         "notes": null,
-        "lead_source": null,
+        "score": 95,
+        "lead_source": "domain",
         "sync_status": null,
         "sync": {
           "sync_airtable": null,
@@ -142,19 +146,16 @@ import 'package:tomba/tomba.dart';
           "sync_pipedrive": null
         },
         "leads_list": {
-          "list_id": null,
-          "name": null
+          "list_id": 10,
+          "name": "test2"
         },
         "attributes": [],
-        "created_at": "2021-01-31T22:07:07+01:00",
-        "updated_at": "2021-01-31T22:07:07+01:00"
-      },
-     ...
-     ...
-     ...
+        "created_at": "2021-02-02T23:04:43+01:00",
+        "updated_at": "2021-02-09T23:57:41+01:00"
+      }
     ],
     "meta": {
-      "total": 6,
+      "total": 2,
       "pageSize": 50,
       "current": 1,
       "total_pages": 1
@@ -455,7 +456,7 @@ import 'package:tomba/tomba.dart';
 | Parameter      | Default  | Description                               |
 | -------------- | -------- | ----------------------------------------- |
 | `id`           | Required | list ID .                                 |
-| `email`        | Required | The email address                         |
+| `email`        | optional | The email address                         |
 | `list`         | optional | List ID                                   |
 | `first_name`   | optional | First name of lead                        |
 | `last_name`    | optional | Last name of lead                         |

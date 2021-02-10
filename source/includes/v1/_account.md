@@ -52,7 +52,7 @@ import 'package:tomba/tomba.dart';
 
 ## HTTP Request
 
-`GET /account`
+`GET /me`
 
 ### The parameters are defined as follows
 
@@ -110,21 +110,6 @@ import 'package:tomba/tomba.dart';
             "timezone": "xx\/xxxx"
         },
         "used": 1349,
-        "teams": {
-            "team_id": 55,
-            "role": "OWNER",
-            "workspace": true,
-            "available": 5,
-            "limit": {
-                "domain": null,
-                "finder": null,
-                "verifier": null
-            },
-            "owner": {
-                "name": null,
-                "available": null
-            }
-        },
         "requests": {
             "domains": {
                 "available": 2500,
