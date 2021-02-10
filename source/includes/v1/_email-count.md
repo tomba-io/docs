@@ -21,38 +21,38 @@ curl --request GET \
 
 ## Response Objects details
 
-| Attribute                   | Type | Description              |
-| --------------------------- | ---- | ------------------------ |
-| `total`                     | int  | Total email              |
-| `personal_emails`           | int  | Total `personal` email   |
-| `generic_emails`            | int  | Total `generic` email    |
-| `department` > `_key_name_` | int  | Total `_key_name_` email |
+| Attribute                   | Type | Description                            |
+| --------------------------- | ---- | -------------------------------------- |
+| `total`                     | int  | Total email                            |
+| `personal_emails`           | int  | Total `personal` email                 |
+| `generic_emails`            | int  | Total `generic` email                  |
+| `department` > `_key_name_` | int  | Total email on department `_key_name_` |
+| `seniority` > `_key_name_`  | int  | Total email on seniority `_key_name_`  |
 > Full Response
 
 ```json
 {
   "data": {
-    "total": 336,
-    "personal_emails": 334,
-    "generic_emails": 2,
+    "total": 129283,
+    "personal_emails": 129283,
+    "generic_emails": 295,
     "department": {
-      "design": 0,
-      "engineering": 0,
-      "finance": 1,
-      "hr": 0,
-      "it": 0,
-      "marketing": 2,
-      "operations": 0,
-      "management": 0,
-      "sales": 2,
-      "legal": 0,
-      "support": 0,
-      "communication": 0
+      "engineering": 871,
+      "finance": 692,
+      "hr": 505,
+      "it": 1040,
+      "marketing": 4996,
+      "operations": 2369,
+      "management": 4208,
+      "sales": 1455,
+      "legal": 208,
+      "support": 1414,
+      "communication": 226
     },
     "seniority": {
-      "junior": 0,
-      "senior": 8,
-      "executive": 0
+      "junior": 3265,
+      "senior": 20948,
+      "executive": 4712
     }
   }
 }
