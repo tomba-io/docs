@@ -10,7 +10,7 @@ The Free plane can create only one key.
 
 ```shell
 curl --request GET \
-  --url http://api.hunting.io/v1/keys \
+  --url https://api.tomba.io/v1/keys \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
@@ -95,7 +95,7 @@ Returns a key.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/keys/241' \
+  --url 'https://api.tomba.io/v1/keys/241' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
@@ -180,7 +180,7 @@ import 'package:tomba/tomba.dart';
 
 ```shell
 curl --request POST \
-  --url 'http://api.hunting.io/v1/keys' \
+  --url 'https://api.tomba.io/v1/keys' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
 ```
@@ -250,7 +250,7 @@ import 'package:tomba/tomba.dart';
 
 ```shell
 curl --request PUT \
-  --url 'http://api.hunting.io/v1/keys/2' \
+  --url 'https://api.tomba.io/v1/keys/2' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 
@@ -325,7 +325,7 @@ import 'package:tomba/tomba.dart';
 
 ```shell
 curl --request DELETE \
-  --url 'http://api.hunting.io/v1/keys/259' \
+  --url 'https://api.tomba.io/v1/keys/259' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```

@@ -6,7 +6,7 @@ It's free and doesn't require authentication.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/domain-status?domain=gmail.com' \
+  --url 'https://api.tomba.io/v1/domain-status?domain=gmail.com' \
   --header 'content-type: application/json' \
 ```
 

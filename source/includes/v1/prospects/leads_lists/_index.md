@@ -6,7 +6,7 @@ Returns a list of leads lists.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/leads_lists/' \
+  --url 'https://api.tomba.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
@@ -119,7 +119,7 @@ Returns a leads list.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/leads_lists/1' \
+  --url 'https://api.tomba.io/v1/leads_lists/1' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
 ```
@@ -209,7 +209,7 @@ Create a new leads list with the `name` request parameter. If the list name alre
 
 ```shell
 curl --request POST \
-  --url 'http://api.hunting.io/v1/leads_lists/' \
+  --url 'https://api.tomba.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
   --data '{
@@ -290,7 +290,7 @@ Update the fields of a list using `id`.
 
 ```shell
 curl --request PUT \
-  --url 'http://api.hunting.io/v1/leads_lists/17' \
+  --url 'https://api.tomba.io/v1/leads_lists/17' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
   --data '{
@@ -370,7 +370,7 @@ Delete a specific list by passing `id`.
 
 ```shell
 curl --request DELETE \
-  --url 'http://api.hunting.io/v1/leads_lists/5' \
+  --url 'https://api.tomba.io/v1/leads_lists/5' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
 ```

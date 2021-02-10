@@ -6,7 +6,7 @@ Returns a list of leads.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/leads/' \
+  --url 'https://api.tomba.io/v1/leads/' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```
@@ -169,7 +169,7 @@ Returns a lead.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/leads/2' \
+  --url 'https://api.tomba.io/v1/leads/2' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
 ```
@@ -282,7 +282,7 @@ Create a new lead . If the email already exists, fails with `422` status code.
 
 ```shell
 curl --request POST \
-  --url 'http://api.hunting.io/v1/leads' \
+  --url 'https://api.tomba.io/v1/leads' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
   --data '{
@@ -384,7 +384,7 @@ Update the fields of a lead using `id`.
 
 ```shell
 curl --request PUT \
-  --url 'http://api.hunting.io/v1/leads/278?format=json' \
+  --url 'https://api.tomba.io/v1/leads/278?format=json' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{
@@ -490,7 +490,7 @@ Delete a specific lead by passing `id`.
 
 ```shell
 curl --request DELETE \
-  --url 'http://api.hunting.io/v1/leads/275' \
+  --url 'https://api.tomba.io/v1/leads/275' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```

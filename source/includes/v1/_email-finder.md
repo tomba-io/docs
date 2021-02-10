@@ -4,7 +4,7 @@ This API endpoint generates or retrieves the most likely email address from a do
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin' \
+  --url 'https://api.tomba.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```

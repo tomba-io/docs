@@ -5,7 +5,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/domain-search/google.com' \
+  --url 'https://api.tomba.io/v1/domain-search/google.com' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'
@@ -62,7 +62,6 @@ import 'package:tomba/tomba.dart';
 | `page`       | optional | Specifies the number of email addresses to skip. The default is 1.                      |
 | `limit`      | optional | Specifies the max number of email addresses to return. The default is 10.               |
 | `department` | optional | Get only email addresses for people working in the selected department(s).              |
-| `seniority`  | optional | Get only email addresses for people with the selected seniority level. The possible val |
 | `type`       | optional | Get only `personal` or `generic` email addresses.                                       |
 
 ## Response Objects details

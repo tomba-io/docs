@@ -4,7 +4,7 @@ Returns total email addresses we have for one domain.
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/email-count?domain=google.com' \
+  --url 'https://api.tomba.io/v1/email-count?domain=google.com' \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```
@@ -57,4 +57,3 @@ curl --request GET \
   }
 }
 ```
-

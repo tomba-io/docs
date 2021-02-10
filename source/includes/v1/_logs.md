@@ -4,7 +4,7 @@ Returns a your last 1,000 requests you made during the last 3 months.
 
 ```shell
 curl --request GET \
-  --url http://api.hunting.io/v1/logs \
+  --url https://api.tomba.io/v1/logs \
   --header 'content-type: application/json' \
   --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
 ```

@@ -4,7 +4,7 @@ Company Autocomplete is an API that lets you auto-complete company names and ret
 
 ```shell
 curl --request GET \
-  --url 'http://api.hunting.io/v1/domains-suggestion?query=googl' \
+  --url 'https://api.tomba.io/v1/domains-suggestion?query=googl' \
   --header 'Content-Type: application/json' \
 ```
 
