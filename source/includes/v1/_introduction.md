@@ -4,7 +4,7 @@ The Tomba API is exposed via [RESTful](http://en.wikipedia.org/wiki/Representati
 
 This documentation will show you how to query.
 
-Three main calls are available:
+Twelve main calls are available:
 
 - The [Account information](#account-information)
 - The [Domain Search](#domain-search) returns all the email addresses found using one given domain name, with sources.
