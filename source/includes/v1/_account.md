@@ -4,7 +4,7 @@ Returns information about the current account.
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/account' \
+  --url 'https://api.tomba.io/v1/me' \
   --header 'content-type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'  
