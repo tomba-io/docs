@@ -6,7 +6,8 @@ This API endpoint generates or retrieves the most likely email address from a do
 curl --request GET \
   --url 'https://api.tomba.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Secret: ts_xxxx'
 ```
 
 ```php
@@ -68,29 +69,24 @@ import 'package:tomba/tomba.dart';
 ```json
 {
   "data": {
-    "email": [
-      {
-        "email": "googxle@asana.com",
-        "type": "1",
-        "website_url": "asana.com",
-        "first_name": "Moskoz",
-        "last_name": "Dustin",
-        "country": "tr",
-        "score": 72,
-        "accept_all": false,
-        "position": "CEO",
-        "department": "ascsd",
-        "twitter": "moskov",
-        "linkedin_url": "dmoskov",
-        "phone_number": "5646456",
-        "company": "Asana",
-        "latitude": "0",
-        "longitude": "0",
-        "last_updated": "2020-08-19 13:58:19",
-        "full_name": "Moskoz Dustin"
-      }
-    ],
-    "sources": false
+    "email": "jan.marek@g-in.cz",
+    "first_name": "Jan",
+    "last_name": "Marek",
+    "full_name": "Jan Marek",
+    "country": "CZ",
+    "position": null,
+    "twitter": null,
+    "linkedin": "https://www.linkedin.com/in/jan-marek-245b85103",
+    "phone_number": null,
+    "accept_all": null,
+    "website_url": "g-incz",
+    "company": "Garp integ.rated",
+    "score": 80,
+    "verification": {
+      "date": null,
+      "status": null
+    },
+    "sources": []
   }
 }
 ```
@@ -109,7 +105,7 @@ import 'package:tomba/tomba.dart';
 | `department`   | string | The person working in the selected department(s).                                                                          |
 | `twitter`      | string | Twitter handle for the person (if found).                                                                                  |
 | `linkedin_url` | string | LinkedIn URL for the person (if found).                                                                                    |
-| `phone_number` | string | The phone number of person (if found)                                                                                      |
+| `phone_number` | bool   | true if found                                                                                                              |
 | `company`      | string | The company of person (if found)                                                                                           |
 | `latitude`     | string | latitude based on location                                                                                                 |
 | `longitude`    | string | longitude based on location                                                                                                |

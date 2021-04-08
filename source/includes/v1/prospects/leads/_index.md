@@ -172,7 +172,7 @@ Returns a lead.
 curl --request GET \
   --url 'https://api.tomba.io/v1/leads/2' \
   --header 'Content-Type: application/json' \
-  --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -285,7 +285,7 @@ Create a new lead . If the email already exists, fails with `422` status code.
 curl --request POST \
   --url 'https://api.tomba.io/v1/leads' \
   --header 'Content-Type: application/json' \
-  --header 'X-Tomba-Key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --data '{
 	"list_id": 22,
 	"email": "Grover12@hotmail.com",

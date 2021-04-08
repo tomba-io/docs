@@ -6,7 +6,7 @@ Returns a your last 1,000 requests you made during the last 3 months.
 curl --request GET \
   --url https://api.tomba.io/v1/logs \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
 ```php

@@ -12,7 +12,7 @@ The Free plane can create only one key.
 curl --request GET \
   --url https://api.tomba.io/v1/keys \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 
 ```
 
@@ -97,7 +97,7 @@ Returns a key.
 curl --request GET \
   --url 'https://api.tomba.io/v1/keys/241' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 
 ```
 
@@ -181,7 +181,7 @@ import 'package:tomba/tomba.dart';
 ```shell
 curl --request POST \
   --url 'https://api.tomba.io/v1/keys' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 
 ```
 
@@ -252,7 +252,7 @@ import 'package:tomba/tomba.dart';
 curl --request PUT \
   --url 'https://api.tomba.io/v1/keys/2' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 
 ```
 
@@ -327,7 +327,7 @@ import 'package:tomba/tomba.dart';
 curl --request DELETE \
   --url 'https://api.tomba.io/v1/keys/259' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
 ```php

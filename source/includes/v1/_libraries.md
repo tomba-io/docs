@@ -23,5 +23,3 @@ Official libraries for common frameworks. These libraries should use the officia
 
 In the framework libraries we can assume more about the developer's use case, and we probably have access to more information, such as a HTTP request object. We can therefore implement additional functionality that
 doesn't make sense in the core language library. This includes bot filtering (not sending requests to our API if the user agent belongs to a "bot").
-
-

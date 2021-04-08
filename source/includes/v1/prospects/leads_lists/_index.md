@@ -8,7 +8,7 @@ Returns a list of leads lists.
 curl --request GET \
   --url 'https://api.tomba.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
 ```php
@@ -121,7 +121,7 @@ Returns a leads list.
 curl --request GET \
   --url 'https://api.tomba.io/v1/leads_lists/1' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
 ```
 
 ```php
@@ -211,7 +211,7 @@ Create a new leads list with the `name` request parameter. If the list name alre
 curl --request POST \
   --url 'https://api.tomba.io/v1/leads_lists/' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --data '{
   "name": "Mario Monahan"
   }'
@@ -292,7 +292,7 @@ Update the fields of a list using `id`.
 curl --request PUT \
   --url 'https://api.tomba.io/v1/leads_lists/17' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --data '{
   "name": "update listsssssssssss"
   }'
@@ -372,7 +372,7 @@ Delete a specific list by passing `id`.
 curl --request DELETE \
   --url 'https://api.tomba.io/v1/leads_lists/5' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx' \
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
 ```
 
 ```php

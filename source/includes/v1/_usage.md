@@ -6,7 +6,7 @@ Returns a your monthly requests
 curl --request GET \
   --url https://api.tomba.io/v1/usage \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
 ```php

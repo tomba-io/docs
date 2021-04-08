@@ -6,7 +6,7 @@ Returns total email addresses we have for one domain.
 curl --request GET \
   --url 'https://api.tomba.io/v1/email-count?domain=google.com' \
   --header 'content-type: application/json' \
-  --header 'x-tannin-key: ta_722xxxxxxxxxxxxx'
+  --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
 ## HTTP Request
