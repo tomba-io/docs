@@ -284,6 +284,16 @@
     <link href="stylesheets/print-4ba26dea.css" rel="stylesheet" media="print" />
       <script src="javascripts/all_nosearch-ea811c3e.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180181035-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-180181035-1');
+    </script>
+
     <script>
       $(function() { setupCodeCopy(); });
     </script>
@@ -527,18 +537,18 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>The Tomba API is exposed via <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a> web services and makes use of the standard <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> encoding.</p>
+<p>We are maintaining a Public API. This service allows any developers to retrieve and manage TOmba data with HTTP requests.</p>
 
 <p>This documentation will show you how to query.</p>
 
-<p>Three main calls are available:</p>
+<p>The main calls are available:</p>
 
 <ul>
 <li>The <a href="#account-information">Account information</a></li>
-<li>The <a href="#domain-search">Domain Search</a> returns all the email addresses found using one given domain name, with sources.</li>
-<li>The <a href="#email-finder">Email Finder</a> guesses the most likely email of a person using his/her first name, last name and a domain name.</li>
-<li>The <a href="#email-verifier">Email Verifier</a> checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.</li>
-<li>The <a href="#leads">Leads.</a> .</li>
+<li>The <a href="#domain-search">Domain Search</a></li>
+<li>The <a href="#email-finder">Email Finder</a></li>
+<li>The <a href="#email-verifier">Email Verifier</a></li>
+<li>The <a href="#leads">Leads.</a></li>
 <li>The <a href="#leads-lists">Leads Lists.</a></li>
 <li>The <a href="#leads-attributes">Lead Attributes.</a></li>
 <li>The <a href="#usage">Usage.</a></li>
@@ -644,7 +654,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <h2 id='introduction-data'>Data</h2>
 <p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyse millions of websites to index the most up to date business data.</p>
 <h3 id='introduction-data-data-at-scale'>Data at scale</h3>
-<p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 100millions domains, all bought together into a standardised global schema.</p>
+<p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardised global schema.</p>
 <h3 id='introduction-data-direct-from-source'>Direct from source</h3>
 <p>We only collect data from the official source itself, we do not use third party data providers to access this data, and we provide direct line of sight to the original source.</p>
 <h2 id='introduction-libraries'>Libraries</h2><h3 id='introduction-libraries-language-libraries'>Language Libraries</h3>
@@ -724,10 +734,6 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 
 <p>In the framework libraries we can assume more about the developer&#39;s use case, and we probably have access to more information, such as a HTTP request object. We can therefore implement additional functionality that
 doesn&#39;t make sense in the core language library. This includes bot filtering (not sending requests to our API if the user agent belongs to a &quot;bot&quot;).</p>
-<h3 id='introduction-libraries-third-party-libraries'>Third party libraries</h3>
-<p>There are a large number of unofficial tomba-io libraries written by third parties. While these aren&#39;t maintained by us and haven&#39;t been tested by us these libraries can be a great way to get started quickly with tomba-io if you&#39;re using a language or framework that we don&#39;t have an official library for. Search GitHub for <a href="https://github.com/search?q=tomba-io">tomba-io</a> libraries.</p>
-
-<p>If you’ve written a tomba-io library and would like to add it to this page, send an email to info@tomba.io.</p>
 <h1 id='account-information'>Account Information</h1>
 <p>Returns information about the current account.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
@@ -840,7 +846,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <p>Search emails are based on the website
 You give one domain name and it returns all the email addresses found on the internet.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domain-search/google.com'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domain-search/stripe.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
@@ -900,146 +906,674 @@ You give one domain name and it returns all the email addresses found on the int
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"social_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"twitter_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">twitter.com</span><span class="se">\/</span><span class="s2">stripe"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.facebook.com</span><span class="se">\/</span><span class="s2">StripeHQ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">company</span><span class="se">\/</span><span class="s2">2135371"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industries"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internet"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94107"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"employee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">976</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-09T05:51:19+01:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"revenue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"domain_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"social_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"twitter_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"employee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-30T16:25:48+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"revenue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"organization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"executive"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:41:00+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">betterthanstockcars.com</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-10 03:23:53"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:41:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"betterthanstockcars.com"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">departamentuldecontabilitate.ro</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-08 18:52:14"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:46:50"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"departamentuldecontabilitate.ro"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">departamentuldecontabilitate.ro</span><span class="se">\/</span><span class="s2">servicii</span><span class="se">\/</span><span class="s2">analiza-financiara</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-08 18:52:14"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:46:50"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"departamentuldecontabilitate.ro"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nonprofit@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-22T13:01:41+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">donatetools.com</span><span class="se">\/</span><span class="s2">pricing"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15 14:35:50"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-22 13:01:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"donatetools.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">fundrazr.com</span><span class="se">\/</span><span class="s2">pages</span><span class="se">\/</span><span class="s2">stripe"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-25 09:33:19"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-30 16:21:18"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fundrazr.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.wizevents.com</span><span class="se">\/</span><span class="s2">pricing"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-26 07:19:54"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28 15:43:44"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.wizevents.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">bloomerang.co</span><span class="se">\/</span><span class="s2">features</span><span class="se">\/</span><span class="s2">payment-processing</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16 08:14:17"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29 13:37:40"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bloomerang.co"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">mancloud.eu</span><span class="se">\/</span><span class="s2">nl</span><span class="se">\/</span><span class="s2">hotel-software</span><span class="se">\/</span><span class="s2">betaaloplossing"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 14:06:03"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 12:48:59"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mancloud.eu"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">mancloud.eu</span><span class="se">\/</span><span class="s2">en</span><span class="se">\/</span><span class="s2">hotel-software</span><span class="se">\/</span><span class="s2">payment-provider"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 14:06:14"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 12:49:00"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mancloud.eu"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">donorbox.org</span><span class="se">\/</span><span class="s2">pricing"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-23 13:44:27"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 13:15:44"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"donorbox.org"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">rootfunding.com</span><span class="se">\/</span><span class="s2">blogs</span><span class="se">\/</span><span class="s2">discounted-stripe-credit-card-processing-fees-for-non-profits"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-26 08:55:14"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 18:22:06"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rootfunding.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">rootfunding.com</span><span class="se">\/</span><span class="s2">feed.rss"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-26 08:55:15"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 18:22:06"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rootfunding.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conduct@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-07T19:50:30+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">xpotoursandtravel.com</span><span class="se">\/</span><span class="s2">vendor</span><span class="se">\/</span><span class="s2">stripe</span><span class="se">\/</span><span class="s2">stripe-php</span><span class="se">\/</span><span class="s2">CODE_OF_CONDUCT.md"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-30 14:57:17"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-07 19:50:30"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xpotoursandtravel.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"am@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amy"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mente"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amy Mente"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Support"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marketing"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"junior"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">amy-mente-6b0854ba"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-13T01:43:04+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">chicobetas.com</span><span class="se">\/</span><span class="s2">alumni-association</span><span class="se">\/</span><span class="s2">alumni-directory</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10 16:39:31"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-22 03:13:01"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chicobetas.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notices@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T23:42:02+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.swiftcomply.com</span><span class="se">\/</span><span class="s2">privacy-policy</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-05 04:20:27"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 10:04:44"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.swiftcomply.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"julia@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"julia"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evans"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Julia Evans"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"software engineer"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"software"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"senior"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">jvans"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-13T02:00:47+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">pypi.org</span><span class="se">\/</span><span class="s2">project</span><span class="se">\/</span><span class="s2">topmodel</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-30 07:57:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-05 03:12:19"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pypi.org"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dpo@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12T09:21:07+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">capotinas.com</span><span class="se">\/</span><span class="s2">politica-de-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 09:21:07"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 09:21:07"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"capotinas.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">consultoriablogger.com</span><span class="se">\/</span><span class="s2">politica-de-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-14 03:14:51"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-14 03:14:51"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"consultoriablogger.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">lorukoru.fi</span><span class="se">\/</span><span class="s2">pages</span><span class="se">\/</span><span class="s2">terms-and-conditions"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 13:49:33"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 13:49:33"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lorukoru.fi"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">leoclub-muenchen-maximilianeum.de</span><span class="se">\/</span><span class="s2">datenschutz-impressum</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-05 08:00:11"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 04:32:11"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leoclub-muenchen-maximilianeum.de"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">ochimanikia.com</span><span class="se">\/</span><span class="s2">politica-de-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11 02:22:32"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 19:24:34"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ochimanikia.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">plusdeprotection.com</span><span class="se">\/</span><span class="s2">politique-de-confidentialite</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-06 02:36:03"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 19:55:52"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plusdeprotection.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">online-hebamme.com</span><span class="se">\/</span><span class="s2">datenschutzbestimmungen</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10 15:55:57"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 20:24:07"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online-hebamme.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">ridelifestyle4home.com</span><span class="se">\/</span><span class="s2">pages</span><span class="se">\/</span><span class="s2">conditions-generales-de-vente"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16 21:34:36"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 06:35:17"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ridelifestyle4home.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">trouvezmoi.ch</span><span class="se">\/</span><span class="s2">declaration-de-confidentialite</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15 16:18:12"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 21:12:22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trouvezmoi.ch"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">gaudinfancia.com</span><span class="se">\/</span><span class="s2">politica-de-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21 01:02:14"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-25 13:47:29"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gaudinfancia.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">gaudinfancia.com</span><span class="se">\/</span><span class="s2">ca</span><span class="se">\/</span><span class="s2">politica-de-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21 01:03:09"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-25 13:47:30"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gaudinfancia.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.rentchester.com</span><span class="se">\/</span><span class="s2">politica-privacidad</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24 18:40:55"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 15:26:43"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.rentchester.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.rentchester.com</span><span class="se">\/</span><span class="s2">politica-de-cookies</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24 18:40:57"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 15:26:43"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.rentchester.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">involic.com</span><span class="se">\/</span><span class="s2">privacy-policy.html"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02 18:23:47"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28 19:50:39"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"involic.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">almarc.de</span><span class="se">\/</span><span class="s2">datenschutz.htm"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 02:48:11"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29 03:53:22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"almarc.de"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.boc-group.com</span><span class="se">\/</span><span class="s2">en</span><span class="se">\/</span><span class="s2">privacy-policy</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-21 15:11:48"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29 17:18:20"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.boc-group.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.drivelock.com</span><span class="se">\/</span><span class="s2">data-protection"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 06:16:37"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 14:32:44"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.drivelock.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.drivelock.com</span><span class="se">\/</span><span class="s2">fr</span><span class="se">\/</span><span class="s2">protection-des-donnees"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 06:17:00"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 14:32:45"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.drivelock.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.drivelock.de</span><span class="se">\/</span><span class="s2">datenschutz</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 06:17:15"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 14:32:45"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.drivelock.de"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">actuanimaux.com</span><span class="se">\/</span><span class="s2">actuanimaux</span><span class="se">\/</span><span class="s2">cgu-stripe</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 16:08:48"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 19:08:52"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"actuanimaux.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"site@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-26T21:12:52+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">atelim.com</span><span class="se">\/</span><span class="s2">this-week-is-going-to-be-huge-for-ritual-sacrifices.html?part=17"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17 23:57:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-26 21:12:52"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atelim.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generic"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16T00:17:41+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.hsi-medical.com</span><span class="se">\/</span><span class="s2">datenschutz</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 00:17:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 00:17:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.hsi-medical.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">knucklewalkgym.com</span><span class="se">\/</span><span class="s2">terms</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 04:16:49"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-16 04:16:49"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"knucklewalkgym.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.nyccfb.info</span><span class="se">\/</span><span class="s2">PDF</span><span class="se">\/</span><span class="s2">NYC-Votes_FAQ.pdf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-19 20:52:05"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-19 20:52:05"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.nyccfb.info"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">chitachok.ru</span><span class="se">\/</span><span class="s2">forums</span><span class="se">\/</span><span class="s2">288</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18 06:27:46"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-22 05:52:27"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chitachok.ru"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.enzocouture.us</span><span class="se">\/</span><span class="s2">index.php?id_cms=5&amp;controller=cms&amp;id_lang=1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15 14:58:03"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-22 18:02:55"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.enzocouture.us"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.listedbeauty.com</span><span class="se">\/</span><span class="s2">stripe_info"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10 00:26:59"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 12:07:37"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.listedbeauty.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">online-theatre-academy.com</span><span class="se">\/</span><span class="s2">privacy-policy</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11 00:31:35"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 20:29:12"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online-theatre-academy.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">online-theatre-academy.com</span><span class="se">\/</span><span class="s2">ru</span><span class="se">\/</span><span class="s2">privacy-policy</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11 00:35:02"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 20:29:12"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online-theatre-academy.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">online-theatre-academy.com</span><span class="se">\/</span><span class="s2">de</span><span class="se">\/</span><span class="s2">privacy-policy</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11 00:35:25"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-23 20:29:12"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online-theatre-academy.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.pregfit.de</span><span class="se">\/</span><span class="s2">datenschutzerklaerung?utm_source=pregfit&amp;utm_medium=home&amp;utm_campaign=1&amp;utm_content=12"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 09:28:50"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 01:17:57"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.pregfit.de"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.pregfit.de</span><span class="se">\/</span><span class="s2">datenschutzerklaerung"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-13 09:28:58"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 01:17:57"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.pregfit.de"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">stripeexperts.com</span><span class="se">\/</span><span class="s2">index.php?id_cms=12&amp;controller=cms&amp;id_lang=1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-10 21:08:41"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 18:15:16"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripeexperts.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">boutique-rasta.fr</span><span class="se">\/</span><span class="s2">pages</span><span class="se">\/</span><span class="s2">conditions-generales-de-ventes"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-20 00:12:13"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-24 19:44:37"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boutique-rasta.fr"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">llarenapagatu.com</span><span class="se">\/</span><span class="s2">donatius</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-26 08:52:15"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-26 23:29:05"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"llarenapagatu.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">ludwig.guru</span><span class="se">\/</span><span class="s2">privacy"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-25 18:41:45"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 00:22:31"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ludwig.guru"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">shovler.com</span><span class="se">\/</span><span class="s2">blog</span><span class="se">\/</span><span class="s2">how-to-become-a-snow-shoveler-on-shovler</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-23 05:59:51"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 02:51:47"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shovler.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">shovler.com</span><span class="se">\/</span><span class="s2">blog</span><span class="se">\/</span><span class="s2">page</span><span class="se">\/</span><span class="s2">4</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-23 05:59:51"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 02:51:47"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shovler.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">shovler.com</span><span class="se">\/</span><span class="s2">blog</span><span class="se">\/</span><span class="s2">2016</span><span class="se">\/</span><span class="s2">11</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-23 05:59:53"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 02:51:47"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shovler.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">gigsmart.com</span><span class="se">\/</span><span class="s2">terms</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02 08:51:21"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 13:22:21"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gigsmart.com"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">zkorean.com</span><span class="se">\/</span><span class="s2">account</span><span class="se">\/</span><span class="s2">register"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-03 18:38:20"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-27 19:34:49"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zkorean.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jsmith@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-02T16:57:52+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.lusha.com</span><span class="se">\/</span><span class="s2">organization</span><span class="se">\/</span><span class="s2">stripe_26094</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 03:55:22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-26 16:45:53"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.lusha.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smith@stripe.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{first}"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-02T16:57:52+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.lusha.com</span><span class="se">\/</span><span class="s2">organization</span><span class="se">\/</span><span class="s2">stripe_26094</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 03:55:22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-26 16:45:53"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.lusha.com"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:45:18+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">community.apache.org</span><span class="se">\/</span><span class="s2">gsoc-admin-tasks.html"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-04 23:36:07"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:45:18"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community.apache.org"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@google.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"personal"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"seniority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31T12:45:18+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">community.apache.org</span><span class="se">\/</span><span class="s2">gsoc-admin-tasks.html"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-04 23:36:07"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 12:45:18"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community.apache.org"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1514</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -1125,7 +1659,8 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-finder/asana.com?first_name=Moskoz&amp;last_name=Dustin'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1178,29 +1713,24 @@ You give one domain name and it returns all the email addresses found on the int
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googxle@asana.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asana.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskoz"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dustin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tr"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEO"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ascsd"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmoskov"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5646456"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asana"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-08-19 13:58:19"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskoz Dustin"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jan.marek@g-in.cz"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jan"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marek"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jan Marek"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CZ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/jan-marek-245b85103"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g-incz"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garp integ.rated"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1273,8 +1803,8 @@ You give one domain name and it returns all the email addresses found on the int
 </tr>
 <tr>
 <td><code>phone_number</code></td>
-<td>string</td>
-<td>The phone number of person (if found)</td>
+<td>bool</td>
+<td>true if found</td>
 </tr>
 <tr>
 <td><code>company</code></td>
@@ -1308,7 +1838,8 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-verifier/ziad@test.io'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1694,7 +2225,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/2'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -1851,7 +2382,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
     "list_id": 22,
     "email": "Grover12@hotmail.com",
@@ -2635,7 +3166,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads_lists/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2748,7 +3279,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads_lists/1'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -2846,7 +3377,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads_lists/'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
   "name": "Mario Monahan"
   }'</span>
@@ -2915,7 +3446,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads_lists/17'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
   "name": "update listsssssssssss"
   }'</span>
@@ -2987,7 +3518,7 @@ You give one domain name and it returns all the email addresses found on the int
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads_lists/5'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -3055,7 +3586,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> https://api.tomba.io/v1/keys <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -3128,7 +3659,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/keys/241'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -3208,7 +3739,7 @@ The Free plane can create only one key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='keys-create-a-key'>Create a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/keys'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -3259,7 +3790,7 @@ The Free plane can create only one key.
 </span></code></pre></div><h2 id='keys-rest-a-key'>Rest a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/keys/2'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
@@ -3319,7 +3850,7 @@ The Free plane can create only one key.
 </span></code></pre></div><h2 id='keys-delete-a-key'>Delete a key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/keys/259'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -3380,7 +3911,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> https://api.tomba.io/v1/usage <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -3487,7 +4018,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> https://api.tomba.io/v1/logs <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
 
@@ -3647,7 +4178,7 @@ The Free plane can create only one key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-count?domain=google.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'x-tannin-key: ta_722xxxxxxxxxxxxx'</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
 </code></pre></div><h2 id='email-count-http-request'>HTTP Request</h2>
 <p><code>GET /email-count/?domain=:domain</code></p>
 <h3 id='email-count-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
