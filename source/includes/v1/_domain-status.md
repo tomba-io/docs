@@ -12,13 +12,13 @@ curl --request GET \
 
 ## HTTP Request
 
-`GET /email-count/?domain=:domain`
+`GET /domain-status/?domain=:domain`
 
 ### The parameters are defined as follows
 
 | Parameter | Default  | Description                                                                             |
 | --------- | -------- | --------------------------------------------------------------------------------------- |
-| `domain`  | Required | Domain name from which you want to find the email addresses. For example, "stripe.com". |
+| `domain`  | Required | Domain name from which you want to check. For example, "gmail.com". |
 
 ## Response  Objects details
 
