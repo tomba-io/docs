@@ -1831,10 +1831,6 @@ You give one domain name and it returns all the email addresses found on the int
 <p>This API endpoint allows you to verify the deliverability of an email address.</p>
 
 <p>Tomba focuses on B2B. Therefore, webmails are not verified. We&#39;ll run every check but won&#39;t reach the remote SMTP server.</p>
-
-<p>This endpoint is rate-limited by domain name. You can check up to 200 email addresses for a domain name every 24 hours. You can check the number of requests remaining using the X-RateLimit-Remaining header.</p>
-
-<p>The request will run for 20 seconds. If it was not able to provide a response in time, we will return a 202 status code. You will then be able to poll the same endpoint to get the verification&#39;s result. Of course, all the requests in this case are counted only once.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-verifier/ziad@test.io'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -1877,45 +1873,37 @@ You give one domain name and it returns all the email addresses found on the int
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85136c79cbf9fe36bb9d05d0639c70c265c18d37%5"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ziad@test.io"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dz"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"mx_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"smtp_check"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asd asd"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.io"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.youtube.com</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-17"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-17"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.io"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.facebook.com</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-17"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-17"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"mx_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"smtp_check"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"gibberish"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blob</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:54+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blame</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:59+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -1925,11 +1913,6 @@ You give one domain name and it returns all the email addresses found on the int
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td><code>email_id</code></td>
-<td>hash</td>
-<td>Internal ID</td>
-</tr>
 <tr>
 <td><code>email</code></td>
 <td>string</td>
@@ -4266,7 +4249,7 @@ The Free plane can create only one key.
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domain-status?domain=gmail.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre></div><h2 id='domain-status-http-request'>HTTP Request</h2>
-<p><code>GET /email-count/?domain=:domain</code></p>
+<p><code>GET /domain-status/?domain=:domain</code></p>
 <h3 id='domain-status-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
 <table><thead>
 <tr>
@@ -4278,7 +4261,7 @@ The Free plane can create only one key.
 <tr>
 <td><code>domain</code></td>
 <td>Required</td>
-<td>Domain name from which you want to find the email addresses. For example, &quot;stripe.com&quot;.</td>
+<td>Domain name from which you want to check. For example, &quot;gmail.com&quot;.</td>
 </tr>
 </tbody></table>
 <h2 id='domain-status-response-objects-details'>Response  Objects details</h2>
