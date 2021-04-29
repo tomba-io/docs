@@ -2493,7 +2493,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><h2 id='leads-update-a-lead'>Update a lead</h2>
 <p>Update the fields of a lead using <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/278?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/278'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{
@@ -2849,7 +2849,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><h2 id='lead-attributes-get-a-attributes'>Get a attributes</h2>
 <p>Returns a Lead Attributes.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes/38?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes/38'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
@@ -2942,7 +2942,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><h2 id='lead-attributes-create-a-lead-attributes'>Create a Lead Attributes</h2>
 <p>Create a new Attributes with the <code>name</code> and <code>type</code> request parameter. If the Attributes name already exists, fails with <code>422</code> status code.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> POST <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"name": "Millie","type": "date"}'</span>
@@ -3008,7 +3008,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><h2 id='lead-attributes-update-a-lead-attributes'>Update a Lead Attributes</h2>
 <p>Update the fields of a Attributes using <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> PUT <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes/41?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes/41'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--data</span> <span class="s1">'{"name": "total ","type": "string"}'</span>
@@ -3083,7 +3083,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><h2 id='lead-attributes-delete-a-lead-attributes'>Delete a Lead Attributes</h2>
 <p>Delete a specific Attributes by passing <code>id</code>.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> DELETE <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes?format=json'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/leads/attributes'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
@@ -4263,7 +4263,16 @@ The Free plane can create only one key.
 <td>Required</td>
 <td>Domain name from which you want to check. For example, &quot;gmail.com&quot;.</td>
 </tr>
+<tr>
+<td><code>email</code></td>
+<td>Required</td>
+<td>Email address from which you want to check. For example, &quot;me@gmail.com&quot;.</td>
+</tr>
 </tbody></table>
+
+<aside class="notice">
+We crawl the disposable daily to keep safe from fake uses .
+</aside>
 <h2 id='domain-status-response-objects-details'>Response  Objects details</h2>
 <blockquote>
 <p>Full Response</p>
