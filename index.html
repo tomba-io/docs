@@ -388,14 +388,16 @@
                   <li>
                     <a href="#email-verifier-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#email-sources" class="toc-h1 toc-link" data-title="Email Sources">Email Sources</a>
+              <ul class="toc-list-h3">
                   <li>
-                    <a href="#email-verifier-email-sources" class="toc-h2 toc-link" data-title="Email Sources">Email Sources</a>
+                    <a href="#email-sources-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#email-verifier-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#email-verifier-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#email-sources-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
                   </li>
               </ul>
           </li>
@@ -1988,7 +1990,7 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The given email address somewhere on the web</td>
 </tr>
 </tbody></table>
-<h2 id='email-verifier-email-sources'>Email Sources</h2>
+<h1 id='email-sources'>Email Sources</h1>
 <p>Find email address source somewhere on the web  </p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-sources/b.mohamed@tomba.io'</span> <span class="se">\</span>
@@ -2010,9 +2012,9 @@ You give one domain name and it returns all the email addresses found on the int
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
-</span></code></pre></div><h2 id='email-verifier-http-request'>HTTP Request</h2>
+</span></code></pre></div><h2 id='email-sources-http-request'>HTTP Request</h2>
 <p><code>GET /email-sources/:email</code></p>
-<h3 id='email-verifier-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<h3 id='email-sources-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2026,7 +2028,7 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The email address you want to find sources.</td>
 </tr>
 </tbody></table>
-<h2 id='email-verifier-response-objects-details'>Response  Objects details</h2>
+<h2 id='email-sources-response-objects-details'>Response  Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
