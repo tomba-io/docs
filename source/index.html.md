@@ -27,6 +27,7 @@ includes:
   - v1/domain-search
   - v1/email-finder
   - v1/email-verifier
+  - v1/email-sources
   - v1/prospects/leads/index
   - v1/prospects/attributes/index
   - v1/prospects/leads_lists/index
