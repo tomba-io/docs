@@ -16,9 +16,14 @@ curl --request GET \
 
 ### The parameters are defined as follows
 
-| Parameter | Default  | Description                                                                             |
-| --------- | -------- | --------------------------------------------------------------------------------------- |
-| `domain`  | Required | Domain name from which you want to check. For example, "gmail.com". |
+| Parameter | Default  | Description                                                              |
+| --------- | -------- | ------------------------------------------------------------------------ |
+| `domain`  | Required | Domain name from which you want to check. For example, "gmail.com".      |
+| `email`   | Required | Email address from which you want to check. For example, "me@gmail.com". |
+
+<aside class="notice">
+We crawl the disposable daily to keep safe from fake uses .
+</aside>
 
 ## Response  Objects details
 
