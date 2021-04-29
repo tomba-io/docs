@@ -162,7 +162,7 @@ Returns a Lead Attributes.
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/leads/attributes/38?format=json' \
+  --url 'https://api.tomba.io/v1/leads/attributes/38' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```
@@ -251,7 +251,7 @@ Create a new Attributes with the `name` and `type` request parameter. If the Att
 
 ```shell
 curl --request POST \
-  --url 'https://api.tomba.io/v1/leads/attributes?format=json' \
+  --url 'https://api.tomba.io/v1/leads/attributes' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{"name": "Millie","type": "date"}'
@@ -329,7 +329,7 @@ Update the fields of a Attributes using `id`.
 
 ```shell
 curl --request PUT \
-  --url 'https://api.tomba.io/v1/leads/attributes/41?format=json' \
+  --url 'https://api.tomba.io/v1/leads/attributes/41' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{"name": "total ","type": "string"}'
@@ -408,7 +408,7 @@ Delete a specific Attributes by passing `id`.
 
 ```shell
 curl --request DELETE \
-  --url 'https://api.tomba.io/v1/leads/attributes?format=json' \
+  --url 'https://api.tomba.io/v1/leads/attributes' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```

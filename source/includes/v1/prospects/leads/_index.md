@@ -385,7 +385,7 @@ Update the fields of a lead using `id`.
 
 ```shell
 curl --request PUT \
-  --url 'https://api.tomba.io/v1/leads/278?format=json' \
+  --url 'https://api.tomba.io/v1/leads/278' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{
