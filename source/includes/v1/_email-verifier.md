@@ -80,7 +80,9 @@ import 'package:tomba/tomba.dart';
             "disposable": false,
             "webmail": false,
             "regex": true,
-            "score": 80
+            "status": "valid",
+            "result": "deliverable",
+            "score": 82
         },
         "sources": [
             {
@@ -102,18 +104,21 @@ import 'package:tomba/tomba.dart';
 }
 ```
 
-| Attribute     | Type   | Description                                                                                                                |
-| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `email`       | string | The email address to look up.                                                                                              |
-| `first_name`  | string | First name of person (if found)                                                                                            |
-| `last_name`   | string | Last name of person (if found)                                                                                             |
-| `country`     | string | Two letter country code based on location                                                                                  |
-| `mx_records`  | bool   | is `true` if we find MX records exist on the domain of the given email address.                                            |
-| `smtp_server` | bool   | is `true` if we connect to the SMTP server successfully.                                                                   |
-| `smtp_check`  | bool   | is `true` if the email address doesn't bounce.                                                                             |
-| `accept_all`  | bool   | is `true` if the SMTP server accepts all the email addresses. It means you can have have `false` positives on SMTP checks. |
-| `block`       | bool   | is `true` if the SMTP server prevented us to perform the SMTP check.                                                       |
-| `score`       | int    | The deliverability score we give to the email address.                                                                     |
-| `regex`       | bool   | The email address passes our regular expression.                                                                           |
-| `full_name`   | string | The person's full name.                                                                                                    |
-| `source`      | array  | The given email address somewhere on the web                                                                               |
+| Attribute     | Type   | Description                                                                                                                                  |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `email`       | string | The email address to look up.                                                                                                                |
+| `first_name`  | string | First name of person (if found)                                                                                                              |
+| `last_name`   | string | Last name of person (if found)                                                                                                               |
+| `country`     | string | Two letter country code based on location                                                                                                    |
+| `mx_records`  | bool   | is `true` if we find MX records exist on the domain of the given email address.                                                              |
+| `smtp_server` | bool   | is `true` if we connect to the SMTP server successfully.                                                                                     |
+| `smtp_check`  | bool   | is `true` if the email address doesn't bounce.                                                                                               |
+| `accept_all`  | bool   | is `true` if the SMTP server accepts all the email addresses. It means you can have have `false` positives on SMTP checks.                   |
+| `block`       | bool   | is `true` if the SMTP server prevented us to perform the SMTP check.                                                                         |
+| `score`       | int    | The deliverability score we give to the email address.                                                                                       |
+| `regex`       | bool   | The email address passes our regular expression.                                                                                             |
+| `full_name`   | string | The person's full name.                                                                                                                      |
+| `status`      | string | returns the status of the email address. It takes 1 out of 6 possible values:`valid`,`invalid`,`accept_all`,`webmail`,`disposable`,`unknown` |
+| `result`      | string | returns the main status of the verification. It takes 1 out of 3 possible values: `deliverable`,`undeliverable`,`risky`                      |
+| `score`       | int    | is the deliverability score we give to the email address. For webmail and disposable emails, we provide an arbitrary score of 50.            |
+| `source`      | array  | The given email address somewhere on the web                                                                                                 |

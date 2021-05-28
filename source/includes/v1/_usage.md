@@ -61,7 +61,6 @@ import 'package:tomba/tomba.dart';
 | `data` ->`created_at` | int  | usage date              |
 | `data` ->`name`       | int  | total usage on the name |
 
-
 > Full Response
 
 ```json

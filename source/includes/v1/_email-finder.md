@@ -107,6 +107,4 @@ import 'package:tomba/tomba.dart';
 | `linkedin_url` | string | LinkedIn URL for the person (if found).                                                                                    |
 | `phone_number` | bool   | true if found                                                                                                              |
 | `company`      | string | The company of person (if found)                                                                                           |
-| `latitude`     | string | latitude based on location                                                                                                 |
-| `longitude`    | string | longitude based on location                                                                                                |
 | `last_updated` | string | The time at which we update this data                                                                                      |
