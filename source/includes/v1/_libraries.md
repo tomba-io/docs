@@ -4,18 +4,18 @@
 
 Official libraries for common programming languages, like PHP, Python etc.
 
-| Language   | Status      | Link                                                  | Package Manager |
-| ---------- | ----------- | ----------------------------------------------------- | --------------- |
-| Javascript | In progress | [tomba-io/node](https://github.com/tomba-io/node)     |                 |
-| Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         |                 |
-| Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     |                 |
-| Python     | In progress | [tomba-io/python](https://github.com/tomba-io/python) |                 |
-| PHP        | In progress | [tomba-io/php](https://github.com/tomba-io/php)       |                 |
-| Ruby       | In progress | [tomba-io/ruby](https://github.com/tomba-io/ruby)     |                 |
-| Perl       | In progress | [tomba-io/perl](https://github.com/tomba-io/perl)     |                 |
-| Dart       | In progress | [tomba-io/dart](https://github.com/tomba-io/dart)     |                 |
-| Rust       | In progress | [tomba-io/rlang](https://github.com/tomba-io/rlang)   |                 |
-| R          | In progress | [tomba-io/rlang](https://github.com/tomba-io/rlang)   |                 |
+| Language   | Status      | Link                                                  | Package Manager                                             |
+| ---------- | ----------- | ----------------------------------------------------- | ----------------------------------------------------------- |
+| Javascript | Released    | [tomba-io/node](https://github.com/tomba-io/node)     | [tomba](https://www.npmjs.com/package/tomba)                |
+| Ruby       | Released    | [tomba-io/ruby](https://github.com/tomba-io/ruby)     | [tomba](https://rubygems.org/gems/tomba)                 |
+| Python     | Released    | [tomba-io/python](https://github.com/tomba-io/python) | [tomba-io](https://pypi.org/project/tomba/)                 |
+| PHP        | Released    | [tomba-io/php](https://github.com/tomba-io/php)       | [tomba-io/php](https://packagist.org/packages/tomba-io/php) |
+| Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         |                                                             |
+| Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     |                                                             |
+| Perl       | In progress | [tomba-io/perl](https://github.com/tomba-io/perl)     |                                                             |
+| Dart       | In progress | [tomba-io/dart](https://github.com/tomba-io/dart)     |                                                             |
+| Rust       | In progress | [tomba-io/rlang](https://github.com/tomba-io/rlang)   |                                                             |
+| R          | In progress | [tomba-io/rlang](https://github.com/tomba-io/rlang)   |                                                             |
 
 ### Framework Libraries
 
