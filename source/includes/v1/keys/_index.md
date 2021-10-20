@@ -17,22 +17,78 @@ curl --request GET \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Keys;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$keys = new Keys($client);
+
+$result = $keys->getKeys();
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.keys import Keys
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+keys = Keys(client)
+
+result = keys.get_keys()
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let keys = new tomba.Keys(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = keys.getKeys();
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+keys = Tomba::Keys.new(client);
+
+response = keys.get_keys();
+
+puts response
 
 ```
 
@@ -186,23 +242,78 @@ curl --request POST \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Keys;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$keys = new Keys($client);
+
+$result = $keys->createKey();
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.keys import Keys
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+keys = Keys(client)
+
+result = keys.create_key()
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let keys = new tomba.Keys(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = keys.createKey();
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
 
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+keys = Tomba::Keys.new(client);
+
+response = keys.create_key();
+
+puts response
 ```
 
 ```java
@@ -257,22 +368,78 @@ curl --request PUT \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Keys;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$keys = new Keys($client);
+
+$result = $keys->resetKey('2');
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.keys import Keys
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+keys = Keys(client)
+
+result = keys.reset_key('')
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let keys = new tomba.Keys(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = keys.resetKey('');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+keys = Tomba::Keys.new(client);
+
+response = keys.reset_key(id: '');
+
+puts response
 
 ```
 
@@ -331,22 +498,78 @@ curl --request DELETE \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Keys;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$keys = new Keys($client);
+
+$result = $keys->deleteKey('259');
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.keys import Keys
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+keys = Keys(client)
+
+result = keys.delete_key('')
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let keys = new tomba.Keys(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = keys.deleteKey('12');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+keys = Tomba::Keys.new(client);
+
+response = keys.delete_key(id: '');
+
+puts response
 
 ```
 

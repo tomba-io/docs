@@ -11,22 +11,78 @@ curl --request GET \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Finder;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$finder = new Finder($client);
+
+$result = $finder->emailFinder('stripe.com', 'fname', 'lname');.
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.finder import Finder
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+finder = Finder(client)
+
+result = finder.email_finder('stripe.com', 'Moskoz', 'Dustin')
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let finder = new tomba.Finder(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = finder.emailFinder('stripe.com', 'fname', 'lname');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+finder = Tomba::Finder.new(client);
+
+response = finder.email_finder(domain: 'stripe.com', first_name: 'Moskoz', last_name: 'Dustin');
+
+puts response
 
 ```
 

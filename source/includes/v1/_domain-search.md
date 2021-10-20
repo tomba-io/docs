@@ -12,22 +12,78 @@ curl --request GET \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Domain;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$domain = new Domain($client);
+
+$result = $domain->domainSearch('stripe.com');
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.domain import Domain
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+domain = Domain(client)
+
+result = domain.domain_search('stripe.com')
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let domain = new tomba.Domain(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = domain.domainSearch('stripe.com');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+domain = Tomba::Domain.new(client);
+
+response = domain.domain_search(domain: 'stripe.com');
+
+puts response
 
 ```
 

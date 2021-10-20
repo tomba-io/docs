@@ -13,23 +13,79 @@ curl --request GET \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Verifier;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$verifier = new Verifier($client);
+
+$result = $verifier->emailVerifier('b.mohamed@tomba.io');
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.verifier import Verifier
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+verifier = Verifier(client)
+
+result = verifier.email_verifier('b.mohamed@tomba.io')
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let verifier = new tomba.Verifier(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = verifier.emailVerifier('b.mohamed@tomba.io');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+verifier = Tomba::Verifier.new(client);
+
+response = verifier.email_verifier(email: 'b.mohamed@tomba.io');
+
+puts response
 
 ```
 

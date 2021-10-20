@@ -9,6 +9,100 @@ curl --request GET \
   --header 'X-Tomba-Key: xxxxxxxxxxxxx'
 ```
 
+```php
+use Tomba\Client;
+use Tomba\Services\Count;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$count = new Count($client);
+
+$result = $count->emailCount('tomba.io');
+
+```
+
+```python
+from tomba.client import Client
+from tomba.services.count import Count
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+count = Count(client)
+
+result = count.email_count('tomba.io')
+```
+
+```javascript
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let count = new tomba.Count(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = count.emailCount('tomba.io');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+```ruby
+require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+count = Tomba::Count.new(client);
+
+response = count.email_count(domain: 'tomba.io');
+
+puts response
+
+```
+
+```java
+import io.tomba.api.Tomba;
+
+```
+
+```r
+require(tomba)
+
+```
+
+```dart
+import 'package:tomba/tomba.dart';
+
+```
+
+```powershell
+
+```
+
 ## HTTP Request
 
 `GET /email-count/?domain=:domain`

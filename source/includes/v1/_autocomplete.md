@@ -8,6 +8,102 @@ curl --request GET \
   --header 'Content-Type: application/json' \
 ```
 
+```php
+use Tomba\Client;
+use Tomba\Services\Status;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$status = new Status($client);
+
+$result = $status->autoComplete('google');
+
+```
+
+```python
+from tomba.client import Client
+from tomba.services.status import Status
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+status = Status(client)
+
+result = status.auto_complete('google')
+
+```
+
+```javascript
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let status = new tomba.Status(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = status.autoComplete('google');
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+```
+
+```ruby
+require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+status = Tomba::Status.new(client);
+
+response = status.auto_complete(query: 'google');
+
+puts response
+
+```
+
+```java
+import io.tomba.api.Tomba;
+
+```
+
+```r
+require(tomba)
+
+```
+
+```dart
+import 'package:tomba/tomba.dart';
+
+```
+
+```powershell
+
+```
+
 ### HTTP Request
 
 `GET /domains-suggestion?query=:query`

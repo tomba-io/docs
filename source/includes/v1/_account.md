@@ -11,23 +11,79 @@ curl --request GET \
 ```
 
 ```php
-<?php
-use tomba\Tomba;
+use Tomba\Client;
+use Tomba\Services\Account;
+
+$client = new Client();
+
+$client
+    ->setKey('ta_xxxx') // Your API Key
+    ->setSecret('ts_xxxx') // Your Secret
+;
+
+$account = new Account($client);
+
+$result = $account->getAccount();
 
 ```
 
 ```python
-import tomba
+from tomba.client import Client
+from tomba.services.account import Account
+
+client = Client()
+
+(client
+  .set_key('ta_xxxx') # Your Key
+  .set_secret('') # Your Secret
+)
+
+account = Account(client)
+
+result = account.get_account()
 
 ```
 
 ```javascript
-const Tomba = require("tomba");
+const tomba = require('tomba');
+
+// Init Tomba
+let client = new tomba.Client();
+
+let account = new tomba.Account(client);
+
+client
+  .setKey("ta_xxxx") // Your Key
+  .setSecret("ts_xxxx"); // Your Secret
+;
+
+let result = account.getAccount();
+
+result
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 ```
 
 ```ruby
 require 'tomba'
+
+client = Tomba::Client.new()
+
+client
+    .set_key('ta_xxxx') # Your Key
+    .set_secret('ts_xxxx') # Your Secret
+;
+
+account = Tomba::Account.new(client);
+
+response = account.get_account();
+
+puts response
 
 ```
 
