@@ -696,6 +696,12 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td><a href="https://rubygems.org/gems/tomba">tomba</a></td>
 </tr>
 <tr>
+<td>R</td>
+<td>Released</td>
+<td><a href="https://github.com/tomba-io/r">tomba-io/r</a></td>
+<td><a href="https://cran.r-project.org/web/packages/tomba/index.html">tomba</a></td>
+</tr>
+<tr>
 <td>Python</td>
 <td>Released</td>
 <td><a href="https://github.com/tomba-io/python">tomba-io/python</a></td>
@@ -734,13 +740,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <tr>
 <td>Rust</td>
 <td>In progress</td>
-<td><a href="https://github.com/tomba-io/rlang">tomba-io/rlang</a></td>
-<td></td>
-</tr>
-<tr>
-<td>R</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/rlang">tomba-io/rlang</a></td>
+<td><a href="https://github.com/tomba-io/rust">tomba-io/rust</a></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -823,8 +823,9 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">account</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
@@ -987,7 +988,9 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">domain_search</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="o">=</span><span class="s2">"tomba.io"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -1854,8 +1857,9 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">email_finder</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="o">=</span><span class="s2">"tomba.io"</span><span class="p">,</span><span class="n">fname</span><span class="o">=</span><span class="s2">"FNAME"</span><span class="p">,</span><span class="n">lname</span><span class="o">=</span><span class="s2">"LNAME"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
@@ -2076,7 +2080,9 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">email_verifier</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="o">=</span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -2298,7 +2304,9 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">email_sources</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="o">=</span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -4500,19 +4508,76 @@ The Free plane can create only one key.
   <span class="nt">--url</span> https://api.tomba.io/v1/usage <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="kn">use</span> <span class="nn">Tomba\Client</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Tomba\Services\Usage</span><span class="p">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">();</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
+<span class="nv">$client</span>
+    <span class="o">-&gt;</span><span class="na">setKey</span><span class="p">(</span><span class="s1">'ta_xxxx'</span><span class="p">)</span> <span class="c1">// Your API Key</span>
+    <span class="o">-&gt;</span><span class="na">setSecret</span><span class="p">(</span><span class="s1">'ts_xxxx'</span><span class="p">)</span> <span class="c1">// Your Secret</span>
+<span class="p">;</span>
+
+<span class="nv">$usage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Usage</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$usage</span><span class="o">-&gt;</span><span class="na">getUsage</span><span class="p">();</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">tomba.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">tomba.services.usage</span> <span class="kn">import</span> <span class="n">Usage</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="p">(</span><span class="n">client</span>
+  <span class="p">.</span><span class="n">set_key</span><span class="p">(</span><span class="s">'ta_xxxx'</span><span class="p">)</span> <span class="c1"># Your Key
+</span>  <span class="p">.</span><span class="n">set_secret</span><span class="p">(</span><span class="s">''</span><span class="p">)</span> <span class="c1"># Your Secret
+</span><span class="p">)</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="n">Usage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">usage</span><span class="p">.</span><span class="n">get_usage</span><span class="p">()</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Init Tomba</span>
+<span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">usage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Usage</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
+
+<span class="nx">client</span>
+  <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
+  <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
+<span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">usage</span><span class="p">.</span><span class="nx">getUsage</span><span class="p">();</span>
+
+<span class="nx">result</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
+<span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
+
+<span class="n">client</span>
+    <span class="p">.</span><span class="nf">set_key</span><span class="p">(</span><span class="s1">'ta_xxxx'</span><span class="p">)</span> <span class="c1"># Your Key</span>
+    <span class="p">.</span><span class="nf">set_secret</span><span class="p">(</span><span class="s1">'ts_xxxx'</span><span class="p">)</span> <span class="c1"># Your Secret</span>
+<span class="p">;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Usage</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">usage</span><span class="p">.</span><span class="nf">get_usage</span><span class="p">();</span>
+
+<span class="nb">puts</span> <span class="n">response</span>
+
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">usage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
@@ -4607,17 +4672,75 @@ The Free plane can create only one key.
   <span class="nt">--url</span> https://api.tomba.io/v1/logs <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span>
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="kn">use</span> <span class="nn">tomba\Tomba</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="kn">use</span> <span class="nn">Tomba\Client</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Tomba\Services\Logs</span><span class="p">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tomba</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">();</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">Tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
+<span class="nv">$client</span>
+    <span class="o">-&gt;</span><span class="na">setKey</span><span class="p">(</span><span class="s1">'ta_xxxx'</span><span class="p">)</span> <span class="c1">// Your API Key</span>
+    <span class="o">-&gt;</span><span class="na">setSecret</span><span class="p">(</span><span class="s1">'ts_xxxx'</span><span class="p">)</span> <span class="c1">// Your Secret</span>
+<span class="p">;</span>
+
+<span class="nv">$logs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logs</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$logs</span><span class="o">-&gt;</span><span class="na">getLogs</span><span class="p">();</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">tomba.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">tomba.services.logs</span> <span class="kn">import</span> <span class="n">Logs</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+
+<span class="p">(</span><span class="n">client</span>
+  <span class="p">.</span><span class="n">set_key</span><span class="p">(</span><span class="s">'ta_xxxx'</span><span class="p">)</span> <span class="c1"># Your Key
+</span>  <span class="p">.</span><span class="n">set_secret</span><span class="p">(</span><span class="s">''</span><span class="p">)</span> <span class="c1"># Your Secret
+</span><span class="p">)</span>
+
+<span class="n">logs</span> <span class="o">=</span> <span class="n">Logs</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">logs</span><span class="p">.</span><span class="n">get_logs</span><span class="p">()</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Init Tomba</span>
+<span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">logs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Logs</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
+
+<span class="nx">client</span>
+  <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
+  <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
+<span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">logs</span><span class="p">.</span><span class="nx">getLogs</span><span class="p">();</span>
+
+<span class="nx">result</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
+
+<span class="n">client</span>
+    <span class="p">.</span><span class="nf">set_key</span><span class="p">(</span><span class="s1">'ta_xxxx'</span><span class="p">)</span> <span class="c1"># Your Key</span>
+    <span class="p">.</span><span class="nf">set_secret</span><span class="p">(</span><span class="s1">'ts_xxxx'</span><span class="p">)</span> <span class="c1"># Your Secret</span>
+<span class="p">;</span>
+
+<span class="n">logs</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Logs</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">client</span><span class="p">);</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">logs</span><span class="p">.</span><span class="nf">get_logs</span><span class="p">();</span>
+
+<span class="nb">puts</span> <span class="n">response</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">logs</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -4832,7 +4955,9 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">count</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="o">=</span><span class="s2">"tomba.io"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -4990,7 +5115,9 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">status</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">domain</span><span class="o">=</span><span class="s2">"gmail.com"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
@@ -5120,7 +5247,9 @@ We crawl the disposable daily to keep safe from fake uses .
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">client</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Tomba</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"ta_xxxx"</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s2">"ts_xxxx"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">autocomplete</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">search</span><span class="o">=</span><span class="s2">"to"</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
