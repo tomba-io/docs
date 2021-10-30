@@ -702,6 +702,12 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td><a href="https://cran.r-project.org/web/packages/tomba/index.html">tomba</a></td>
 </tr>
 <tr>
+<td>Dart</td>
+<td>Released</td>
+<td><a href="https://github.com/tomba-io/dart">tomba-io/dart</a></td>
+<td><a href="https://pub.dev/packages/tomba">tomba</a></td>
+</tr>
+<tr>
 <td>Python</td>
 <td>Released</td>
 <td><a href="https://github.com/tomba-io/python">tomba-io/python</a></td>
@@ -712,6 +718,12 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td>Released</td>
 <td><a href="https://github.com/tomba-io/php">tomba-io/php</a></td>
 <td><a href="https://packagist.org/packages/tomba-io/php">tomba-io/php</a></td>
+</tr>
+<tr>
+<td>Deno</td>
+<td>Released</td>
+<td><a href="https://github.com/tomba-io/deno">tomba-io/deno</a></td>
+<td><a href="https://deno.land/x/tombaio">tombaio</a></td>
 </tr>
 <tr>
 <td>Go</td>
@@ -729,12 +741,6 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td>Perl</td>
 <td>In progress</td>
 <td><a href="https://github.com/tomba-io/perl">tomba-io/perl</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Dart</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/dart">tomba-io/dart</a></td>
 <td></td>
 </tr>
 <tr>
@@ -828,6 +834,25 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="n">Account</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getAccount</span><span class="o">();</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='account-information-http-request'>HTTP Request</h2>
 <p><code>GET /me</code></p>
@@ -869,7 +894,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
         </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.gravatar.com</span><span class="se">\/</span><span class="s2">avatar</span><span class="se">\/</span><span class="s2">xxxxxxxxx?s=128&amp;d=https:</span><span class="se">\/\/</span><span class="s2">ui-avatars.com</span><span class="se">\/</span><span class="s2">api</span><span class="se">\/</span><span class="s2">M+B</span><span class="se">\/</span><span class="s2">128</span><span class="se">\/</span><span class="s2">001529</span><span class="se">\/</span><span class="s2">fff?ssl=1"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx</span><span class="se">\/</span><span class="s2">xx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"newletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
@@ -993,6 +1018,28 @@ You give one domain name and it returns all the email addresses found on the int
 </span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Domain</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">Domain</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="na">domainSearch</span><span class="o">(</span>
+    <span class="nl">domain:</span> <span class="s">'stripe.com'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='domain-search-http-request'>HTTP Request</h2>
@@ -1862,6 +1909,30 @@ You give one domain name and it returns all the email addresses found on the int
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Finder</span> <span class="n">finder</span> <span class="o">=</span> <span class="n">Finder</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">finder</span><span class="o">.</span><span class="na">emailFinder</span><span class="o">(</span>
+    <span class="nl">domain:</span> <span class="s">'stripe.com'</span><span class="o">,</span>
+    <span class="nl">firstName:</span> <span class="s">'Fname'</span><span class="o">,</span>
+    <span class="nl">lastName:</span> <span class="s">'Lname'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
+
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='email-finder-http-request'>HTTP Request</h2>
 <p><code>GET /email-finder/:domain</code></p>
@@ -2007,7 +2078,7 @@ You give one domain name and it returns all the email addresses found on the int
 <h1 id='email-verifier'>Email Verifier</h1>
 <p>This API endpoint allows you to verify the deliverability of an email address.</p>
 
-<p>Tomba focuses on B2B. Therefore, webmails are not verified. We&#39;ll run every check but won&#39;t reach the remote SMTP server.</p>
+<p>Tomba focuses on B2B. Therefore, Webmail are not verified. We&#39;ll run every check but won&#39;t reach the remote SMTP server.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-verifier/ziad@test.io'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -2086,6 +2157,27 @@ You give one domain name and it returns all the email addresses found on the int
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Verifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">Verifier</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">verifier</span><span class="o">.</span><span class="na">emailVerifier</span><span class="o">(</span>
+    <span class="nl">email:</span> <span class="s">'b.mohamed@tomba.io'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='email-verifier-http-request'>HTTP Request</h2>
 <p><code>GET /email-verifier/:email</code></p>
@@ -2154,21 +2246,6 @@ You give one domain name and it returns all the email addresses found on the int
 <td><code>email</code></td>
 <td>string</td>
 <td>The email address to look up.</td>
-</tr>
-<tr>
-<td><code>first_name</code></td>
-<td>string</td>
-<td>First name of person (if found)</td>
-</tr>
-<tr>
-<td><code>last_name</code></td>
-<td>string</td>
-<td>Last name of person (if found)</td>
-</tr>
-<tr>
-<td><code>country</code></td>
-<td>string</td>
-<td>Two letter country code based on location</td>
 </tr>
 <tr>
 <td><code>mx_records</code></td>
@@ -2310,6 +2387,27 @@ You give one domain name and it returns all the email addresses found on the int
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Sources</span> <span class="n">sources</span> <span class="o">=</span> <span class="n">Sources</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sources</span><span class="o">.</span><span class="na">emailSources</span><span class="o">(</span>
+    <span class="nl">email:</span> <span class="s">'b.mohamed@tomba.io'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='email-sources-http-request'>HTTP Request</h2>
 <p><code>GET /email-sources/:email</code></p>
@@ -4027,9 +4125,28 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="na">getKeys</span><span class="o">();</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='keys-list-all-your-keys-http-request'>HTTP Request</h3>
@@ -4100,8 +4217,7 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
@@ -4235,9 +4351,28 @@ The Free plane can create only one key.
 <span class="nb">puts</span> <span class="n">response</span>
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="na">createKey</span><span class="o">();</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='keys-create-a-key-http-request'>HTTP Request</h3>
@@ -4342,10 +4477,30 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="na">resetKey</span><span class="o">(</span>
+    <span class="nl">id:</span> <span class="s">''</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='keys-rest-a-key-http-request'>HTTP Request</h3>
 <p><code>PUT /keys/:id</code></p>
@@ -4457,9 +4612,30 @@ The Free plane can create only one key.
 
 </code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">io.tomba.api.Tomba</span><span class="o">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">require</span><span class="p">(</span><span class="n">tomba</span><span class="p">)</span><span class="w">
-
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="na">deleteKey</span><span class="o">(</span>
+    <span class="nl">id:</span> <span class="s">''</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='keys-delete-a-key-http-request'>HTTP Request</h3>
@@ -4579,6 +4755,26 @@ The Free plane can create only one key.
 </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">usage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w">
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Usage</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">Usage</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">usage</span><span class="o">.</span><span class="na">getUsage</span><span class="o">();</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='usage-delete-a-key-http-request'>HTTP Request</h3>
@@ -4744,6 +4940,25 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Logs</span> <span class="n">logs</span> <span class="o">=</span> <span class="n">Logs</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="na">getLogs</span><span class="o">();</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='logs-delete-a-key-http-request'>HTTP Request</h3>
 <p><code>GET /logs/</code></p>
@@ -4961,6 +5176,27 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Count</span> <span class="n">count</span> <span class="o">=</span> <span class="n">Count</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="na">emailCount</span><span class="o">(</span>
+    <span class="nl">domain:</span> <span class="s">'tomba.io'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='email-count-http-request'>HTTP Request</h2>
 <p><code>GET /email-count/?domain=:domain</code></p>
@@ -5121,6 +5357,28 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Status</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="na">domainStatus</span><span class="o">(</span>
+    <span class="nl">domain:</span> <span class="s">'gmail.com'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
+
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='domain-status-http-request'>HTTP Request</h2>
 <p><code>GET /domain-status/?domain=:domain</code></p>
@@ -5176,7 +5434,7 @@ We crawl the disposable daily to keep safe from fake uses .
 </tr>
 </tbody></table>
 <h1 id='autocomplete'>Autocomplete</h1>
-<p>Company Autocomplete is an API that lets you auto-complete company names and retreive logo and domain information.</p>
+<p>Company Autocomplete is an API that lets you auto-complete company names and retrieve logo and domain information.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domains-suggestion?query=googl'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -5252,6 +5510,28 @@ We crawl the disposable daily to keep safe from fake uses .
 </span><span class="n">data</span><span class="w">
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+  <span class="c1">// Init SDK</span>
+  <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
+  <span class="n">Status</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+  <span class="n">client</span>
+   <span class="o">.</span><span class="na">setKey</span><span class="o">(</span><span class="s">"ta_xxxx"</span><span class="o">)</span> <span class="c1">// Your Key</span>
+   <span class="o">.</span><span class="na">setSecret</span><span class="o">(</span><span class="s">"ts_xxxx"</span><span class="o">);</span> <span class="c1">// Your Secret</span>
+  <span class="o">;</span>
+
+  <span class="n">Future</span> <span class="n">result</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="na">autoComplete</span><span class="o">(</span>
+    <span class="nl">query:</span> <span class="s">'google'</span><span class="o">,</span>
+  <span class="o">);</span>
+
+  <span class="n">result</span>
+    <span class="o">.</span><span class="na">then</span><span class="o">((</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+    <span class="o">}).</span><span class="na">catchError</span><span class="o">((</span><span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">error</span><span class="o">.</span><span class="na">response</span><span class="o">);</span>
+  <span class="o">});</span>
+<span class="o">}</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h3 id='autocomplete-response-objects-details-http-request'>HTTP Request</h3>
