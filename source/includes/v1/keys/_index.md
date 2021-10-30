@@ -98,12 +98,31 @@ import io.tomba.api.Tomba;
 ```
 
 ```r
-require(tomba)
 
 ```
 
 ```dart
 import 'package:tomba/tomba.dart';
+
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Keys keys = Keys(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = keys.getKeys();
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 
 ```
 
@@ -183,7 +202,6 @@ import io.tomba.api.Tomba;
 ```
 
 ```r
-require(tomba)
 
 ```
 
@@ -322,12 +340,31 @@ import io.tomba.api.Tomba;
 ```
 
 ```r
-require(tomba)
 
 ```
 
 ```dart
 import 'package:tomba/tomba.dart';
+
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Keys keys = Keys(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = keys.createKey();
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 
 ```
 
@@ -449,13 +486,33 @@ import io.tomba.api.Tomba;
 ```
 
 ```r
-require(tomba)
 
 ```
 
 ```dart
 import 'package:tomba/tomba.dart';
 
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Keys keys = Keys(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = keys.resetKey(
+    id: '',
+  );
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 ```
 
 ```powershell
@@ -579,12 +636,33 @@ import io.tomba.api.Tomba;
 ```
 
 ```r
-require(tomba)
 
 ```
 
 ```dart
 import 'package:tomba/tomba.dart';
+
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Keys keys = Keys(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = keys.deleteKey(
+    id: '',
+  );
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 
 ```
 

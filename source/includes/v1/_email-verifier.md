@@ -2,7 +2,7 @@
 
 This API endpoint allows you to verify the deliverability of an email address.
 
-Tomba focuses on B2B. Therefore, webmails are not verified. We'll run every check but won't reach the remote SMTP server.
+Tomba focuses on B2B. Therefore, Webmail are not verified. We'll run every check but won't reach the remote SMTP server.
 
 ```shell
 curl --request GET \
@@ -104,6 +104,27 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Verifier verifier = Verifier(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = verifier.emailVerifier(
+    email: 'b.mohamed@tomba.io',
+  );
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 ```
 
 ```powershell
@@ -165,9 +186,6 @@ import 'package:tomba/tomba.dart';
 | Attribute     | Type   | Description                                                                                                                                  |
 | ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `email`       | string | The email address to look up.                                                                                                                |
-| `first_name`  | string | First name of person (if found)                                                                                                              |
-| `last_name`   | string | Last name of person (if found)                                                                                                               |
-| `country`     | string | Two letter country code based on location                                                                                                    |
 | `mx_records`  | bool   | is `true` if we find MX records exist on the domain of the given email address.                                                              |
 | `smtp_server` | bool   | is `true` if we connect to the SMTP server successfully.                                                                                     |
 | `smtp_check`  | bool   | is `true` if the email address doesn't bounce.                                                                                               |

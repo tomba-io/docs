@@ -1,6 +1,6 @@
 # Autocomplete
 
-Company Autocomplete is an API that lets you auto-complete company names and retreive logo and domain information.
+Company Autocomplete is an API that lets you auto-complete company names and retrieve logo and domain information.
 
 ```shell
 curl --request GET \
@@ -99,6 +99,28 @@ data
 
 ```dart
 import 'package:tomba/tomba.dart';
+
+void main() { 
+  // Init SDK
+  Client client = Client();
+  Status status = Status(client);
+
+  client
+   .setKey("ta_xxxx") // Your Key
+   .setSecret("ts_xxxx"); // Your Secret
+  ;
+
+  Future result = status.autoComplete(
+    query: 'google',
+  );
+
+  result
+    .then((response) {
+      print(response);
+    }).catchError((error) {
+      print(error.response);
+  });
+}
 
 ```
 
