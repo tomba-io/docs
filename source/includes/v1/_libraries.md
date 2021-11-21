@@ -10,14 +10,14 @@ Official libraries for common programming languages, like PHP, Python etc.
 | Ruby       | Released    | [tomba-io/ruby](https://github.com/tomba-io/ruby)     | [Ruby Gems](https://rubygems.org/gems/tomba)                     |
 | R          | Released    | [tomba-io/r](https://github.com/tomba-io/r)           | [CRAN](https://cran.r-project.org/web/packages/tomba/index.html) |
 | Dart       | Released    | [tomba-io/dart](https://github.com/tomba-io/dart)     | [Pub](https://pub.dev/packages/tomba)                            |
-| Python     | Released    | [tomba-io/python](https://github.com/tomba-io/python) | [PyPi](https://pypi.org/project/tomba/)                          |
+| Python     | Released    | [tomba-io/python](https://github.com/tomba-io/python) | [PyPi](https://pypi.org/project/tomba-io/)                       |
 | PHP        | Released    | [tomba-io/php](https://github.com/tomba-io/php)       | [Packagist](https://packagist.org/packages/tomba-io/php)         |
 | Deno       | Released    | [tomba-io/deno](https://github.com/tomba-io/deno)     | [Deno land](https://deno.land/x/tombaio)                         |
 | C#         | Released    | [tomba-io/csharp](https://github.com/tomba-io/csharp) | [Nuget](https://www.nuget.org/packages/Tomba)                    |
+| Rust       | In progress | [tomba-io/rust](https://github.com/tomba-io/rust)     | [crates.io](https://crates.io/crates/tomba)                    |
 | Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         | GitHub                                                           |
 | Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     | Maven Central                                                    |
 | Perl       | In progress | [tomba-io/perl](https://github.com/tomba-io/perl)     | CPAN                                                             |
-| Rust       | In progress | [tomba-io/rust](https://github.com/tomba-io/rust)     | crates.io                                                        |
 
 ### Framework Libraries
 
