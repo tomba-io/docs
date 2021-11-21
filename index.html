@@ -402,6 +402,17 @@
               </ul>
           </li>
           <li>
+            <a href="#phone-finder" class="toc-h1 toc-link" data-title="Phone Finder">Phone Finder</a>
+              <ul class="toc-list-h3">
+                  <li>
+                    <a href="#phone-finder-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#phone-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#leads" class="toc-h1 toc-link" data-title="Leads">Leads</a>
               <ul class="toc-list-h3">
                   <li>
@@ -559,14 +570,16 @@
 <li>The <a href="#domain-search">Domain Search</a></li>
 <li>The <a href="#email-finder">Email Finder</a></li>
 <li>The <a href="#email-verifier">Email Verifier</a></li>
-<li>The <a href="#leads">Leads.</a></li>
-<li>The <a href="#leads-lists">Leads Lists.</a></li>
-<li>The <a href="#leads-attributes">Lead Attributes.</a></li>
-<li>The <a href="#usage">Usage.</a></li>
-<li>The Account <a href="#logs">Logs.</a></li>
-<li>The <a href="#keys">Keys.</a></li>
-<li>The <a href="#email-count">Email Count.</a></li>
-<li>The <a href="#autocomplete">Domain autocomplete.</a></li>
+<li>The <a href="#email-sources">Email Sources</a></li>
+<li>The <a href="#phone-finder">Phone Finder</a></li>
+<li>The <a href="#leads">Leads</a></li>
+<li>The <a href="#leads-lists">Leads Lists</a></li>
+<li>The <a href="#leads-attributes">Lead Attributes</a></li>
+<li>The <a href="#usage">Usage</a></li>
+<li>The Account <a href="#logs">Logs</a></li>
+<li>The <a href="#keys">Keys</a></li>
+<li>The <a href="#email-count">Email Count</a></li>
+<li>The <a href="#autocomplete">Domain autocomplete</a></li>
 </ul>
 
 <blockquote>
@@ -711,7 +724,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td>Python</td>
 <td>Released</td>
 <td><a href="https://github.com/tomba-io/python">tomba-io/python</a></td>
-<td><a href="https://pypi.org/project/tomba/">PyPi</a></td>
+<td><a href="https://pypi.org/project/tomba-io/">PyPi</a></td>
 </tr>
 <tr>
 <td>PHP</td>
@@ -732,6 +745,12 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td><a href="https://www.nuget.org/packages/Tomba">Nuget</a></td>
 </tr>
 <tr>
+<td>Rust</td>
+<td>In progress</td>
+<td><a href="https://github.com/tomba-io/rust">tomba-io/rust</a></td>
+<td><a href="https://crates.io/crates/tomba">crates.io</a></td>
+</tr>
+<tr>
 <td>Go</td>
 <td>In progress</td>
 <td><a href="https://github.com/tomba-io/go">tomba-io/go</a></td>
@@ -748,12 +767,6 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <td>In progress</td>
 <td><a href="https://github.com/tomba-io/perl">tomba-io/perl</a></td>
 <td>CPAN</td>
-</tr>
-<tr>
-<td>Rust</td>
-<td>In progress</td>
-<td><a href="https://github.com/tomba-io/rust">tomba-io/rust</a></td>
-<td>crates.io</td>
 </tr>
 </tbody></table>
 <h3 id='introduction-libraries-framework-libraries'>Framework Libraries</h3>
@@ -2471,6 +2484,107 @@ You give one domain name and it returns all the email addresses found on the int
 <td><code>source</code></td>
 <td>array</td>
 <td>The given email address somewhere on the web</td>
+</tr>
+</tbody></table>
+<h1 id='phone-finder'>Phone Finder</h1>
+<p>Search phone are based on the email
+You give one email and it returns phone data</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/phone/******@zapier.com'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
+</code></pre></div><h2 id='phone-finder-http-request'>HTTP Request</h2>
+<p><code>GET /phone/:email</code></p>
+<h3 id='phone-finder-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>email</code></td>
+<td>Required</td>
+<td>The email address you want to find phone</td>
+</tr>
+</tbody></table>
+<h2 id='phone-finder-response-objects-details'>Response  Objects details</h2>
+<blockquote>
+<p>Full Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"******@zapier.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"valid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"local_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(877) 381-8743"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"intl_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1 877-381-8743"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"e164_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+18773818743"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rfc3966_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tel:+1-877-381-8743"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"line_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOLL_FREE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"carrier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timezones"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America</span><span class="se">\/</span><span class="s2">Adak"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>returns The email address to look up.</td>
+</tr>
+<tr>
+<td><code>valid</code></td>
+<td>bool</td>
+<td>returns the status of the phone.</td>
+</tr>
+<tr>
+<td><code>local_format</code></td>
+<td>string</td>
+<td>returns the local format</td>
+</tr>
+<tr>
+<td><code>intl_format</code></td>
+<td>string</td>
+<td>returns the international format</td>
+</tr>
+<tr>
+<td><code>e164_format</code></td>
+<td>string</td>
+<td>returns the e164 format</td>
+</tr>
+<tr>
+<td><code>rfc3966_format</code></td>
+<td>string</td>
+<td>returns the rfc3966 format</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>string</td>
+<td>returns the phone country code</td>
+</tr>
+<tr>
+<td><code>line_type</code></td>
+<td>string</td>
+<td>returns the phone type line</td>
+</tr>
+<tr>
+<td><code>carrier</code></td>
+<td>string</td>
+<td>returns the phone carrier</td>
+</tr>
+<tr>
+<td><code>timezones</code></td>
+<td>string</td>
+<td>returns the phone timezones</td>
 </tr>
 </tbody></table>
 <h1 id='leads'>Leads</h1><h2 id='leads-list-all-your-leads'>List all your leads</h2>
