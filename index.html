@@ -682,7 +682,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <h2 id='introduction-data'>Data</h2>
 <p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyse millions of websites to index the most up to date business data.</p>
 <h3 id='introduction-data-data-at-scale'>Data at scale</h3>
-<p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardised global schema.</p>
+<p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardized global schema.</p>
 <h3 id='introduction-data-direct-from-source'>Direct from source</h3>
 <p>We only collect data from the official source itself, we do not use third party data providers to access this data, and we provide direct line of sight to the original source.</p>
 <h2 id='introduction-libraries'>Libraries</h2><h3 id='introduction-libraries-language-libraries'>Language Libraries</h3>
@@ -746,7 +746,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 </tr>
 <tr>
 <td>Rust</td>
-<td>In progress</td>
+<td>Released</td>
 <td><a href="https://github.com/tomba-io/rust">tomba-io/rust</a></td>
 <td><a href="https://crates.io/crates/tomba">crates.io</a></td>
 </tr>
@@ -770,7 +770,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 </tr>
 </tbody></table>
 <h3 id='introduction-libraries-framework-libraries'>Framework Libraries</h3>
-<p>Official libraries for common frameworks. These libraries should use the official lanaguge library as a dependency, so for example the Django library should use the Python library.</p>
+<p>Official libraries for common frameworks. These libraries should use the official language library as a dependency, so for example the Django library should use the Python library.</p>
 
 <p>In the framework libraries we can assume more about the developer&#39;s use case, and we probably have access to more information, such as a HTTP request object. We can therefore implement additional functionality that
 doesn&#39;t make sense in the core language library. This includes bot filtering (not sending requests to our API if the user agent belongs to a &quot;bot&quot;).</p>
@@ -962,7 +962,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <p>Search emails are based on the website
 You give one domain name and it returns all the email addresses found on the internet.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domain-search/stripe.com'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/domain-search?domain=stripe.com'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
@@ -1062,7 +1062,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='domain-search-http-request'>HTTP Request</h2>
-<p><code>GET /domain-search/:domain</code></p>
+<p><code>GET /domain-search/?domain=:domain</code></p>
 <h3 id='domain-search-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
 <table><thead>
 <tr>
@@ -1079,7 +1079,7 @@ You give one domain name and it returns all the email addresses found on the int
 <tr>
 <td><code>page</code></td>
 <td>optional</td>
-<td>Specifies the number of email addresses to skip. The default is 1.</td>
+<td>Specifies the number of email addresses to skip. The default is <code>1</code>.</td>
 </tr>
 <tr>
 <td><code>limit</code></td>
@@ -1159,62 +1159,7 @@ You give one domain name and it returns all the email addresses found on the int
                         </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"donatetools.com"</span><span class="w">
                     </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">fundrazr.com</span><span class="se">\/</span><span class="s2">pages</span><span class="se">\/</span><span class="s2">stripe"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-25 09:33:19"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-30 16:21:18"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fundrazr.com"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.wizevents.com</span><span class="se">\/</span><span class="s2">pricing"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-26 07:19:54"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-28 15:43:44"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.wizevents.com"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">bloomerang.co</span><span class="se">\/</span><span class="s2">features</span><span class="se">\/</span><span class="s2">payment-processing</span><span class="se">\/</span><span class="s2">"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-16 08:14:17"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29 13:37:40"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bloomerang.co"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">mancloud.eu</span><span class="se">\/</span><span class="s2">nl</span><span class="se">\/</span><span class="s2">hotel-software</span><span class="se">\/</span><span class="s2">betaaloplossing"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 14:06:03"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 12:48:59"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mancloud.eu"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">mancloud.eu</span><span class="se">\/</span><span class="s2">en</span><span class="se">\/</span><span class="s2">hotel-software</span><span class="se">\/</span><span class="s2">payment-provider"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-12 14:06:14"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 12:49:00"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mancloud.eu"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">donorbox.org</span><span class="se">\/</span><span class="s2">pricing"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-23 13:44:27"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 13:15:44"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"donorbox.org"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">rootfunding.com</span><span class="se">\/</span><span class="s2">blogs</span><span class="se">\/</span><span class="s2">discounted-stripe-credit-card-processing-fees-for-non-profits"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-26 08:55:14"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 18:22:06"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rootfunding.com"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">rootfunding.com</span><span class="se">\/</span><span class="s2">feed.rss"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-26 08:55:15"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01 18:22:06"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rootfunding.com"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
+
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
@@ -1853,7 +1798,7 @@ You give one domain name and it returns all the email addresses found on the int
 <h1 id='email-finder'>Email Finder</h1>
 <p>This API endpoint generates or retrieves the most likely email address from a domain name, a first name and a last name.</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
-  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-finder/asana.com?first_name=Moskoz&amp;last_name=Dustin'</span> <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-finder?domain=asana.com&amp;first_name=Moskoz&amp;last_name=Dustin'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
@@ -1954,7 +1899,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 </code></pre></div><div class="highlight"><pre class="highlight powershell tab-powershell"><code><span class="w">
 </span></code></pre></div><h2 id='email-finder-http-request'>HTTP Request</h2>
-<p><code>GET /email-finder/:domain</code></p>
+<p><code>GET /email-finder?domain=:domain&amp;full_name=:full_name</code></p>
 <h3 id='email-finder-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
 <table><thead>
 <tr>
@@ -4971,7 +4916,6 @@ The Free plane can create only one key.
     </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"finder"</span><span class="p">:</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w">
     </span><span class="nl">"verifier"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"socail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"technologies"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"bulk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
