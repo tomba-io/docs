@@ -4,7 +4,7 @@ This API endpoint generates or retrieves the most likely email address from a do
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/email-finder/asana.com?first_name=Moskoz&last_name=Dustin' \
+  --url 'https://api.tomba.io/v1/email-finder?domain=asana.com&first_name=Moskoz&last_name=Dustin' \
   --header 'content-type: application/json' \
   --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'
@@ -132,7 +132,7 @@ void main() {
 
 ## HTTP Request
 
-`GET /email-finder/:domain`
+`GET /email-finder?domain=:domain&full_name=:full_name`
 
 ### The parameters are defined as follows
 
