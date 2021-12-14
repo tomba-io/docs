@@ -4,7 +4,7 @@ When you use Tomba , you access data from one unique source: the public web. Eve
 
 ### Data at scale
 
-We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardised global schema.
+We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardized global schema.
 
 ### Direct from source
 

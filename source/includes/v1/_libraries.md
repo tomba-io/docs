@@ -14,14 +14,14 @@ Official libraries for common programming languages, like PHP, Python etc.
 | PHP        | Released    | [tomba-io/php](https://github.com/tomba-io/php)       | [Packagist](https://packagist.org/packages/tomba-io/php)         |
 | Deno       | Released    | [tomba-io/deno](https://github.com/tomba-io/deno)     | [Deno land](https://deno.land/x/tombaio)                         |
 | C#         | Released    | [tomba-io/csharp](https://github.com/tomba-io/csharp) | [Nuget](https://www.nuget.org/packages/Tomba)                    |
-| Rust       | In progress | [tomba-io/rust](https://github.com/tomba-io/rust)     | [crates.io](https://crates.io/crates/tomba)                    |
+| Rust       | Released    | [tomba-io/rust](https://github.com/tomba-io/rust)     | [crates.io](https://crates.io/crates/tomba)                      |
 | Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         | GitHub                                                           |
 | Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     | Maven Central                                                    |
 | Perl       | In progress | [tomba-io/perl](https://github.com/tomba-io/perl)     | CPAN                                                             |
 
 ### Framework Libraries
 
-Official libraries for common frameworks. These libraries should use the official lanaguge library as a dependency, so for example the Django library should use the Python library.
+Official libraries for common frameworks. These libraries should use the official language library as a dependency, so for example the Django library should use the Python library.
 
 In the framework libraries we can assume more about the developer's use case, and we probably have access to more information, such as a HTTP request object. We can therefore implement additional functionality that
 doesn't make sense in the core language library. This includes bot filtering (not sending requests to our API if the user agent belongs to a "bot").

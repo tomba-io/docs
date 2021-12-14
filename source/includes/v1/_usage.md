@@ -185,7 +185,6 @@ void main() {
     "domain": 0,
     "finder": 158,
     "verifier": 35,
-    "socail": 0,
     "technologies": 0,
     "website": 0,
     "bulk": 0,
