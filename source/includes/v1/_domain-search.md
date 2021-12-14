@@ -5,7 +5,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/domain-search/stripe.com' \
+  --url 'https://api.tomba.io/v1/domain-search?domain=stripe.com' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'
@@ -132,14 +132,14 @@ void main() {
 
 ## HTTP Request
 
-`GET /domain-search/:domain`
+`GET /domain-search/?domain=:domain`
 
 ### The parameters are defined as follows
 
 | Parameter    | Default  | Description                                                                                            |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------ |
 | `domain`     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com".                |
-| `page`       | optional | Specifies the number of email addresses to skip. The default is 1.                                     |
+| `page`       | optional | Specifies the number of email addresses to skip. The default is `1`.                                     |
 | `limit`      | optional | Specifies the max number of email addresses to return. The default is 10. valid number(`10`,`20`,`50`) |
 | `department` | optional | Get only email addresses for people working in the selected department(s).                             |
 | `type`       | optional | Get only `personal` or `generic` email addresses.                                                      |
@@ -207,62 +207,7 @@ void main() {
                         "still_on_page": true,
                         "website_url": "donatetools.com"
                     },
-                    {
-                        "uri": "https:\/\/fundrazr.com\/pages\/stripe",
-                        "extracted_on": "2020-12-25 09:33:19",
-                        "last_seen_on": "2021-01-30 16:21:18",
-                        "still_on_page": true,
-                        "website_url": "fundrazr.com"
-                    },
-                    {
-                        "uri": "https:\/\/www.wizevents.com\/pricing",
-                        "extracted_on": "2020-12-26 07:19:54",
-                        "last_seen_on": "2021-01-28 15:43:44",
-                        "still_on_page": true,
-                        "website_url": "www.wizevents.com"
-                    },
-                    {
-                        "uri": "https:\/\/bloomerang.co\/features\/payment-processing\/",
-                        "extracted_on": "2020-12-16 08:14:17",
-                        "last_seen_on": "2021-01-29 13:37:40",
-                        "still_on_page": true,
-                        "website_url": "bloomerang.co"
-                    },
-                    {
-                        "uri": "https:\/\/mancloud.eu\/nl\/hotel-software\/betaaloplossing",
-                        "extracted_on": "2021-01-12 14:06:03",
-                        "last_seen_on": "2021-02-01 12:48:59",
-                        "still_on_page": true,
-                        "website_url": "mancloud.eu"
-                    },
-                    {
-                        "uri": "https:\/\/mancloud.eu\/en\/hotel-software\/payment-provider",
-                        "extracted_on": "2021-01-12 14:06:14",
-                        "last_seen_on": "2021-02-01 12:49:00",
-                        "still_on_page": true,
-                        "website_url": "mancloud.eu"
-                    },
-                    {
-                        "uri": "https:\/\/donorbox.org\/pricing",
-                        "extracted_on": "2020-12-23 13:44:27",
-                        "last_seen_on": "2021-02-01 13:15:44",
-                        "still_on_page": true,
-                        "website_url": "donorbox.org"
-                    },
-                    {
-                        "uri": "https:\/\/rootfunding.com\/blogs\/discounted-stripe-credit-card-processing-fees-for-non-profits",
-                        "extracted_on": "2021-01-26 08:55:14",
-                        "last_seen_on": "2021-02-01 18:22:06",
-                        "still_on_page": true,
-                        "website_url": "rootfunding.com"
-                    },
-                    {
-                        "uri": "https:\/\/rootfunding.com\/feed.rss",
-                        "extracted_on": "2021-01-26 08:55:15",
-                        "last_seen_on": "2021-02-01 18:22:06",
-                        "still_on_page": true,
-                        "website_url": "rootfunding.com"
-                    }
+                   
                 ]
             },
             {
