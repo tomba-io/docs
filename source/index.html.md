@@ -14,6 +14,11 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://app.tomba.io/auth/register'>Sign Up for a Developer Key</a>
+  - <a href='https://status.tomba.io/'>API Status</a>
+  - <a href='https://help.tomba.io/en/'>Support</a>
+
+
+
 
 includes:
   - v1/introduction
