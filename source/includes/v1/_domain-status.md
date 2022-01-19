@@ -142,7 +142,7 @@ void main() {
 | `email`   | Required | Email address from which you want to check. For example, "me@gmail.com". |
 
 <aside class="notice">
-We crawl the disposable daily to keep safe from fake uses .
+We crawl the disposable daily to keep safe from fake uses, if the invalid domain we will set disposable `true` .
 </aside>
 
 ## Response  Objects details
