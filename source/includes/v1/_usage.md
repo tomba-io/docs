@@ -44,7 +44,7 @@ result = usage.get_usage()
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -54,8 +54,6 @@ let usage = new tomba.Usage(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
 let result = usage.getUsage();
 
 result
@@ -65,7 +63,6 @@ result
   .catch((err) => {
     console.log(err);
   });
-
 ```
 
 ```ruby
@@ -100,7 +97,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Usage usage = Usage(client);

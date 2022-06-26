@@ -20,7 +20,7 @@ curl --request GET \
 | --------- | -------- | -------------------------------- |
 | `email`   | Required | The email address to find data . |
 
-## Response  Objects details
+## Response Objects details
 
 > Full Response
 
@@ -80,5 +80,5 @@ curl --request GET \
 | `position`     | string | The job title of person (if found)                                                                                         |
 | `twitter`      | string | Twitter handle for the person (if found).                                                                                  |
 | `linkedin_url` | string | LinkedIn URL for the person (if found).                                                                                    |
-| `phone_number` | bool   | true (if found)                                                                                                              |
+| `phone_number` | bool   | true (if found)                                                                                                            |
 | `company`      | string | The company of person (if found)                                                                                           |

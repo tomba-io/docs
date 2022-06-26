@@ -43,7 +43,7 @@ result = count.email_count('tomba.io')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -53,9 +53,7 @@ let count = new tomba.Count(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = count.emailCount('tomba.io');
+let result = count.emailCount("tomba.io");
 
 result
   .then((response) => {
@@ -99,7 +97,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Count count = Count(client);
@@ -145,6 +143,7 @@ void main() {
 | `generic_emails`            | int  | Total `generic` email                  |
 | `department` > `_key_name_` | int  | Total email on department `_key_name_` |
 | `seniority` > `_key_name_`  | int  | Total email on seniority `_key_name_`  |
+
 > Full Response
 
 ```json

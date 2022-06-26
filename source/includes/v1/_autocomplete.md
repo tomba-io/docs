@@ -43,7 +43,7 @@ result = status.auto_complete('google')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -53,9 +53,7 @@ let status = new tomba.Status(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = status.autoComplete('google');
+let result = status.autoComplete("google");
 
 result
   .then((response) => {
@@ -64,7 +62,6 @@ result
   .catch((err) => {
     console.log(err);
   });
-
 ```
 
 ```ruby
@@ -100,7 +97,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Status status = Status(client);
@@ -156,31 +153,31 @@ void main() {
       "website_url": "google.com",
       "name": "Google",
       "email_count": 336,
-      "logo": "https:\/\/www.google.com\/s2\/favicons?sz=24&domain=google.com"
+      "logo": "https://www.google.com/s2/favicons?sz=24&domain=google.com"
     },
     {
       "website_url": "txt.voice.google.com",
       "name": "Txt",
       "email_count": 2,
-      "logo": "https:\/\/www.google.com\/s2\/favicons?sz=24&domain=txt.voice.google.com"
+      "logo": "https://www.google.com/s2/favicons?sz=24&domain=txt.voice.google.com"
     },
     {
       "website_url": "googlegroups.com",
       "name": "Googlegroups",
       "email_count": 5,
-      "logo": "https:\/\/www.google.com\/s2\/favicons?sz=24&domain=googlegroups.com"
+      "logo": "https://www.google.com/s2/favicons?sz=24&domain=googlegroups.com"
     },
     {
       "website_url": "ooglesngoogles.com",
       "name": "Ooglesngoogles",
       "email_count": 1,
-      "logo": "https:\/\/www.google.com\/s2\/favicons?sz=24&domain=ooglesngoogles.com"
+      "logo": "https://www.google.com/s2/favicons?sz=24&domain=ooglesngoogles.com"
     },
     {
       "website_url": "googlemail.con",
       "name": "Googlemail",
       "email_count": 2,
-      "logo": "https:\/\/www.google.com\/s2\/favicons?sz=24&domain=googlemail.con"
+      "logo": "https://www.google.com/s2/favicons?sz=24&domain=googlemail.con"
     }
   ],
   "meta": {

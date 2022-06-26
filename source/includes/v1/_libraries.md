@@ -15,7 +15,7 @@ Official libraries for common programming languages, like PHP, Python etc.
 | Deno       | Released    | [tomba-io/deno](https://github.com/tomba-io/deno)     | [Deno land](https://deno.land/x/tombaio)                         |
 | C#         | Released    | [tomba-io/csharp](https://github.com/tomba-io/csharp) | [Nuget](https://www.nuget.org/packages/Tomba)                    |
 | Rust       | Released    | [tomba-io/rust](https://github.com/tomba-io/rust)     | [crates.io](https://crates.io/crates/tomba)                      |
-| Lua        | Released    | [tomba-io/lua](https://github.com/tomba-io/lua)       | [luarocks](https://luarocks.org/modules/benemohamed/tomba)                      |
+| Lua        | Released    | [tomba-io/lua](https://github.com/tomba-io/lua)       | [luarocks](https://luarocks.org/modules/benemohamed/tomba)       |
 | Elixir     | Released    | [tomba-io/elixir](https://github.com/tomba-io/elixir) | [hex.pm](https://hex.pm/packages/tomba)                          |
 | Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         | GitHub                                                           |
 | Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     | Maven Central                                                    |

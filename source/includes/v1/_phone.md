@@ -21,24 +21,24 @@ curl --request GET \
 | --------- | -------- | ---------------------------------------- |
 | `email`   | Required | The email address you want to find phone |
 
-## Response  Objects details
+## Response Objects details
 
 > Full Response
 
 ```json
 {
-    "data": {
-        "email": "******@zapier.com",
-        "valid": true,
-        "local_format": "(877) 381-8743",
-        "intl_format": "+1 877-381-8743",
-        "e164_format": "+18773818743",
-        "rfc3966_format": "tel:+1-877-381-8743",
-        "country_code": "US",
-        "line_type": "TOLL_FREE",
-        "carrier": null,
-        "timezones": "America\/Adak"
-    }
+  "data": {
+    "email": "******@zapier.com",
+    "valid": true,
+    "local_format": "(877) 381-8743",
+    "intl_format": "+1 877-381-8743",
+    "e164_format": "+18773818743",
+    "rfc3966_format": "tel:+1-877-381-8743",
+    "country_code": "US",
+    "line_type": "TOLL_FREE",
+    "carrier": null,
+    "timezones": "America/Adak"
+  }
 }
 ```
 

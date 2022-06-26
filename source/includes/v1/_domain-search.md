@@ -46,7 +46,7 @@ result = domain.domain_search('stripe.com')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -56,9 +56,7 @@ let domain = new tomba.Domain(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = domain.domainSearch('stripe.com');
+let result = domain.domainSearch("stripe.com");
 
 result
   .then((response) => {
@@ -102,7 +100,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Domain domain = Domain(client);
@@ -139,7 +137,7 @@ void main() {
 | Parameter    | Default  | Description                                                                                            |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------ |
 | `domain`     | Required | Domain name from which you want to find the email addresses. For example, "stripe.com".                |
-| `page`       | optional | Specifies the number of email addresses to skip. The default is `1`.                                     |
+| `page`       | optional | Specifies the number of email addresses to skip. The default is `1`.                                   |
 | `limit`      | optional | Specifies the max number of email addresses to return. The default is 10. valid number(`10`,`20`,`50`) |
 | `department` | optional | Get only email addresses for people working in the selected department(s).                             |
 | `type`       | optional | Get only `personal` or `generic` email addresses.                                                      |
@@ -207,7 +205,7 @@ void main() {
                         "still_on_page": true,
                         "website_url": "donatetools.com"
                     },
-                   
+
                 ]
             },
             ...

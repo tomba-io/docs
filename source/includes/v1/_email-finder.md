@@ -45,7 +45,7 @@ result = finder.email_finder('stripe.com', 'Moskoz', 'Dustin')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -55,9 +55,7 @@ let finder = new tomba.Finder(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = finder.emailFinder('stripe.com', 'fname', 'lname');
+let result = finder.emailFinder("stripe.com", "fname", "lname");
 
 result
   .then((response) => {
@@ -100,7 +98,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Finder finder = Finder(client);

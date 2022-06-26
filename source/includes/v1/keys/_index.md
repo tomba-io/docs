@@ -51,7 +51,7 @@ result = keys.get_keys()
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -61,8 +61,6 @@ let keys = new tomba.Keys(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
 let result = keys.getKeys();
 
 result
@@ -104,7 +102,7 @@ import io.tomba.api.Tomba;
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Keys keys = Keys(client);
@@ -294,7 +292,7 @@ result = keys.create_key()
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -304,8 +302,6 @@ let keys = new tomba.Keys(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
 let result = keys.createKey();
 
 result
@@ -346,7 +342,7 @@ import io.tomba.api.Tomba;
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Keys keys = Keys(client);
@@ -439,7 +435,7 @@ result = keys.reset_key('')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -449,9 +445,7 @@ let keys = new tomba.Keys(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = keys.resetKey('');
+let result = keys.resetKey("");
 
 result
   .then((response) => {
@@ -492,7 +486,7 @@ import io.tomba.api.Tomba;
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Keys keys = Keys(client);
@@ -589,7 +583,7 @@ result = keys.delete_key('')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -599,9 +593,7 @@ let keys = new tomba.Keys(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = keys.deleteKey('12');
+let result = keys.deleteKey("12");
 
 result
   .then((response) => {
@@ -642,7 +634,7 @@ import io.tomba.api.Tomba;
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Keys keys = Keys(client);

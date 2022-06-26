@@ -44,7 +44,7 @@ result = logs.get_logs()
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -54,8 +54,6 @@ let logs = new tomba.Logs(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
 let result = logs.getLogs();
 
 result
@@ -100,7 +98,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Logs logs = Logs(client);

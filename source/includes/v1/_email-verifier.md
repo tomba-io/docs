@@ -47,7 +47,7 @@ result = verifier.email_verifier('b.mohamed@tomba.io')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -57,9 +57,7 @@ let verifier = new tomba.Verifier(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = verifier.emailVerifier('b.mohamed@tomba.io');
+let result = verifier.emailVerifier("b.mohamed@tomba.io");
 
 result
   .then((response) => {
@@ -68,7 +66,6 @@ result
   .catch((err) => {
     console.log(err);
   });
-
 ```
 
 ```ruby
@@ -104,7 +101,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Verifier verifier = Verifier(client);
@@ -141,45 +138,45 @@ void main() {
 | --------- | -------- | ------------------------------------- |
 | `email`   | Required | The email address you want to verify. |
 
-## Response  Objects details
+## Response Objects details
 
 > Full Response
 
 ```json
 {
-    "data": {
-        "email": {
-            "mx_records": true,
-            "smtp_server": null,
-            "smtp_check": true,
-            "accept_all": null,
-            "block": null,
-            "email": "b.mohamed@tomba.io",
-            "gibberish": false,
-            "disposable": false,
-            "webmail": false,
-            "regex": true,
-            "status": "valid",
-            "result": "deliverable",
-            "score": 82
-        },
-        "sources": [
-            {
-                "uri": "https:\/\/github.com\/tomba-io\/generic-emails\/blob\/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9\/src\/lib\/validation\/hash.ts",
-                "extracted_on": "2021-02-08T20:09:54+01:00",
-                "last_seen_on": "2021-02-08T22:43:40+01:00",
-                "still_on_page": true,
-                "website_url": "github.com"
-            },
-            {
-                "uri": "https:\/\/github.com\/tomba-io\/generic-emails\/blame\/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9\/src\/lib\/validation\/hash.ts",
-                "extracted_on": "2021-02-08T20:09:59+01:00",
-                "last_seen_on": "2021-02-08T22:43:40+01:00",
-                "still_on_page": true,
-                "website_url": "github.com"
-            }
-        ]
-    }
+  "data": {
+    "email": {
+      "mx_records": true,
+      "smtp_server": null,
+      "smtp_check": true,
+      "accept_all": null,
+      "block": null,
+      "email": "b.mohamed@tomba.io",
+      "gibberish": false,
+      "disposable": false,
+      "webmail": false,
+      "regex": true,
+      "status": "valid",
+      "result": "deliverable",
+      "score": 82
+    },
+    "sources": [
+      {
+        "uri": "https://github.com/tomba-io/generic-emails/blob/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts",
+        "extracted_on": "2021-02-08T20:09:54+01:00",
+        "last_seen_on": "2021-02-08T22:43:40+01:00",
+        "still_on_page": true,
+        "website_url": "github.com"
+      },
+      {
+        "uri": "https://github.com/tomba-io/generic-emails/blame/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts",
+        "extracted_on": "2021-02-08T20:09:59+01:00",
+        "last_seen_on": "2021-02-08T22:43:40+01:00",
+        "still_on_page": true,
+        "website_url": "github.com"
+      }
+    ]
+  }
 }
 ```
 

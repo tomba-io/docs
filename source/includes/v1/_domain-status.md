@@ -45,7 +45,7 @@ result = status.domain_status('gmail.com')
 ```
 
 ```javascript
-const tomba = require('tomba');
+const tomba = require("tomba");
 
 // Init Tomba
 let client = new tomba.Client();
@@ -55,9 +55,7 @@ let status = new tomba.Status(client);
 client
   .setKey("ta_xxxx") // Your Key
   .setSecret("ts_xxxx"); // Your Secret
-;
-
-let result = status.domainStatus('gmail.com');
+let result = status.domainStatus("gmail.com");
 
 result
   .then((response) => {
@@ -66,7 +64,6 @@ result
   .catch((err) => {
     console.log(err);
   });
-
 ```
 
 ```ruby
@@ -102,7 +99,7 @@ data
 ```dart
 import 'package:tomba/tomba.dart';
 
-void main() { 
+void main() {
   // Init SDK
   Client client = Client();
   Status status = Status(client);
@@ -145,7 +142,7 @@ void main() {
 We crawl the disposable daily to keep safe from fake uses, if invalid domain we will set disposable `true` .
 </aside>
 
-## Response  Objects details
+## Response Objects details
 
 > Full Response
 
