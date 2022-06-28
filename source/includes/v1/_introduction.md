@@ -9,6 +9,8 @@ The main calls are available:
 - The [Account information](#account-information)
 - The [Domain Search](#domain-search)
 - The [Email Finder](#email-finder)
+- The [Email Enrichment](#enrichment)
+- The [Author Finder](#author-finder)
 - The [Email Verifier](#email-verifier)
 - The [Email Sources](#email-sources)
 - The [Phone Finder](#phone-finder)
