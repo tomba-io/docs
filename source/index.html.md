@@ -17,14 +17,11 @@ toc_footers:
   - <a href='https://status.tomba.io/'>API Status</a>
   - <a href='https://help.tomba.io/en/'>Support</a>
 
-
-
-
 includes:
   - v1/introduction
   - v1/authentication
   - v1/errors
-  - v1/rate-limiting 
+  - v1/rate-limiting
   - v1/https
   - v1/data
   - v1/libraries
@@ -32,6 +29,7 @@ includes:
   - v1/domain-search
   - v1/email-finder
   - v1/enrichment
+  - v1/author-finder
   - v1/email-verifier
   - v1/email-sources
   - v1/phone
