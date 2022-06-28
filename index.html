@@ -353,7 +353,7 @@
                     <a href="#account-information-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#account-information-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#account-information-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -386,7 +386,18 @@
                     <a href="#enrichment-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#enrichment-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#enrichment-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#author-finder" class="toc-h1 toc-link" data-title="Author finder">Author finder</a>
+              <ul class="toc-list-h3">
+                  <li>
+                    <a href="#author-finder-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#author-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -397,7 +408,7 @@
                     <a href="#email-verifier-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#email-verifier-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#email-verifier-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -408,7 +419,7 @@
                     <a href="#email-sources-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#email-sources-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#email-sources-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -419,7 +430,7 @@
                     <a href="#phone-finder-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#phone-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#phone-finder-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -543,7 +554,7 @@
                     <a href="#domain-status-http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
                   </li>
                   <li>
-                    <a href="#domain-status-response-objects-details" class="toc-h2 toc-link" data-title="Response  Objects details">Response  Objects details</a>
+                    <a href="#domain-status-response-objects-details" class="toc-h2 toc-link" data-title="Response Objects details">Response Objects details</a>
                   </li>
               </ul>
           </li>
@@ -693,7 +704,7 @@ We&#39;ll return an error if the key is either missing or invalid.</p>
 <h2 id='introduction-https-ssl'>HTTPS / SSL</h2>
 <p>Our API is available over a secure HTTPS connection for all users, even on the free plan. Simply add <code>https://</code> to the request URLs to make the requests secure.</p>
 <h2 id='introduction-data'>Data</h2>
-<p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyse millions of websites to index the most up to date business data.</p>
+<p>When you use Tomba , you access data from one unique source: the public web. Every day, we analyze millions of websites to index the most up to date business data.</p>
 <h3 id='introduction-data-data-at-scale'>Data at scale</h3>
 <p>We are the largest professional email database of companies and domains in the world. We have 160+m email from 55 millions domains, all bought together into a standardized global schema.</p>
 <h3 id='introduction-data-direct-from-source'>Direct from source</h3>
@@ -805,7 +816,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/me'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: ta_xxxx'</span> <span class="se">\</span>
-  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>  
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="kn">use</span> <span class="nn">Tomba\Client</span><span class="p">;</span>
 <span class="kn">use</span> <span class="nn">Tomba\Services\Account</span><span class="p">;</span>
 
@@ -834,7 +845,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">account</span><span class="p">.</span><span class="n">get_account</span><span class="p">()</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -844,8 +855,6 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">();</span>
 
 <span class="nx">result</span>
@@ -855,7 +864,6 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -878,7 +886,7 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="n">Account</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -919,69 +927,69 @@ doesn&#39;t make sense in the core language library. This includes bot filtering
 <td>Your API <code>secret</code></td>
 </tr>
 </tbody></table>
-<h2 id='account-information-response-objects-details'>Response  Objects details</h2>
+<h2 id='account-information-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"secret_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ts_xxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@tomba.io"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+xxxxxxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.gravatar.com</span><span class="se">\/</span><span class="s2">avatar</span><span class="se">\/</span><span class="s2">xxxxxxxxx?s=128&amp;d=https:</span><span class="se">\/\/</span><span class="s2">ui-avatars.com</span><span class="se">\/</span><span class="s2">api</span><span class="se">\/</span><span class="s2">M+B</span><span class="se">\/</span><span class="s2">128</span><span class="se">\/</span><span class="s2">001529</span><span class="se">\/</span><span class="s2">fff?ssl=1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx</span><span class="se">\/</span><span class="s2">xx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-18T15:52:10+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-22T15:52:10+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expired"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-24T00:00:00+01:00"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pricing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Growth"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pricing_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_searches"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_verifications"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_phones"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_list"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_attr"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_keys"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_teams"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"available_email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 21:23:00.997965"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx</span><span class="se">\/</span><span class="s2">xxxx"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">1349</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"verifications"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"secret_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ts_xxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"blocked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@tomba.io"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+xxxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gravatar.com/avatar/xxxxxxxxx?s=128&amp;d=https://ui-avatars.com/api/M+B/128/001529/fff?ssl=1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx/xx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"newsletter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-18T15:52:10+01:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-22T15:52:10+01:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expired"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-24T00:00:00+01:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pricing"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Growth"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pricing_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_searches"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_verifications"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_phones"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_leads"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_list"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_attr"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_keys"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_teams"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available_email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"monthly"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-31 21:23:00.997965"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx/xxxx"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">1349</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"verifications"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"phones"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='domain-search'>Domain Search</h1>
 <p>Search emails are based on the website
@@ -1019,7 +1027,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">domain</span><span class="p">.</span><span class="n">domain_search</span><span class="p">(</span><span class="s">'stripe.com'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -1029,9 +1037,7 @@ You give one domain name and it returns all the email addresses found on the int
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">domain</span><span class="p">.</span><span class="nx">domainSearch</span><span class="p">(</span><span class="dl">'</span><span class="s1">stripe.com</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">domain</span><span class="p">.</span><span class="nx">domainSearch</span><span class="p">(</span><span class="dl">"</span><span class="s2">stripe.com</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1063,7 +1069,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Domain</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">Domain</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -1313,7 +1319,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">finder</span><span class="p">.</span><span class="n">email_finder</span><span class="p">(</span><span class="s">'stripe.com'</span><span class="p">,</span> <span class="s">'Moskoz'</span><span class="p">,</span> <span class="s">'Dustin'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -1323,9 +1329,7 @@ You give one domain name and it returns all the email addresses found on the int
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">finder</span><span class="p">.</span><span class="nx">emailFinder</span><span class="p">(</span><span class="dl">'</span><span class="s1">stripe.com</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fname</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">lname</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">finder</span><span class="p">.</span><span class="nx">emailFinder</span><span class="p">(</span><span class="dl">"</span><span class="s2">stripe.com</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">fname</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">lname</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1356,7 +1360,7 @@ You give one domain name and it returns all the email addresses found on the int
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Finder</span> <span class="n">finder</span> <span class="o">=</span> <span class="n">Finder</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -1545,7 +1549,7 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The email address to find data .</td>
 </tr>
 </tbody></table>
-<h2 id='enrichment-response-objects-details'>Response  Objects details</h2>
+<h2 id='enrichment-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -1659,6 +1663,171 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The company of person (if found)</td>
 </tr>
 </tbody></table>
+<h1 id='author-finder'>Author finder</h1>
+<p>This API endpoint generates or retrieves the most likely email address from a blog post url.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
+  <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/author-finder?url=https://clearbit.com/blog/company-name-to-domain-api'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Key: xxxxxxxxxxxxx'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'X-Tomba-Secret: ts_xxxx'</span>
+</code></pre></div><h2 id='author-finder-http-request'>HTTP Request</h2>
+<p><code>GET /author-finder?url=:url</code></p>
+<h3 id='author-finder-http-request-the-parameters-are-defined-as-follows'>The parameters are defined as follows</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>Required</td>
+<td>The URL of the article. For example. For example, &quot;https://clearbit.com/blog/company-name-to-domain-api&quot;.</td>
+</tr>
+</tbody></table>
+<h2 id='author-finder-response-objects-details'>Response Objects details</h2>
+<blockquote>
+<p>Full Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clearbit.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alex@clearbit.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maccaw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founder"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/maccman"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/alex-maccaw-ab592978"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alex Maccaw"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clearbit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pypi.org/project/clearbit/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pypi.org"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T20:32:08+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-05T02:15:43+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://growjo.com/company/Clearbit"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"growjo.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-23T09:11:15+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-23T20:19:38+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pdfcookie.com/documents/book1xlsx-025ekom5x721"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdfcookie.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-01T14:53:49+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-03T00:55:58+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/clearbit/clearbit-ruby/blob/master/clearbit.gemspec"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-22T15:54:30+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-23T00:12:25+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/clearbit/clearbit-python"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-22T15:54:33+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-23T00:12:25+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>The email address</td>
+</tr>
+<tr>
+<td><code>website_url</code></td>
+<td>string</td>
+<td>Company domain</td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>string</td>
+<td>First name of person</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>string</td>
+<td>Last name of person</td>
+</tr>
+<tr>
+<td><code>full_name</code></td>
+<td>string</td>
+<td>Full formatted name of person. Sometimes this will be present even if the <code>last_name</code> or <code>first_name</code> aren’t available</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>string</td>
+<td>Two letter country code based on location</td>
+</tr>
+<tr>
+<td><code>accept_all</code></td>
+<td>bool</td>
+<td>is <code>true</code> if the SMTP server accepts all the email addresses. It means you can have have <code>false</code> positives on SMTP checks.</td>
+</tr>
+<tr>
+<td><code>department</code></td>
+<td>string</td>
+<td>The person working in the selected department(s).</td>
+</tr>
+<tr>
+<td><code>twitter</code></td>
+<td>string</td>
+<td>Twitter handle for the person (if found).</td>
+</tr>
+<tr>
+<td><code>linkedin_url</code></td>
+<td>string</td>
+<td>LinkedIn URL for the person (if found).</td>
+</tr>
+<tr>
+<td><code>phone_number</code></td>
+<td>bool</td>
+<td>true if found</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>string</td>
+<td>The company of person (if found)</td>
+</tr>
+<tr>
+<td><code>last_updated</code></td>
+<td>string</td>
+<td>The time at which we update this data</td>
+</tr>
+</tbody></table>
 <h1 id='email-verifier'>Email Verifier</h1>
 <p>This API endpoint allows you to verify the deliverability of an email address.</p>
 
@@ -1696,7 +1865,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">verifier</span><span class="p">.</span><span class="n">email_verifier</span><span class="p">(</span><span class="s">'b.mohamed@tomba.io'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -1706,9 +1875,7 @@ You give one domain name and it returns all the email addresses found on the int
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">verifier</span><span class="p">.</span><span class="nx">emailVerifier</span><span class="p">(</span><span class="dl">'</span><span class="s1">b.mohamed@tomba.io</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">verifier</span><span class="p">.</span><span class="nx">emailVerifier</span><span class="p">(</span><span class="dl">"</span><span class="s2">b.mohamed@tomba.io</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1717,7 +1884,6 @@ You give one domain name and it returns all the email addresses found on the int
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -1741,7 +1907,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Verifier</span> <span class="n">verifier</span> <span class="o">=</span> <span class="n">Verifier</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -1779,44 +1945,44 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The email address you want to verify.</td>
 </tr>
 </tbody></table>
-<h2 id='email-verifier-response-objects-details'>Response  Objects details</h2>
+<h2 id='email-verifier-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"mx_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"smtp_check"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"gibberish"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deliverable"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blob</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:54+01:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blame</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:59+01:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"mx_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smtp_check"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accept_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"block"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gibberish"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"disposable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"webmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deliverable"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">82</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/tomba-io/generic-emails/blob/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:54+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/tomba-io/generic-emails/blame/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:59+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -1893,7 +2059,7 @@ You give one domain name and it returns all the email addresses found on the int
 </tr>
 </tbody></table>
 <h1 id='email-sources'>Email Sources</h1>
-<p>Find email address source somewhere on the web  </p>
+<p>Find email address source somewhere on the web</p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--request</span> GET <span class="se">\</span>
   <span class="nt">--url</span> <span class="s1">'https://api.tomba.io/v1/email-sources/b.mohamed@tomba.io'</span> <span class="se">\</span>
   <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1926,7 +2092,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">sources</span><span class="p">.</span><span class="n">email_sources</span><span class="p">(</span><span class="s">'b.mohamed@tomba.io'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -1936,9 +2102,7 @@ You give one domain name and it returns all the email addresses found on the int
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">sources</span><span class="p">.</span><span class="nx">emailSources</span><span class="p">(</span><span class="dl">'</span><span class="s1">b.mohamed@tomba.io</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">sources</span><span class="p">.</span><span class="nx">emailSources</span><span class="p">(</span><span class="dl">"</span><span class="s2">b.mohamed@tomba.io</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1947,7 +2111,6 @@ You give one domain name and it returns all the email addresses found on the int
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -1971,7 +2134,7 @@ You give one domain name and it returns all the email addresses found on the int
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Sources</span> <span class="n">sources</span> <span class="o">=</span> <span class="n">Sources</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -2009,28 +2172,28 @@ You give one domain name and it returns all the email addresses found on the int
 <td>The email address you want to find sources.</td>
 </tr>
 </tbody></table>
-<h2 id='email-sources-response-objects-details'>Response  Objects details</h2>
+<h2 id='email-sources-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blob</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:54+01:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">github.com</span><span class="se">\/</span><span class="s2">tomba-io</span><span class="se">\/</span><span class="s2">generic-emails</span><span class="se">\/</span><span class="s2">blame</span><span class="se">\/</span><span class="s2">084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9</span><span class="se">\/</span><span class="s2">src</span><span class="se">\/</span><span class="s2">lib</span><span class="se">\/</span><span class="s2">validation</span><span class="se">\/</span><span class="s2">hash.ts"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:59+01:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b.mohamed@tomba.io"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/tomba-io/generic-emails/blob/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:54+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/tomba-io/generic-emails/blame/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extracted_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T20:09:59+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_seen_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T22:43:40+01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"still_on_page"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -2075,23 +2238,23 @@ You give one email and it returns phone data</p>
 <td>The email address you want to find phone</td>
 </tr>
 </tbody></table>
-<h2 id='phone-finder-response-objects-details'>Response  Objects details</h2>
+<h2 id='phone-finder-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"******@zapier.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"valid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"local_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(877) 381-8743"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"intl_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1 877-381-8743"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"e164_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+18773818743"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"rfc3966_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tel:+1-877-381-8743"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"line_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOLL_FREE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"carrier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"timezones"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America</span><span class="se">\/</span><span class="s2">Adak"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"******@zapier.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"local_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(877) 381-8743"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"intl_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1 877-381-8743"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"e164_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+18773818743"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rfc3966_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tel:+1-877-381-8743"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"line_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOLL_FREE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"carrier"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezones"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Adak"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <table><thead>
@@ -2315,7 +2478,7 @@ You give one email and it returns phone data</p>
         </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mozilla.com"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"senior system administrator"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">edwardlim"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/edwardlim"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla Toronto"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes"</span><span class="p">,</span><span class="w">
@@ -2346,7 +2509,7 @@ You give one email and it returns phone data</p>
         </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mozilla.com"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vp firefox product"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.linkedin.com</span><span class="se">\/</span><span class="s2">in</span><span class="se">\/</span><span class="s2">osunick"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"linkedin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.linkedin.com/in/osunick"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla Toronto"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"notes"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -3772,7 +3935,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="p">.</span><span class="n">get_keys</span><span class="p">()</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -3782,8 +3945,6 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">getKeys</span><span class="p">();</span>
 
 <span class="nx">result</span>
@@ -3813,7 +3974,7 @@ The Free plane can create only one key.
 </code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -3999,7 +4160,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="p">.</span><span class="n">create_key</span><span class="p">()</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4009,8 +4170,6 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">createKey</span><span class="p">();</span>
 
 <span class="nx">result</span>
@@ -4039,7 +4198,7 @@ The Free plane can create only one key.
 </code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4124,7 +4283,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="p">.</span><span class="n">reset_key</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4134,9 +4293,7 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">resetKey</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">resetKey</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -4165,7 +4322,7 @@ The Free plane can create only one key.
 </code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4259,7 +4416,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">keys</span><span class="p">.</span><span class="n">delete_key</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4269,9 +4426,7 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">deleteKey</span><span class="p">(</span><span class="dl">'</span><span class="s1">12</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">deleteKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -4300,7 +4455,7 @@ The Free plane can create only one key.
 </code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Keys</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">Keys</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4397,7 +4552,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">usage</span><span class="p">.</span><span class="n">get_usage</span><span class="p">()</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4407,8 +4562,6 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">usage</span><span class="p">.</span><span class="nx">getUsage</span><span class="p">();</span>
 
 <span class="nx">result</span>
@@ -4418,7 +4571,6 @@ The Free plane can create only one key.
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -4441,7 +4593,7 @@ The Free plane can create only one key.
 </span><span class="n">data</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Usage</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">Usage</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4580,7 +4732,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">logs</span><span class="p">.</span><span class="n">get_logs</span><span class="p">()</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4590,8 +4742,6 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">logs</span><span class="p">.</span><span class="nx">getLogs</span><span class="p">();</span>
 
 <span class="nx">result</span>
@@ -4624,7 +4774,7 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Logs</span> <span class="n">logs</span> <span class="o">=</span> <span class="n">Logs</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4816,7 +4966,7 @@ The Free plane can create only one key.
 <span class="n">count</span> <span class="o">=</span> <span class="n">Count</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">count</span><span class="p">.</span><span class="n">email_count</span><span class="p">(</span><span class="s">'tomba.io'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -4826,9 +4976,7 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">count</span><span class="p">.</span><span class="nx">emailCount</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba.io</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">count</span><span class="p">.</span><span class="nx">emailCount</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba.io</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -4860,7 +5008,7 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Count</span> <span class="n">count</span> <span class="o">=</span> <span class="n">Count</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -4996,7 +5144,7 @@ The Free plane can create only one key.
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">status</span><span class="p">.</span><span class="n">domain_status</span><span class="p">(</span><span class="s">'gmail.com'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -5006,9 +5154,7 @@ The Free plane can create only one key.
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">status</span><span class="p">.</span><span class="nx">domainStatus</span><span class="p">(</span><span class="dl">'</span><span class="s1">gmail.com</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">status</span><span class="p">.</span><span class="nx">domainStatus</span><span class="p">(</span><span class="dl">"</span><span class="s2">gmail.com</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -5017,7 +5163,6 @@ The Free plane can create only one key.
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -5041,7 +5186,7 @@ The Free plane can create only one key.
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Status</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -5089,7 +5234,7 @@ The Free plane can create only one key.
 <aside class="notice">
 We crawl the disposable daily to keep safe from fake uses, if invalid domain we will set disposable `true` .
 </aside>
-<h2 id='domain-status-response-objects-details'>Response  Objects details</h2>
+<h2 id='domain-status-response-objects-details'>Response Objects details</h2>
 <blockquote>
 <p>Full Response</p>
 </blockquote>
@@ -5150,7 +5295,7 @@ We crawl the disposable daily to keep safe from fake uses, if invalid domain we 
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">status</span><span class="p">.</span><span class="n">auto_complete</span><span class="p">(</span><span class="s">'google'</span><span class="p">)</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">tomba</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">tomba</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tomba</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Init Tomba</span>
 <span class="kd">let</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">tomba</span><span class="p">.</span><span class="nx">Client</span><span class="p">();</span>
@@ -5160,9 +5305,7 @@ We crawl the disposable daily to keep safe from fake uses, if invalid domain we 
 <span class="nx">client</span>
   <span class="p">.</span><span class="nx">setKey</span><span class="p">(</span><span class="dl">"</span><span class="s2">ta_xxxx</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// Your Key</span>
   <span class="p">.</span><span class="nx">setSecret</span><span class="p">(</span><span class="dl">"</span><span class="s2">ts_xxxx</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// Your Secret</span>
-<span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">status</span><span class="p">.</span><span class="nx">autoComplete</span><span class="p">(</span><span class="dl">'</span><span class="s1">google</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">status</span><span class="p">.</span><span class="nx">autoComplete</span><span class="p">(</span><span class="dl">"</span><span class="s2">google</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">result</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -5171,7 +5314,6 @@ We crawl the disposable daily to keep safe from fake uses, if invalid domain we 
   <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
-
 </code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'tomba'</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="no">Tomba</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
@@ -5195,7 +5337,7 @@ We crawl the disposable daily to keep safe from fake uses, if invalid domain we 
 
 </span></code></pre></div><div class="highlight"><pre class="highlight dart tab-dart"><code><span class="kn">import</span> <span class="s">'package:tomba/tomba.dart'</span><span class="o">;</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Init SDK</span>
   <span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">();</span>
   <span class="n">Status</span> <span class="n">status</span> <span class="o">=</span> <span class="n">Status</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
@@ -5273,31 +5415,31 @@ We crawl the disposable daily to keep safe from fake uses, if invalid domain we 
       </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"google.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">336</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=google.com"</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google.com/s2/favicons?sz=24&amp;domain=google.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"txt.voice.google.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Txt"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=txt.voice.google.com"</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google.com/s2/favicons?sz=24&amp;domain=txt.voice.google.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googlegroups.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Googlegroups"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=googlegroups.com"</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google.com/s2/favicons?sz=24&amp;domain=googlegroups.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ooglesngoogles.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ooglesngoogles"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=ooglesngoogles.com"</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google.com/s2/favicons?sz=24&amp;domain=ooglesngoogles.com"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"website_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googlemail.con"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Googlemail"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"email_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.google.com</span><span class="se">\/</span><span class="s2">s2</span><span class="se">\/</span><span class="s2">favicons?sz=24&amp;domain=googlemail.con"</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.google.com/s2/favicons?sz=24&amp;domain=googlemail.con"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
