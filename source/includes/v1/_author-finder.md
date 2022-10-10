@@ -16,8 +16,8 @@ curl --request GET \
 
 ### The parameters are defined as follows
 
-| Parameter | Default  | Description                                                                |
-| --------- | -------- | -------------------------------------------------------------------------- |
+| Parameter | Default  | Description                                                                                               |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------- |
 | url       | Required | The URL of the article. For example. For example, "https://clearbit.com/blog/company-name-to-domain-api". |
 
 ## Response Objects details

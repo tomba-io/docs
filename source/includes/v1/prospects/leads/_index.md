@@ -252,25 +252,33 @@ import 'package:tomba/tomba.dart';
   "data": {
     "leads": [
       {
-        "leads_list": {
-          "list_id": 1,
-          "name": "Lazaro Reichert"
-        },
-        "email": "test@rg.fr",
-        "first_name": "Moskovitzs",
-        "last_name": "Dustinx",
-        "country": null,
-        "website_url": "asana.com",
-        "position": "CEO",
-        "twitter": "moskov",
-        "linkedin": "dmoskov",
-        "phone_number": "",
-        "company": "Asana",
+        "id": 8420,
+        "user_id": 1,
+        "email": "b.mohamed@tomba.io",
+        "first_name": "Mohamed",
+        "last_name": "Ben rebia",
+        "country": "DZ",
+        "website_url": "tomba.io",
+        "position": "ceo",
+        "twitter": null,
+        "linkedin": "https://www.linkedin.com/in/mohamed-ben-rebia-4337061ba",
+        "phone_number": null,
+        "company": "Tomba technology web service LLC ",
         "notes": null,
-        "lead_source": "1",
-        "created_at": "2020-06-02 19:16:20",
-        "updated_at": "0000-00-00 00:00:00",
-        "id": 2
+        "score": 95,
+        "lead_source": "browser",
+        "sync_status": true,
+        "sync": {
+          "sync_airtable": true,
+          "sync_hubspot": true,
+          "sync_mailchimp": true,
+          "sync_pipedrive": true,
+          "sync_muxemail": true
+        },
+        "leads_list": { "list_id": 117, "name": "CEO" },
+        "attributes": [],
+        "created_at": "2021-06-07T20:31:20+01:00",
+        "updated_at": "2022-07-03T14:31:30+01:00"
       }
     ]
   }

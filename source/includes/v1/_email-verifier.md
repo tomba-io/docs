@@ -6,7 +6,7 @@ Tomba focuses on B2B. Therefore, Webmail are not verified. We'll run every check
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/email-verifier/ziad@test.io' \
+  --url 'https://api.tomba.io/v1/email-verifier/b.mohamed@tomba.io' \
   --header 'content-type: application/json' \
   --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'
@@ -147,10 +147,10 @@ void main() {
   "data": {
     "email": {
       "mx_records": true,
-      "smtp_server": null,
+      "smtp_server": true,
       "smtp_check": true,
-      "accept_all": null,
-      "block": null,
+      "accept_all": false,
+      "block": false,
       "email": "b.mohamed@tomba.io",
       "gibberish": false,
       "disposable": false,
@@ -158,22 +158,148 @@ void main() {
       "regex": true,
       "status": "valid",
       "result": "deliverable",
-      "score": 82
+      "score": 100
     },
     "sources": [
       {
         "uri": "https://github.com/tomba-io/generic-emails/blob/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts",
+        "website_url": "github.com",
         "extracted_on": "2021-02-08T20:09:54+01:00",
         "last_seen_on": "2021-02-08T22:43:40+01:00",
-        "still_on_page": true,
-        "website_url": "github.com"
+        "still_on_page": true
       },
       {
         "uri": "https://github.com/tomba-io/generic-emails/blame/084fc1a63d3cdaf9a34f255bedc2baea49a8e8b9/src/lib/validation/hash.ts",
+        "website_url": "github.com",
         "extracted_on": "2021-02-08T20:09:59+01:00",
         "last_seen_on": "2021-02-08T22:43:40+01:00",
-        "still_on_page": true,
-        "website_url": "github.com"
+        "still_on_page": true
+      },
+      {
+        "uri": "https://katta.co/tomba-review/",
+        "website_url": "katta.co",
+        "extracted_on": "2021-06-02T13:41:50+02:00",
+        "last_seen_on": "2021-06-02T18:26:12+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://shards.info/github/benemohamed/",
+        "website_url": "shards.info",
+        "extracted_on": "2021-10-26T15:36:04+02:00",
+        "last_seen_on": "2021-12-22T23:57:50+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://githubmemory.com/repo/tomba-io/python",
+        "website_url": "githubmemory.com",
+        "extracted_on": "2021-10-26T15:36:37+02:00",
+        "last_seen_on": "2021-12-22T23:57:49+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://pypi.org/project/tomba-io/",
+        "website_url": "pypi.org",
+        "extracted_on": "2021-10-26T15:37:41+02:00",
+        "last_seen_on": "2021-10-26T15:37:46+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://www.npmjs.com/package/tomba",
+        "website_url": "www.npmjs.com",
+        "extracted_on": "2021-10-26T15:39:28+02:00",
+        "last_seen_on": "2021-10-26T15:39:36+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://cnpmjs.org/package/tomba",
+        "website_url": "cnpmjs.org",
+        "extracted_on": "2021-10-26T18:58:53+02:00",
+        "last_seen_on": "2021-12-22T23:58:49+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://packosphere.com/tombaio/tomba-meteor",
+        "website_url": "packosphere.com",
+        "extracted_on": "2021-10-28T00:52:33+02:00",
+        "last_seen_on": "2021-12-23T00:02:43+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://www.pkgstats.com/pkg:tomba",
+        "website_url": "www.pkgstats.com",
+        "extracted_on": "2021-10-28T00:53:39+02:00",
+        "last_seen_on": "2021-10-28T00:53:44+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://pub.dev/packages/tomba",
+        "website_url": "pub.dev",
+        "extracted_on": "2021-10-30T15:28:18+02:00",
+        "last_seen_on": "2021-10-30T15:28:45+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://pub.dev/packages/tomba/license",
+        "website_url": "pub.dev",
+        "extracted_on": "2021-10-30T15:28:19+02:00",
+        "last_seen_on": "2021-10-30T15:28:45+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://pub.dev/packages/tomba/versions/1.0.0",
+        "website_url": "pub.dev",
+        "extracted_on": "2021-10-30T15:28:25+02:00",
+        "last_seen_on": "2021-10-30T15:28:47+02:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://cnpmjs.org/package/tomba/v/1.0.0",
+        "website_url": "cnpmjs.org",
+        "extracted_on": "2021-12-22T14:21:30+01:00",
+        "last_seen_on": "2021-12-22T23:58:49+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://r.cnpmjs.org/tomba",
+        "website_url": "r.cnpmjs.org",
+        "extracted_on": "2021-12-22T14:23:16+01:00",
+        "last_seen_on": "2021-12-22T23:58:51+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://github.com/tomba-io/r",
+        "website_url": "github.com",
+        "extracted_on": "2021-12-22T14:41:25+01:00",
+        "last_seen_on": "2021-12-23T00:02:09+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://rdrr.io/cran/tomba/f/README.md",
+        "website_url": "rdrr.io",
+        "extracted_on": "2021-12-22T14:41:37+01:00",
+        "last_seen_on": "2021-12-23T00:02:18+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://packosphere.com/tombaio/tomba-meteor/1.0.0",
+        "website_url": "packosphere.com",
+        "extracted_on": "2021-12-22T14:42:21+01:00",
+        "last_seen_on": "2021-12-23T00:02:43+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://githubmemory.com/repo/tomba-io/node",
+        "website_url": "githubmemory.com",
+        "extracted_on": "2021-12-22T15:44:03+01:00",
+        "last_seen_on": "2021-12-23T00:10:51+01:00",
+        "still_on_page": true
+      },
+      {
+        "uri": "https://www.nuget.org/packages/Tomba/1.0.0",
+        "website_url": "www.nuget.org",
+        "extracted_on": "2021-12-22T15:44:25+01:00",
+        "last_seen_on": "2021-12-23T00:10:52+01:00",
+        "still_on_page": true
       }
     ]
   }
