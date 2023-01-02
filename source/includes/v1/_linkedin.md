@@ -1,10 +1,10 @@
-# Author finder
+# Linkedin Finder
 
-This API endpoint generates or retrieves the most likely email address from a blog post url.
+This API endpoint generates or retrieves the most likely email address from a Linkedin URL.
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/author-finder?url=https://clearbit.com/blog/company-name-to-domain-api' \
+  --url 'https://api.tomba.io/v1/linkedin?url=https://www.linkedin.com/in/alex-maccaw-ab592978' \
   --header 'content-type: application/json' \
   --header 'X-Tomba-Key: xxxxxxxxxxxxx' \
   --header 'X-Tomba-Secret: ts_xxxx'
@@ -12,13 +12,13 @@ curl --request GET \
 
 ## HTTP Request
 
-`GET /author-finder?url=:url`
+`GET /linkedin?url=:url`
 
 ### The parameters are defined as follows
 
 | Parameter | Default  | Description                                                                                               |
 | --------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| url       | Required | The URL of the article. For example, "https://clearbit.com/blog/company-name-to-domain-api". |
+| url       | Required | The URL of the Linkedin.  For example, "https://clearbit.com/blog/company-name-to-domain-api". |
 
 ## Response Objects details
 

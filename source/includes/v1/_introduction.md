@@ -11,6 +11,7 @@ The main calls are available:
 - The [Email Finder](#email-finder)
 - The [Email Enrichment](#enrichment)
 - The [Author Finder](#author-finder)
+- The [Linkedin Finder](#linkedin-finder)
 - The [Email Verifier](#email-verifier)
 - The [Email Sources](#email-sources)
 - The [Phone Finder](#phone-finder)

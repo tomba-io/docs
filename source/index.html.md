@@ -30,6 +30,7 @@ includes:
   - v1/email-finder
   - v1/enrichment
   - v1/author-finder
+  - v1/linkedin
   - v1/email-verifier
   - v1/email-sources
   - v1/phone
