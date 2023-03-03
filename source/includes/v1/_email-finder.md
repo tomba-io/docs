@@ -153,6 +153,7 @@ void main() {
     "last_name": "Marek",
     "full_name": "Jan Marek",
     "country": "CZ",
+    "gender": "male",
     "position": null,
     "twitter": null,
     "linkedin": "https://www.linkedin.com/in/jan-marek-245b85103",

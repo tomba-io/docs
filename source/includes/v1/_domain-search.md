@@ -148,77 +148,83 @@ void main() {
 
 ```json
 {
-    "data": {
-        "organization": {
-            "location": {
-                "country": "US",
-                "city": "San Francisco",
-                "state": "California",
-                "street_address": null
-            },
-            "social_links": {
-                "twitter_url": "https:\/\/twitter.com\/stripe",
-                "facebook_url": "https:\/\/www.facebook.com\/StripeHQ",
-                "linkedin_url": "https:\/\/www.linkedin.com\/company\/2135371"
-            },
-            "disposable": false,
-            "webmail": false,
-            "website_url": "stripe.com",
-            "phone_number": "",
-            "industries": "internet",
-            "postal_code": "94107",
-            "employee_count": 976,
-            "last_updated": "2021-01-09T05:51:19+01:00",
-            "revenue": "150000",
-            "accept_all": false,
-            "pattern": "{first}",
-            "domain_score": 30,
-            "organization": "stripe"
-        },
-        "emails": [
-            {
-                "email": "nonprofit@stripe.com",
-                "first_name": null,
-                "last_name": null,
-                "full_name": null,
-                "phone_number": null,
-                "type": "generic",
-                "country": null,
-                "position": null,
-                "department": null,
-                "seniority": null,
-                "twitter": null,
-                "linkedin": null,
-                "accept_all": false,
-                "pattern": "{first}",
-                "score": 55,
-                "verification": {
-                    "date": null,
-                    "status": null
-                },
-                "last_updated": "2021-01-22T13:01:41+01:00",
-                "sources": [
-                    {
-                        "uri": "https:\/\/donatetools.com\/pricing",
-                        "extracted_on": "2020-12-15 14:35:50",
-                        "last_seen_on": "2021-01-22 13:01:41",
-                        "still_on_page": true,
-                        "website_url": "donatetools.com"
-                    },
+  "data": {
+    "organization": {
+      "location": {
+        "country": "US",
+        "city": "San Francisco",
+        "state": "California",
+        "street_address": null
+      },
+      "social_links": {
+        "twitter_url": "https://twitter.com/stripe",
+        "facebook_url": "https://www.facebook.com/StripeHQ",
+        "linkedin_url": "https://www.linkedin.com/company/2135371"
+      },
+      "disposable": false,
+      "webmail": false,
+      "website_url": "stripe.com",
+      "phone_number": "",
+      "industries": "internet",
+      "postal_code": "94107",
+      "employee_count": 976,
+      "last_updated": "2021-01-09T05:51:19+01:00",
+      "revenue": "150000",
+      "accept_all": true,
+      "description": "Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.",
 
-                ]
-            },
-            ...
-            ...
-            ...
-        ]
+      "pattern": "{first}",
+      "domain_score": 30,
+      "organization": "stripe",
+      "whois": {
+        "registrar_name": "SafeNames Ltd.",
+        "created_date": "1995-09-12 00:00:00",
+        "referral_url": "https://www.safenames.net/"
+      }
     },
-    "meta": {
-        "total": 1514,
-        "pageSize": 10,
-        "current": 0,
-        "total_pages": 152
-    }
+    "emails": [
+      {
+        "email": "********@stripe.com",
+        "first_name": null,
+        "last_name": null,
+        "full_name": null,
+        "phone_number": null,
+        "type": "generic",
+        "country": null,
+        "position": null,
+        "department": null,
+        "seniority": null,
+        "twitter": null,
+        "linkedin": null,
+        "accept_all": false,
+        "pattern": "{first}",
+        "score": 55,
+        "verification": {
+          "date": null,
+          "status": null
+        },
+        "last_updated": "2021-01-22T13:01:41+01:00",
+        "sources": [
+          {
+            "uri": "https://donatetools.com/pricing",
+            "extracted_on": "2020-12-15 14:35:50",
+            "last_seen_on": "2021-01-22 13:01:41",
+            "still_on_page": true,
+            "website_url": "donatetools.com"
+          }
+          ....
+          ....
+          ....
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "total": 1514,
+    "pageSize": 10,
+    "current": 0,
+    "total_pages": 152
+  }
 }
 ```
 
