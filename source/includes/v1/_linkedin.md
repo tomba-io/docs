@@ -16,9 +16,9 @@ curl --request GET \
 
 ### The parameters are defined as follows
 
-| Parameter | Default  | Description                                                                                               |
-| --------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| url       | Required | The URL of the Linkedin.  For example, "https://clearbit.com/blog/company-name-to-domain-api". |
+| Parameter | Default  | Description                                                                                   |
+| --------- | -------- | --------------------------------------------------------------------------------------------- |
+| url       | Required | The URL of the Linkedin. For example, "https://clearbit.com/blog/company-name-to-domain-api". |
 
 ## Response Objects details
 
