@@ -156,6 +156,11 @@ void main() {
       "disposable": false,
       "webmail": false,
       "regex": true,
+      "whois": {
+        "registrar_name": "NameCheap, Inc.",
+        "created_date": "2020-07-07 20:54:07",
+        "referral_url": "https://www.namecheap.com/"
+      },
       "status": "valid",
       "result": "deliverable",
       "score": 100
