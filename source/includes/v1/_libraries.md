@@ -17,9 +17,9 @@ Official libraries for common programming languages, like PHP, Python etc.
 | Rust       | Released    | [tomba-io/rust](https://github.com/tomba-io/rust)     | [crates.io](https://crates.io/crates/tomba)                      |
 | Lua        | Released    | [tomba-io/lua](https://github.com/tomba-io/lua)       | [luarocks](https://luarocks.org/modules/benemohamed/tomba)       |
 | Elixir     | Released    | [tomba-io/elixir](https://github.com/tomba-io/elixir) | [hex.pm](https://hex.pm/packages/tomba)                          |
-| Go         | In progress | [tomba-io/go](https://github.com/tomba-io/go)         | GitHub                                                           |
+| Go         | Released    | [tomba-io/go](https://github.com/tomba-io/go)         | [GitHub](https://github.com/tomba-io/go)                         |
 | Java       | In progress | [tomba-io/java](https://github.com/tomba-io/java)     | Maven Central                                                    |
-| Perl       | In progress | [tomba-io/perl](https://github.com/tomba-io/perl)     | CPAN                                                             |
+| Perl       | Released    | [tomba-io/perl](https://github.com/tomba-io/perl)     | [GitHub](https://github.com/tomba-io/perl)                       |
 
 ### Framework Libraries
 
