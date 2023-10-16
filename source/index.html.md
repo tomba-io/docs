@@ -42,7 +42,6 @@ includes:
   - v1/logs
   - v1/email-count
   - v1/domain-status
-  - v1/autocomplete
   # - v1/cli
   # - v1/app
 

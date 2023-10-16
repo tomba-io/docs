@@ -6,7 +6,7 @@ Returns a list of Lead Attributes.
 
 ```shell
 curl --request GET \
-  --url https://api.tomba.io/v1/leads/attributes \
+  --url https://api.tomba.io/v1/attributes \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
@@ -52,7 +52,7 @@ import 'package:tomba/tomba.dart';
 
 ### HTTP Request
 
-`GET /leads/attributes/`
+`GET /attributes/`
 
 ### The parameters are defined as follows
 
@@ -162,7 +162,7 @@ Returns a Lead Attributes.
 
 ```shell
 curl --request GET \
-  --url 'https://api.tomba.io/v1/leads/attributes/38' \
+  --url 'https://api.tomba.io/v1/attributes/38' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```
@@ -208,7 +208,7 @@ import 'package:tomba/tomba.dart';
 
 ### HTTP Request
 
-`GET /leads/attributes/:id`
+`GET /attributes/:id`
 
 ### The parameters are defined as follows
 
@@ -251,7 +251,7 @@ Create a new Attributes with the `name` and `type` request parameter. If the Att
 
 ```shell
 curl --request POST \
-  --url 'https://api.tomba.io/v1/leads/attributes' \
+  --url 'https://api.tomba.io/v1/attributes' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{"name": "Millie","type": "date"}'
@@ -298,7 +298,7 @@ import 'package:tomba/tomba.dart';
 
 ### HTTP Request
 
-`POST /leads/attributes`
+`POST /attributes`
 
 ### The parameters are defined as follows
 
@@ -329,7 +329,7 @@ Update the fields of a Attributes using `id`.
 
 ```shell
 curl --request PUT \
-  --url 'https://api.tomba.io/v1/leads/attributes/41' \
+  --url 'https://api.tomba.io/v1/attributes/41' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx' \
   --data '{"name": "total ","type": "string"}'
@@ -376,7 +376,7 @@ import 'package:tomba/tomba.dart';
 
 ### HTTP Request
 
-`PUT /leads/attributes/:id`
+`PUT /attributes/:id`
 
 ### The parameters are defined as follows
 
@@ -408,7 +408,7 @@ Delete a specific Attributes by passing `id`.
 
 ```shell
 curl --request DELETE \
-  --url 'https://api.tomba.io/v1/leads/attributes' \
+  --url 'https://api.tomba.io/v1/attributes' \
   --header 'Content-Type: application/json' \
   --header 'X-Tomba-Key: ta_xxxx'
 ```
@@ -454,7 +454,7 @@ import 'package:tomba/tomba.dart';
 
 ### HTTP Request
 
-`DELETE /leads/attributes/:id`
+`DELETE /attributes/:id`
 
 ### The parameters are defined as follows
 

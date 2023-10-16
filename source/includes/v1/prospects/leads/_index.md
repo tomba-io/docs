@@ -268,13 +268,10 @@ import 'package:tomba/tomba.dart';
         "score": 95,
         "lead_source": "browser",
         "sync_status": true,
-        "sync": {
-          "sync_airtable": true,
-          "sync_hubspot": true,
-          "sync_mailchimp": true,
-          "sync_pipedrive": true,
-          "sync_muxemail": true
-        },
+        "sync_airtable": true,
+        "sync_hubspot": true,
+        "sync_mailchimp": true,
+        "sync_pipedrive": true,
         "leads_list": { "list_id": 117, "name": "CEO" },
         "attributes": [],
         "created_at": "2021-06-07T20:31:20+01:00",

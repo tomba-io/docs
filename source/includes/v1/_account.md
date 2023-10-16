@@ -141,60 +141,76 @@ void main() {
 ```json
 {
   "data": {
-    "available": 5000,
-    "user_id": 1,
-    "secret_token": "ts_xxx",
+    "user_id": 283,
+    "secret_token": "ts_d611fc23-504c-4c13-8943-a48d98db38bf",
     "role": 2,
     "confirmed": true,
     "blocked": false,
-    "first_name": "xxx",
-    "last_name": "xxxx",
-    "email": "xxx@tomba.io",
-    "phone": "+xxxxxxx",
-    "image": "https://www.gravatar.com/avatar/xxxxxxxxx?s=128&d=https://ui-avatars.com/api/M+B/128/001529/fff?ssl=1",
+    "first_name": "******",
+    "last_name": "****",
+    "email": "******@tomba.io",
+    "phone": "+3550556254142",
+    "image": "https://lh3.googleusercontent.com/a/xxxxxx=s96-c",
     "deleted": false,
-    "timezone": "xx/xx",
+    "provider": "google",
+    "timezone": "XXX/XXXX",
     "newsletter": false,
     "activity": false,
-    "title": "",
-    "country": "AU",
-    "created_at": "2020-02-18T15:52:10+01:00",
-    "ip": "1.0.0.0",
-    "payment_status": true,
-    "issued": "2020-12-22T15:52:10+01:00",
-    "expired": "2021-10-24T00:00:00+01:00",
+    "title": null,
+    "country": "***",
+    "created_at": "2021-03-08T14:39:52+01:00",
+    "ip": "105.98.231.150",
+    "issued": "2023-10-12T12:34:10+02:00",
+    "expired": "2023-11-11T11:34:10+01:00",
+    "expired_subscription": "2024-06-23T21:58:07+02:00",
     "pricing": {
-      "name": "Growth",
-      "pricing_id": 3,
-      "available_searches": 2500,
-      "available_verifications": 2500,
-      "available_phones": 500,
-      "available_leads": 10000,
-      "available_list": 150,
+      "name": "Enterprise",
+      "pricing_id": 5,
+      "available_searches": 50000,
+      "available_verifications": 100000,
+      "available_phones": 5000,
+      "available_leads": 50000,
+      "available_list": 500,
       "available_attr": 29,
-      "available_keys": 10,
-      "available_teams": 5,
-      "available_email_count": 10000,
-      "frequency": "monthly"
+      "available_keys": 50,
+      "available_teams": 20,
+      "available_b2b": 25,
+      "available_sources": 500,
+      "available_email_count": 80000,
+      "frequency": "monthly",
+      "price_monthly": "389",
+      "price_yearly": "3501",
+      "update_url": null,
+      "cancel_url": null
     },
-    "time": {
-      "date": "2021-01-31 21:23:00.997965",
-      "timezone_type": 3,
-      "timezone": "xx/xxxx"
+    "teams": {
+      "team_id": null,
+      "role": null,
+      "workspace": null,
+      "export": null,
+      "bulks": null,
+      "limit": {
+        "search": null,
+        "verifier": null
+      },
+      "owner": null
     },
-    "used": 1349,
     "requests": {
       "domains": {
-        "available": 2500,
-        "used": 12
+        "available": 50000,
+        "used": 51
       },
       "verifications": {
-        "available": 2500,
-        "used": 49
+        "available": 100000,
+        "used": 1
       },
       "phones": {
-        "available": 500,
-        "used": 17
+        "available": 5000,
+        "used": 0
+      },
+      "b2b": {
+        "available": 25,
+        "used": 0
       }
     }
   }
